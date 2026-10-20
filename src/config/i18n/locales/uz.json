@@ -1,0 +1,389 @@
+{
+  "common": {
+    "search": "Qidirish",
+    "all": "Hammasi",
+    "loading": "Yuklanmoqda…",
+    "retry": "Qayta urinish",
+    "loadError": "Ma'lumotni yuklab bo'lmadi: {{message}}",
+    "details": "Batafsil",
+    "prev": "Oldingi",
+    "next": "Keyingi",
+    "pages": "Sahifalar",
+    "language": "Til",
+    "recommended": "Tavsiya",
+    "disclaimer": "InternWay viza yoki ishga qabul qilinishni kafolatlamaydi. Pullik xizmatdan oldin xizmat tarkibi, narxi, to'lov bosqichlari va qaytarish shartlari yozma ravishda kelishiladi."
+  },
+  "nav": {
+    "label": "Asosiy menyu",
+    "internships": "Amaliyotlar",
+    "companies": "Ish beruvchilar",
+    "portfolio": "Talabalar portfeli",
+    "students": "Talabalar uchun",
+    "employers": "Kompaniyalar uchun",
+    "universities": "Universitetlar",
+    "about": "Biz haqimizda",
+    "login": "Kirish",
+    "start": "Boshlash",
+    "menu": "Menyu"
+  },
+  "footer": {
+    "about": "O'zbekistonlik talabalar va bitiruvchilarni dunyo bo'ylab ish beruvchilar bilan bog'laydigan xalqaro amaliyot platformasi.",
+    "platform": "Platforma",
+    "partnership": "Hamkorlik",
+    "company": "InternWay",
+    "disclaimer": "E'lonlar rasmiy manbalardan olinadi. Ariza berishdan oldin shartlarni rasmiy sahifada tekshiring."
+  },
+  "date": {
+    "unknown": "Sana noma'lum",
+    "today": "Bugun",
+    "yesterday": "Kecha",
+    "daysAgo": "{{count}} kun oldin",
+    "monthsAgo": "{{count}} oy oldin",
+    "yearsAgo": "{{count}} yil oldin"
+  },
+  "regions": {
+    "germany": "Germaniya",
+    "uk": "Buyuk Britaniya",
+    "europe": "Yevropa",
+    "canada": "Kanada",
+    "asia": "Osiyo",
+    "usa": "AQSh",
+    "remote": "Masofaviy"
+  },
+  "countries": {
+    "italy": "Italiya",
+    "southKorea": "Janubiy Koreya",
+    "malaysia": "Malayziya",
+    "uk": "Buyuk Britaniya"
+  },
+  "home": {
+    "eyebrow": "Xalqaro amaliyot platformasi",
+    "titleStart": "Har bir katta yurish",
+    "titleAccent": "bitta qadamdan",
+    "titleEnd": "boshlanadi",
+    "lead": "Dunyo bo'ylab internship, traineeship va xalqaro dasturlar bitta joyda. Har kuni yangilanadi, rasmiy manbalardan olinadi, sanaga ko'ra saralanadi.",
+    "searchPlaceholder": "Masalan: software, marketing, Germany...",
+    "logoAlt": "InternWay logotipi",
+    "today": "bugungi e'lon",
+    "regions": "hudud",
+    "stats": {
+      "total": "faol amaliyot",
+      "companies": "ish beruvchi",
+      "programs": "xalqaro dastur",
+      "sources": "rasmiy manba"
+    },
+    "directions": {
+      "eyebrow": "Platforma",
+      "title": "Uch yo'nalish, bitta maqsad",
+      "lead": "Talaba o'z yo'lini topadi, ish beruvchi o'z nomzodini topadi.",
+      "students": {
+        "title": "Talabalar profili",
+        "text": "Ta'lim, yo'nalish, ko'nikmalar, tillar, tajriba va loyihalar. CV joylang va profilingizni kim ko'rishini o'zingiz boshqaring."
+      },
+      "employers": {
+        "title": "Ish beruvchilar profili",
+        "text": "Kompaniya haqida ma'lumot, faoliyat sohasi, mamlakat, hamkorlik holati va ochiq amaliyot vakansiyalari."
+      },
+      "internships": {
+        "title": "Amaliyotlar bo'limi",
+        "text": "Mamlakat, soha, davomiylik, til talabi, boshlanish sanasi va haq to'lanishiga qarab qidiring."
+      }
+    },
+    "latest": {
+      "eyebrow": "Yangi",
+      "title": "Eng so'nggi amaliyotlar",
+      "all": "Barcha amaliyotlar"
+    },
+    "partners": {
+      "eyebrow": "Ish beruvchilar",
+      "title": "Ustuvor hamkorlar",
+      "lead": "Jamoamiz tomonidan tekshirilgan, joriy amaliyot dasturi bor kompaniyalar.",
+      "all": "Barcha kompaniyalar"
+    },
+    "how": {
+      "eyebrow": "Qanday ishlaydi",
+      "title": "To'rt qadamda xalqaro amaliyotga",
+      "1": {
+        "title": "Profil yarating",
+        "text": "Bepul ro'yxatdan o'ting, CV va ko'nikmalaringizni qo'shing."
+      },
+      "2": {
+        "title": "Amaliyot toping",
+        "text": "Mamlakat va soha bo'yicha filtrlang, yangi e'lonlarni kuzating."
+      },
+      "3": {
+        "title": "Ariza yuboring",
+        "text": "O'zingiz yoki \"InternWay orqali\" — jamoamiz hujjatlarda yordam beradi."
+      },
+      "4": {
+        "title": "Holatni kuzating",
+        "text": "Arizangiz qaysi bosqichda ekanini shaxsiy kabinetda ko'ring."
+      }
+    },
+    "cta": {
+      "title": "InternWay orqali ariza topshiring",
+      "text": "Konsultatsiya, mos amaliyotni tanlash, CV va suhbatga tayyorlanish — bir joyda.",
+      "label": "Xizmatlar bilan tanishish"
+    }
+  },
+  "internships": {
+    "eyebrow": "Amaliyotlar",
+    "title": "Xalqaro amaliyotlarni qidiring",
+    "lead": "Kompaniyalarning rasmiy sahifalari va xalqaro dasturlardan har kuni yig'iladi. Eng yangisi — tepada.",
+    "searchPlaceholder": "Lavozim, kompaniya yoki shahar",
+    "kindLabel": "Turi",
+    "freshLabel": "Sana",
+    "kind": {
+      "all": "Barcha turlar",
+      "job": "Kompaniya amaliyoti",
+      "program": "Xalqaro dastur"
+    },
+    "fresh": {
+      "all": "Istalgan vaqt",
+      "1": "Oxirgi 24 soat",
+      "7": "Oxirgi hafta",
+      "30": "Oxirgi oy"
+    },
+    "found": "{{count}} ta amaliyot topildi",
+    "empty": "Bu filtr bo'yicha amaliyot topilmadi. Qidiruvni soddalashtirib ko'ring.",
+    "noLocation": "Joy ko'rsatilmagan",
+    "source": "Manba: {{source}}",
+    "new": "Yangi"
+  },
+  "companies": {
+    "eyebrow": "Ish beruvchilar",
+    "title": "Hamkor va maqsadli kompaniyalar",
+    "lead": "Italiya, Janubiy Koreya, Malayziya va Buyuk Britaniyadagi amaliyot dasturi bor kompaniyalar. Ustuvorlik jamoamiz tekshiruvi asosida belgilanadi.",
+    "searchPlaceholder": "Kompaniya, soha yoki shahar",
+    "priorityLabel": "Holat",
+    "filter": {
+      "all": "Barcha holatlar",
+      "A": "Ustuvor (A)",
+      "B": "Istiqbolli (B)",
+      "verified": "WAYU tekshirgan"
+    },
+    "priority": {
+      "A": "Ustuvor",
+      "B": "Istiqbolli",
+      "none": "Tekshirilmoqda"
+    },
+    "priorityHint": {
+      "A": "Joriy amaliyot tasdiqlangan",
+      "B": "Talabalar bilan ishlaydi, shartlar aniqlanmoqda",
+      "none": "Jamoamiz ma'lumotni tekshirmoqda"
+    },
+    "duration": "Davomiylik",
+    "eligibility": "Xalqaro talabalar",
+    "fromShortlist": "WAYU ro'yxati",
+    "fromBase": "Dastlabki baza",
+    "officialPage": "Rasmiy sahifa",
+    "found": "{{count}} ta kompaniya",
+    "empty": "Kompaniya topilmadi.",
+    "note": "Xalqaro talabalarni qabul qilish shartlari har kompaniyada farq qiladi. Ariza berishdan oldin rasmiy sahifada tekshiring yoki \"InternWay orqali\" xizmatidan foydalaning."
+  },
+  "students": {
+    "eyebrow": "Talabalar uchun",
+    "title": "Xalqaro karyerangizni shu yerdan boshlang",
+    "lead": "Platforma bilan bepul tanishing. Pul faqat aniq qiymat beradigan xizmat uchun olinadi — narx oldindan ko'rsatiladi.",
+    "browse": "Amaliyotlarni ko'rish",
+    "plansEyebrow": "Tariflar",
+    "plansTitle": "Siz uchun mos yo'l",
+    "plans": {
+      "free": {
+        "name": "Bepul",
+        "price": "0 so'm",
+        "text": "Platforma bilan tanishish",
+        "items": [
+          "Profil yaratish",
+          "CV joylash",
+          "Kompaniyalar va amaliyotlar haqida umumiy ma'lumot",
+          "Yangi e'lonlarni kuzatish"
+        ],
+        "cta": "Boshlash"
+      },
+      "platform": {
+        "name": "Platforma imkoniyatlari",
+        "price": "Narx tez orada",
+        "text": "Bir martalik to'lov yoki a'zolik",
+        "items": [
+          "To'liq vakansiya tafsilotlari",
+          "Platforma orqali ariza yuborish",
+          "Ariza holatini kuzatish",
+          "Qo'shimcha funksiyalar"
+        ],
+        "cta": "Xabardor bo'lish"
+      },
+      "full": {
+        "name": "InternWay orqali",
+        "price": "Kelishilgan holda",
+        "text": "To'liq hamrohlik xizmati",
+        "items": [
+          "Dastlabki konsultatsiya",
+          "Mos amaliyotlarni tanlash",
+          "CV va hujjatlar bo'yicha yordam",
+          "Ish beruvchi bilan aloqa",
+          "Suhbatga tayyorgarlik",
+          "Viza jarayoni bo'yicha yo'l-yo'riq"
+        ],
+        "cta": "Konsultatsiya olish"
+      }
+    },
+    "payEyebrow": "To'lov",
+    "payTitle": "To'lov qanday ishlaydi",
+    "pay": {
+      "1": { "title": "Xizmatni tanlang", "text": "To'lov evaziga aynan nima olishingizni ko'rasiz." },
+      "2": { "title": "To'lang", "text": "Yakuniy narx, valyuta va shartlar oldindan ko'rsatiladi." },
+      "3": { "title": "Tasdiq oling", "text": "Tizim to'lovni tekshiradi va elektron chek yuboradi." },
+      "4": { "title": "Foydalaning", "text": "Tegishli xizmat yoki funksiya darhol ochiladi." }
+    }
+  },
+  "employers": {
+    "eyebrow": "Ish beruvchilar uchun",
+    "title": "O'zbekistonning iqtidorli yoshlarini toping",
+    "lead": "Kompaniya profilini yarating, vakansiyani tasdiqlating va motivatsiyali nomzodlarni qabul qiling. Boshlanishi — bepul.",
+    "featuresEyebrow": "Imkoniyatlar",
+    "featuresTitle": "Nimalar olasiz",
+    "features": {
+      "profile": {
+        "title": "Kompaniya profili",
+        "text": "Faoliyat sohasi, mamlakat, hamkorlik holati va ochiq amaliyotlar bir sahifada."
+      },
+      "verified": {
+        "title": "Tasdiqlangan e'lonlar",
+        "text": "Har bir vakansiya jamoamiz tekshiruvidan so'ng joylanadi — talabalar ishonadi."
+      },
+      "candidates": {
+        "title": "Nomzodlar oqimi",
+        "text": "Profil, ko'nikma va tillar bo'yicha saralangan arizalarni bir joyda ko'rib chiqing."
+      }
+    },
+    "modelEyebrow": "Model",
+    "modelTitle": "Hamkorlik shartlari",
+    "plans": {
+      "now": {
+        "name": "Hozir — bepul",
+        "price": "0 so'm",
+        "text": "Platformaga qo'shilish",
+        "items": ["Kompaniya profilini yaratish", "Hamkorlikka ariza yuborish", "Vakansiyani tasdiqlatish"],
+        "cta": "Ariza qoldirish"
+      },
+      "later": {
+        "name": "Keyin — paketlar",
+        "price": "Obuna",
+        "text": "HR vositalari",
+        "items": [
+          "Nomzodlarning to'liq profillari",
+          "Nomzodlar bilan bevosita aloqa",
+          "Vakansiyani yuqorida ko'rsatish",
+          "Intervyu rejalash va statistika"
+        ],
+        "cta": "Batafsil"
+      }
+    },
+    "formTitle": "Hamkorlikka ariza"
+  },
+  "universities": {
+    "eyebrow": "Universitetlar",
+    "title": "Talabalaringizni dunyoga yo'naltiring",
+    "lead": "Universitetlar bilan hamkorlikda talabalarni mos xalqaro amaliyotlarga yo'naltiramiz va natijalarini kuzatamiz.",
+    "featuresTitle": "Hamkorlik nima beradi",
+    "features": {
+      "guide": {
+        "title": "Yo'naltirish",
+        "text": "Talabalarga yo'nalishiga mos amaliyotlar ro'yxati va tayyorgarlik bo'yicha yordam."
+      },
+      "stats": {
+        "title": "Statistika",
+        "text": "Qaysi talabalar ariza berdi, qabul qilindi va qaysi mamlakatda amaliyot o'tadi."
+      },
+      "cabinet": {
+        "title": "Universitet kabineti",
+        "text": "Rivojlanish bosqichida — universitetlar uchun alohida kabinet va paketlar."
+      }
+    },
+    "formTitle": "Hamkorlikni boshlash"
+  },
+  "portfolio": {
+    "eyebrow": "Talabalar portfeli",
+    "title": "Ko'nikmalaringiz — sizning vizit kartangiz",
+    "lead": "Talaba profili ish beruvchilarga sizni to'liq ko'rsatadi. Kim ko'rishini esa o'zingiz hal qilasiz.",
+    "create": "Profil yaratish",
+    "fieldsTitle": "Profilda nimalar bo'ladi",
+    "fields": {
+      "education": {
+        "title": "Ta'lim va yo'nalish",
+        "text": "Universitet, fakultet, kurs va mutaxassislik."
+      },
+      "skills": {
+        "title": "Ko'nikmalar va tillar",
+        "text": "Texnik va soft skill'lar, til darajalari (IELTS, TOPIK, Goethe...)."
+      },
+      "experience": {
+        "title": "Tajriba va loyihalar",
+        "text": "Ish tajribasi, loyihalar, sertifikatlar va CV fayli."
+      }
+    },
+    "privacyTitle": "Maxfiylik sizning qo'lingizda",
+    "privacy": {
+      "visibility": {
+        "title": "Ko'rinishni boshqarish",
+        "text": "Profil ochiq, faqat tasdiqlangan ish beruvchilarga yoki yopiq bo'lishini tanlang."
+      },
+      "documents": {
+        "title": "Hujjatlar himoyada",
+        "text": "Pasport va shaxsiy hujjatlar hech qachon ochiq ko'rsatilmaydi."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Biz haqimizda",
+    "title": "InternWay — xalqaro amaliyotga ishonchli yo'l",
+    "lead": "Maqsadimiz: talabalar va bitiruvchilarni O'zbekiston hamda xorijdagi ish beruvchilar bilan bog'lash, amaliyot topish va nomzod tanlashni osonlashtirish.",
+    "valuesTitle": "Qadriyatlarimiz",
+    "values": {
+      "trust": {
+        "title": "Ishonch",
+        "text": "Faqat rasmiy manbalar va tekshirilgan kompaniyalar. Pullik vositachilar aniq belgilanadi."
+      },
+      "growth": { "title": "O'sish", "text": "Har bir amaliyot — kelajakdagi karyera uchun bir qadam." },
+      "openness": {
+        "title": "Ochiqlik",
+        "text": "Narx va shartlar to'lovdan oldin ko'rsatiladi. Kafolat va'dalari berilmaydi."
+      }
+    },
+    "contactEyebrow": "Aloqa",
+    "contactTitle": "Biz bilan bog'laning"
+  },
+  "contact": {
+    "send": "Yuborish",
+    "notConfigured": "Aloqa manzili hali sozlanmagan — .env faylidagi VITE_CONTACT_EMAIL to'ldiriladi.",
+    "topic": {
+      "general": "Umumiy murojaat",
+      "employer": "Ish beruvchi hamkorligi",
+      "university": "Universitet hamkorligi"
+    },
+    "field": {
+      "name": "Ism",
+      "contact": "Telefon yoki email",
+      "company": "Kompaniya",
+      "country": "Mamlakat",
+      "university": "Universitet",
+      "message": "Xabar"
+    }
+  },
+  "login": {
+    "title": "Shaxsiy kabinet",
+    "lead": "Talaba, ish beruvchi va administrator kabinetlari birinchi versiyada ishga tushadi.",
+    "roles": {
+      "student": { "title": "Talaba", "text": "Profil, CV, arizalar holati" },
+      "employer": { "title": "Ish beruvchi", "text": "Vakansiyalar, nomzodlar" }
+    },
+    "notify": "Ishga tushganda xabar berish",
+    "browse": "Hozircha amaliyotlarni ko'rish"
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "text": "Bu manzil mavjud emas yoki ko'chirilgan.",
+    "home": "Bosh sahifaga"
+  }
+}

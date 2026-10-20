@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* Brand tokens are taken from the InternWay logo. */
+:root {
+  --navy-950: #071338;
+  --navy-900: #0b1d52;
+  --navy-700: #13297a;
+  --navy-500: #2a4bc4;
+  --green-600: #13923a;
+  --green-500: #1fb24a;
+  --green-100: #e3f7e9;
+  --gold: #e0a526;
+
+  --radius: 1rem;
+  --background: #ffffff;
+  --foreground: #0e1a3a;
+  --card: #ffffff;
+  --card-foreground: #0e1a3a;
+  --popover: #ffffff;
+  --popover-foreground: #0e1a3a;
+  --primary: var(--navy-900);
+  --primary-foreground: #ffffff;
+  --secondary: #f4f7fd;
+  --secondary-foreground: var(--navy-900);
+  --muted: #f4f7fd;
+  --muted-foreground: #5d6886;
+  --accent: var(--green-500);
+  --accent-foreground: #ffffff;
+  --destructive: #c2410c;
+  --border: #e3e8f3;
+  --input: #e3e8f3;
+  --ring: var(--navy-500);
+}
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-700: var(--navy-700);
+  --color-navy-500: var(--navy-500);
+  --color-green-600: var(--green-600);
+  --color-green-500: var(--green-500);
+  --color-green-100: var(--green-100);
+  --color-gold: var(--gold);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-card: 0 1px 2px rgb(11 29 82 / 6%), 0 8px 24px rgb(11 29 82 / 8%);
+  --shadow-float: 0 24px 60px rgb(7 19 56 / 25%);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-bob: bob 5s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+  }
+  @keyframes bob {
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility chessboard {
+  background: repeating-conic-gradient(#fff 0 25%, transparent 0 50%) 0 0 / 64px 64px;
+  mask-image: linear-gradient(to left, #000 10%, transparent 70%);
+}
+
+@utility hero-bg {
+  background:
+    radial-gradient(1200px 600px at 85% 10%, #1d3aa8 0%, transparent 60%),
+    radial-gradient(800px 500px at 0% 100%, rgb(31 178 74 / 30%) 0%, transparent 60%), var(--navy-950);
+}
+
+@utility text-gradient {
+  background: linear-gradient(90deg, var(--green-500), #7fe39b);
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@utility container-page {
+  width: min(1280px, 100% - 32px);
+  margin-inline: auto;
+}
+
+@utility eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-600);
+}
+
+@utility card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(pnpm-lock.yaml)",
+      "Write(pnpm-lock.yaml)",
+      "Edit(public/data/**)",
+      "Write(public/data/**)",
+      "Read(.env)",
+      "Edit(.env)",
+      "Write(.env)"
+    ]
+  }
+}

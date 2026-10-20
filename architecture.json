@@ -1,0 +1,46 @@
+{
+  "$comment": "Read by scripts/check-boundaries.mjs. Layers are listed top to bottom; a file may import only from its own layer or a layer below it.",
+  "srcRoot": "src",
+  "alias": {
+    "@/": "src/"
+  },
+  "layers": [
+    {
+      "name": "test",
+      "paths": ["src/test"]
+    },
+    {
+      "name": "entry",
+      "paths": ["src/main.tsx", "src/App.tsx"]
+    },
+    {
+      "name": "routes",
+      "paths": ["src/routes"]
+    },
+    {
+      "name": "features",
+      "paths": ["src/features"]
+    },
+    {
+      "name": "shared",
+      "paths": ["src/components", "src/hooks"]
+    },
+    {
+      "name": "config",
+      "paths": ["src/config"]
+    },
+    {
+      "name": "primitives",
+      "paths": ["src/constants", "src/types", "src/store", "src/lib", "src/vite-env.d.ts"]
+    }
+  ],
+  "features": {
+    "root": "src/features",
+    "publicSurface": "index.ts"
+  },
+  "rules": {
+    "R1": "a feature may not deep-import another feature's internals",
+    "R2": "feature dependencies may not form a cycle",
+    "R3": "a layer may import only from layers below it; import type is exempt"
+  }
+}
