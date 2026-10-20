@@ -31,6 +31,7 @@ look for it: `src/components/shared`, `src/lib`, the target slice's `lib/` and
 | copy / translations | both `src/config/i18n/locales/{uz,ru}.json` |
 | colours, radius, shadows, animation | `src/styles.css` (`:root` + `@theme inline` + `@utility`) |
 | a button / input / select look | `src/components/ui/*` (generated — §11) |
+| deploy / CI | `vercel.json`, `.github/workflows/*.yml` |
 | the data | `scripts/collect.py`, `scripts/import_companies.py`, `public/data/` (generated — §1) |
 | the product scope | the PDFs the owner shared (website brief, payment model) — summarised in `ARCHITECTURE.md` § Known gaps |
 

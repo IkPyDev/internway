@@ -1,0 +1,43 @@
+# Refreshes public/data/internships.json every day and commits it; Vercel redeploys on the push.
+name: collect
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # 08:00 Tashkent
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Keeps the "seen" list between runs so new postings get the 🆕 mark.
+      - uses: actions/cache@v4
+        with:
+          path: scripts/.seen.json
+          key: seen-${{ github.run_id }}
+          restore-keys: seen-
+
+      - run: python3 scripts/collect.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "internway-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/internships.json
+          git diff --cached --quiet && echo "no changes" && exit 0
+          git commit -m "chore(data): refresh internships"
+          git push

@@ -152,6 +152,8 @@ another is how values go stale.
 | UI primitives | `src/components/ui/*` | shadcn — generated, do not fork |
 | App-specific UI | `src/components/shared/*` | layout, sections, states, pager |
 | External links | `safeUrl()` in `src/lib` | scraped data is untrusted |
+| Hosting | Vercel, `vercel.json` | SPA fallback to `index.html`; `/data` not cached, `/assets` immutable |
+| CI | `.github/workflows/` | `gate.yml` on push/PR; `collect.yml` daily data refresh |
 
 ---
 
@@ -172,7 +174,10 @@ True as of 2026-10-20:
 - **Filtering runs on the main thread** over 5k rows on every keystroke (debounced
   250 ms on internships). Fine at this size; move server-side with the backend.
 - **Prices are placeholders** ("Narx tez orada") — the payment brief gives none.
-- **Data refresh is manual** — `pnpm collect` must be run (or scheduled) daily.
+- **Data refresh runs in GitHub Actions** (`collect.yml`, daily) once the repo is on
+  GitHub. Not yet verified that every source answers from GitHub's datacenter IPs —
+  check the run log. Each refresh commits the full ≈1.5 MB JSON, so git history grows
+  roughly 0.5 GB a year; move the data to storage or the backend before that matters.
 - **Tests:** 4 files, 12 tests — `lib` helpers, both slices' `lib/`, one component
   test. No page or routing tests.
 
