@@ -1,11 +1,14 @@
 import type { InternshipsSearch } from "../types"
 import {
   byRegion,
+  countFields,
   countRegions,
+  fieldsOf,
   filterInternships,
   normalizeInternships,
   parseInternshipsSearch,
   regionsOf,
+  sourceLinks,
 } from "./internships"
 
 const EMPTY: InternshipsSearch = {}
@@ -17,6 +20,25 @@ describe("internships lib", () => {
     expect(regionsOf("San Francisco, CA")).toEqual(["usa"])
     expect(regionsOf("Remote")).toEqual(["remote"])
     expect(regionsOf("")).toEqual([])
+  })
+
+  it("fieldsOf", () => {
+    expect(fieldsOf("Software Engineer Intern")).toEqual(["software"])
+    expect(fieldsOf("Werkstudent Marketing & Social Media (m/w/d)")).toEqual(["marketing"])
+    expect(fieldsOf("AI Scientist Intern").sort()).toEqual(["data", "research"])
+    expect(fieldsOf("Air Quality Intern")).toEqual([])
+    expect(fieldsOf("Summer Analyst Programme")).toEqual([])
+  })
+
+  it("sourceLinks fills keywords and location", () => {
+    const [linkedin, , eures] = sourceLinks({ field: "marketing", region: "germany" })
+    expect(linkedin.url).toBe(
+      "https://www.linkedin.com/jobs/search/?keywords=Marketing%20internship&location=Germany",
+    )
+    expect(eures.url).toContain("keywordsEverywhere=Marketing%20internship")
+    expect(sourceLinks({ q: "summer internship" })[1].url).toBe(
+      "https://www.indeed.com/jobs?q=summer%20internship&l=",
+    )
   })
 
   it("filters by text, kind, freshness and region", () => {
@@ -46,6 +68,8 @@ describe("internships lib", () => {
     expect(filterInternships(list, { ...EMPTY, fresh: "7" }, now)).toHaveLength(1)
     expect(byRegion(list, "europe")).toHaveLength(1)
     expect(countRegions(list).europe).toBe(1)
+    expect(filterInternships(list, { ...EMPTY, field: "data" }, now)).toHaveLength(1)
+    expect(countFields(list).data).toBe(1)
   })
 
   it("parseInternshipsSearch drops unknown values", () => {
@@ -53,6 +77,7 @@ describe("internships lib", () => {
       q: "x",
       kind: undefined,
       region: "uk",
+      field: undefined,
       fresh: undefined,
       page: undefined,
     })

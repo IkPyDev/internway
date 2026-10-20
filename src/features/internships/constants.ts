@@ -1,4 +1,4 @@
-import type { FreshWindow, InternshipKind, RegionKey } from "./types"
+import type { FieldKey, FreshWindow, InternshipKind, PopularSearch, RegionKey } from "./types"
 
 export const KIND_OPTIONS: { value: InternshipKind; label: string }[] = [
   { value: "job", label: "internships.kind.job" },
@@ -11,11 +11,13 @@ export const FRESH_OPTIONS: { value: FreshWindow; label: string }[] = [
   { value: "30", label: "internships.fresh.30" },
 ]
 
-/** Keywords that place a free-text location into a region. */
-export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
+/** Keywords that place a free-text location into a region; `en` is the place name used on outside job sites, `photo` an Unsplash image (free licence). */
+export const REGIONS: { key: RegionKey; label: string; en: string; photo: string; words: string[] }[] = [
   {
     key: "germany",
     label: "regions.germany",
+    photo: "https://images.unsplash.com/photo-1554072675-66db59dba46f?auto=format&fit=crop&w=720&q=70",
+    en: "Germany",
     words: [
       "germany",
       "deutschland",
@@ -38,6 +40,8 @@ export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
   {
     key: "uk",
     label: "regions.uk",
+    photo: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=720&q=70",
+    en: "United Kingdom",
     words: [
       "united kingdom",
       " uk",
@@ -53,6 +57,8 @@ export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
   {
     key: "europe",
     label: "regions.europe",
+    photo: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=720&q=70",
+    en: "Europe",
     words: [
       "europe",
       "emea",
@@ -101,6 +107,8 @@ export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
   {
     key: "canada",
     label: "regions.canada",
+    photo: "https://images.unsplash.com/photo-1507992781348-310259076fe0?auto=format&fit=crop&w=720&q=70",
+    en: "Canada",
     words: [
       "canada",
       "toronto",
@@ -122,6 +130,8 @@ export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
   {
     key: "asia",
     label: "regions.asia",
+    photo: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=720&q=70",
+    en: "Asia",
     words: [
       "singapore",
       "japan",
@@ -155,8 +165,226 @@ export const REGIONS: { key: RegionKey; label: string; words: string[] }[] = [
       "tashkent",
     ],
   },
-  { key: "usa", label: "regions.usa", words: ["united states", "usa", " us,", "remote in usa"] },
-  { key: "remote", label: "regions.remote", words: ["remote", "anywhere", "worldwide"] },
+  {
+    key: "usa",
+    label: "regions.usa",
+    photo: "https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=720&q=70",
+    en: "United States",
+    words: ["united states", "usa", " us,", "remote in usa"],
+  },
+  {
+    key: "remote",
+    label: "regions.remote",
+    photo: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=720&q=70",
+    en: "Remote",
+    words: ["remote", "anywhere", "worldwide"],
+  },
 ]
 
-export const QUICK_REGIONS: RegionKey[] = ["germany", "uk", "europe", "canada", "asia", "remote"]
+/** Career fields; `words` are regex fragments matched at a word start in the title. */
+export const FIELDS: { key: FieldKey; label: string; en: string; words: string[] }[] = [
+  {
+    key: "software",
+    label: "fields.software",
+    en: "Software",
+    words: [
+      "software",
+      "developer",
+      "frontend",
+      "front-end",
+      "backend",
+      "back-end",
+      "full[- ]?stack",
+      "web",
+      "mobile",
+      "android",
+      "ios\\b",
+      "devops",
+      "cloud",
+      "cyber",
+      "security",
+      "programm(?:er|ing)",
+      "sde\\b",
+      "qa\\b",
+      "ict\\b",
+      "informatik",
+    ],
+  },
+  {
+    key: "data",
+    label: "fields.data",
+    en: "Data",
+    words: [
+      "data",
+      "machine learning",
+      "ml\\b",
+      "ai\\b",
+      "artificial intelligence",
+      "deep learning",
+      "analytics",
+      "statistic",
+      "quant",
+      "computer vision",
+      "nlp\\b",
+      "llm",
+    ],
+  },
+  {
+    key: "engineering",
+    label: "fields.engineering",
+    en: "Engineering",
+    words: [
+      "mechanical",
+      "electrical",
+      "hardware",
+      "civil",
+      "chemical engineer",
+      "manufacturing",
+      "mechatronic",
+      "robotic",
+      "aerospace",
+      "embedded",
+      "firmware",
+      "process engineer",
+      "industrial",
+      "automotive",
+      "energy",
+      "materials",
+      "systems engineer",
+      "test engineer",
+      "robotik",
+      "energie",
+      "geb[äa]ude",
+      "technisch",
+      "elektro",
+      "maschinenbau",
+    ],
+  },
+  {
+    key: "business",
+    label: "fields.business",
+    en: "Business",
+    words: [
+      "business",
+      "operations",
+      "consult",
+      "strategy",
+      "management",
+      "sales",
+      "supply chain",
+      "logistic",
+      "procurement",
+      "human resources",
+      "hr\\b",
+      "recruit",
+      "project",
+      "product",
+      "customer success",
+      "projekt",
+      "produkt",
+      "people",
+      "kunden",
+      "vertrieb",
+      "einkauf",
+    ],
+  },
+  {
+    key: "finance",
+    label: "fields.finance",
+    en: "Finance",
+    words: [
+      "financ",
+      "accounting",
+      "audit",
+      "tax\\b",
+      "investment",
+      "banking",
+      "trading",
+      "treasury",
+      "risk",
+      "actuar",
+      "economi",
+      "controlling",
+    ],
+  },
+  {
+    key: "marketing",
+    label: "fields.marketing",
+    en: "Marketing",
+    words: [
+      "marketing",
+      "communication",
+      "content",
+      "social media",
+      "brand",
+      "seo\\b",
+      "growth",
+      "public relations",
+      "pr\\b",
+      "advertising",
+      "campaign",
+      "e-?commerce",
+      "copywrit",
+      "kommunikation",
+    ],
+  },
+  {
+    key: "design",
+    label: "fields.design",
+    en: "Design",
+    words: [
+      "design",
+      "ux\\b",
+      "ui\\b",
+      "graphic",
+      "creative",
+      "video",
+      "motion",
+      "illustrat",
+      "photograph",
+      "animation",
+      "grafik",
+    ],
+  },
+  {
+    key: "research",
+    label: "fields.research",
+    en: "Research",
+    words: [
+      "research",
+      "scien",
+      "lab\\b",
+      "laborator",
+      "phd",
+      "fellow",
+      "biolog",
+      "chemist",
+      "physic",
+      "clinical",
+      "policy",
+      "governance",
+      "forschung",
+    ],
+  },
+]
+
+/** Search shortcuts suggested by the content team. */
+export const POPULAR_SEARCHES: PopularSearch[] = [
+  { label: "internships.popular.europe", search: { region: "europe" } },
+  { label: "internships.popular.marketingSpain", search: { field: "marketing", q: "spain" } },
+  { label: "internships.popular.engineeringGermany", search: { field: "engineering", region: "germany" } },
+  { label: "internships.popular.businessNetherlands", search: { field: "business", q: "netherlands" } },
+  { label: "internships.popular.singapore", search: { q: "singapore" } },
+  { label: "internships.popular.remote", search: { region: "remote" } },
+  { label: "internships.popular.summer2027", search: { q: "summer 2027" } },
+]
+
+/** Outside job sites the current search can be repeated on; `{kw}` and `{loc}` are filled in. */
+export const SEARCH_SITES: { name: string; url: string }[] = [
+  { name: "LinkedIn Jobs", url: "https://www.linkedin.com/jobs/search/?keywords={kw}&location={loc}" },
+  { name: "Indeed", url: "https://www.indeed.com/jobs?q={kw}&l={loc}" },
+  { name: "EURES", url: "https://europa.eu/eures/portal/jv-se/search?keywordsEverywhere={kw}&lang=en" },
+  { name: "ErasmusIntern", url: "https://erasmusintern.org/traineeships" },
+  { name: "EuroBrussels", url: "https://www.eurobrussels.com/job_search?keywords={kw}" },
+  { name: "iAgora", url: "https://www.iagora.com/work/en/internships" },
+]

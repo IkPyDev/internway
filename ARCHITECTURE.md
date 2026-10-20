@@ -44,7 +44,7 @@ changes what the build allows.
 
 | Feature | Owns | Imports from |
 | --- | --- | --- |
-| `internships` | the internships list, filters, region detection, stats | — |
+| `internships` | the internships list, filters, region and field detection, stats, outside search links | — |
 | `companies` | the employers list, priority badges, country filter | — |
 | `contact` | the contact form (mailto until a backend exists) | — |
 | `content` | static pages: students, employers, universities, portfolio, about, login, 404 | `contact` |
@@ -80,11 +80,11 @@ cycle.
 
 ### Where this stands today
 
-Measured 2026-10-20 (`pnpm boundaries` re-measures):
+Measured 2026-10-20, after the field/destination update (`pnpm boundaries` re-measures):
 
 | Metric | Value |
 | --- | --- |
-| source files scanned (incl. `components/ui`) | **97** |
+| source files scanned (incl. `components/ui`) | **101** |
 | deep cross-feature imports (R1) | **0** |
 | feature cycles (R2) | **0** |
 | upward layer imports (R3) | **0** |
@@ -145,7 +145,7 @@ another is how values go stale.
 | Query keys | `src/constants/query-keys.ts` | the registry; `createEntityKeys` builds it |
 | Endpoints | `src/constants/api-endpoints.ts` | never a URL literal |
 | Routes | `src/constants/routes.ts` + `src/routes/router.tsx` | paths, nav items, the route table |
-| i18n | `src/config/i18n/` | uz default, ru; no fallback; choice kept in `localStorage` |
+| i18n | `src/config/i18n/` | uz default, en, ru; no fallback; choice kept in `localStorage` |
 | Runtime settings | `src/config/app.ts` ← `.env` | `VITE_CONTACT_EMAIL`, `VITE_API_URL` |
 | Styling | Tailwind 4 CSS-first, `@theme inline` in `src/styles.css` | **no `tailwind.config.ts` exists** |
 | Brand tokens | `src/styles.css` `:root` | navy / green / gold from the logo |
@@ -165,7 +165,7 @@ True as of 2026-10-20:
   company/listing approval and payments from the product brief cannot work yet. The
   login page says so. The contact form opens a `mailto:` and is disabled until
   `VITE_CONTACT_EMAIL` is set.
-- **One 636 kB JS bundle** (208 kB gzip). Routes are not code-split yet; Vite warns.
+- **One 650 kB JS bundle** (212 kB gzip). Routes are not code-split yet; Vite warns.
   Fix: `lazyRouteComponent` per page.
 - **`document.title` never changes** per page; every tab says "InternWay". Matters for
   SEO once the site is public.
@@ -173,12 +173,25 @@ True as of 2026-10-20:
   root route.
 - **Filtering runs on the main thread** over 5k rows on every keystroke (debounced
   250 ms on internships). Fine at this size; move server-side with the backend.
+- **Field tags are keyword guesses.** `fieldsOf` (regex over the title, `FIELDS` in
+  `internships/constants.ts`) tags ≈86% of rows; generic titles ("Intern - Multiple
+  Teams") get none and appear only under "all fields".
+- **LinkedIn, Indeed, EURES, ErasmusIntern, EuroBrussels and iAgora are links, not
+  sources.** The content team suggested them; none offers a public feed we may poll
+  (login walls, Cloudflare challenge, robots.txt blocks AI agents, no RSS). `SEARCH_SITES`
+  turns the current filters into a search on each site instead — see AGENTS.md §16.
+- **Photos are hot-linked from Unsplash** (free licence): destination cards
+  (`REGIONS[].photo`) and the home "how we help" image. If Unsplash is down they fail
+  to load; copy them into `public/img/` once the content team picks final photos.
+- **Duration, paid/unpaid and language-level filters do not exist** — the sources
+  only give title, company, location, date and link. They need a backend where
+  listings are entered or enriched.
 - **Prices are placeholders** ("Narx tez orada") — the payment brief gives none.
 - **Data refresh runs in GitHub Actions** (`collect.yml`, daily) once the repo is on
   GitHub. Not yet verified that every source answers from GitHub's datacenter IPs —
   check the run log. Each refresh commits the full ≈1.5 MB JSON, so git history grows
   roughly 0.5 GB a year; move the data to storage or the backend before that matters.
-- **Tests:** 4 files, 12 tests — `lib` helpers, both slices' `lib/`, one component
+- **Tests:** 4 files, 14 tests — `lib` helpers, both slices' `lib/`, one component
   test. No page or routing tests.
 
 ---

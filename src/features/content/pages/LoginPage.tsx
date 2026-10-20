@@ -20,7 +20,7 @@ export function LoginPage() {
           height={101}
           className="mx-auto mix-blend-multiply"
         />
-        <h1 className="text-2xl font-extrabold">{t("login.title")}</h1>
+        <h1 className="text-3xl">{t("login.title")}</h1>
         <p className="text-muted-foreground">{t("login.lead")}</p>
         <div className="my-2 grid grid-cols-2 gap-2.5">
           {roles.map(({ icon: Icon, key }) => (

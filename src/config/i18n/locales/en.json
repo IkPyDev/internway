@@ -1,0 +1,476 @@
+{
+  "common": {
+    "search": "Search",
+    "all": "All",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "loadError": "Could not load data: {{message}}",
+    "details": "Details",
+    "prev": "Previous",
+    "next": "Next",
+    "pages": "Pages",
+    "language": "Language",
+    "recommended": "Recommended",
+    "disclaimer": "InternWay does not guarantee a visa or a job offer. Before any paid service, its scope, price, payment stages and refund terms are agreed in writing."
+  },
+  "nav": {
+    "label": "Main menu",
+    "internships": "Internships",
+    "companies": "Employers",
+    "portfolio": "Student portfolio",
+    "students": "For students",
+    "employers": "For companies",
+    "universities": "Universities",
+    "about": "About us",
+    "login": "Log in",
+    "start": "Get started",
+    "menu": "Menu"
+  },
+  "footer": {
+    "about": "An international internship platform connecting students and graduates from Uzbekistan with employers around the world.",
+    "platform": "Platform",
+    "partnership": "Partnership",
+    "company": "InternWay",
+    "disclaimer": "Listings come from official sources. Check the terms on the official page before you apply."
+  },
+  "date": {
+    "unknown": "Date unknown",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{count}} days ago",
+    "monthsAgo": "{{count}} months ago",
+    "yearsAgo": "{{count}} years ago"
+  },
+  "regions": {
+    "germany": "Germany",
+    "uk": "United Kingdom",
+    "europe": "Europe",
+    "canada": "Canada",
+    "asia": "Asia",
+    "usa": "USA",
+    "remote": "Remote"
+  },
+  "fields": {
+    "software": "Software",
+    "data": "Data & AI",
+    "engineering": "Engineering",
+    "business": "Business & management",
+    "finance": "Finance",
+    "marketing": "Marketing & PR",
+    "design": "Design & media",
+    "research": "Research & science"
+  },
+  "countries": {
+    "italy": "Italy",
+    "southKorea": "South Korea",
+    "malaysia": "Malaysia",
+    "uk": "United Kingdom"
+  },
+  "home": {
+    "eyebrow": "International internship platform",
+    "titleStart": "Take the first step",
+    "titleAccent": "towards a global career",
+    "titleEnd": "with us!",
+    "lead": "InternWay is an international platform that connects students and graduates with internships abroad. We help you find the right programme, reach employers and apply.",
+    "searchPlaceholder": "e.g. software, marketing, Germany...",
+    "ctaPrimary": "Browse internship programmes",
+    "ctaSecondary": "About us",
+    "photoAlt": "The InternWay team",
+    "today": "posted today",
+    "stats": {
+      "total": "open internships",
+      "companies": "employers",
+      "programs": "international programmes"
+    },
+    "fields": {
+      "eyebrow": "Fields",
+      "title": "Where do you want to gain experience?",
+      "lead": "Pick a field — matching internships open right away."
+    },
+    "destinations": {
+      "eyebrow": "Countries",
+      "title": "Where would you like to go?",
+      "lead": "Pick a country — its internships open right away.",
+      "cta": "See opportunities"
+    },
+    "popular": {
+      "eyebrow": "Quick search",
+      "title": "Popular searches",
+      "lead": "A ready-made search in one click."
+    },
+    "directions": {
+      "eyebrow": "Services",
+      "title": "How we help",
+      "lead": "From finding an internship to applying — we are with you.",
+      "photoAlt": "Young people working together in an office",
+      "students": {
+        "title": "Profile and CV",
+        "text": "Upload your CV, show your skills and languages. You decide who sees your profile."
+      },
+      "employers": {
+        "title": "Reach employers",
+        "text": "Verified companies and their open internships in one place."
+      },
+      "internships": {
+        "title": "Help with applying",
+        "text": "CV, documents and interview preparation — our team is by your side."
+      }
+    },
+    "latest": {
+      "eyebrow": "New",
+      "title": "Latest internships",
+      "all": "All internships"
+    },
+    "partners": {
+      "eyebrow": "Employers",
+      "title": "Our international partners",
+      "lead": "Companies with a confirmed internship programme.",
+      "all": "All companies"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Four steps to an international internship",
+      "1": {
+        "title": "Create a profile",
+        "text": "Sign up for free and add your CV and skills."
+      },
+      "2": {
+        "title": "Find an internship",
+        "text": "Filter by country and field, follow new listings."
+      },
+      "3": {
+        "title": "Apply",
+        "text": "On your own or \"through InternWay\" — our team helps with documents."
+      },
+      "4": {
+        "title": "Track your status",
+        "text": "See which stage your application is at in your account."
+      }
+    },
+    "cta": {
+      "title": "Need help applying?",
+      "text": "The right internship, your CV and interview preparation — we are with you at every step.",
+      "label": "See our services"
+    }
+  },
+  "internships": {
+    "eyebrow": "Internships",
+    "title": "Internship programmes",
+    "lead": "Search by country and field. Updated daily, newest first.",
+    "searchPlaceholder": "Role, company or city",
+    "kindLabel": "Type",
+    "freshLabel": "Date",
+    "fieldLabel": "Field",
+    "kind": {
+      "all": "All types",
+      "job": "Company internship",
+      "program": "International programme"
+    },
+    "fresh": {
+      "all": "Any time",
+      "1": "Last 24 hours",
+      "7": "Last week",
+      "30": "Last month"
+    },
+    "found": "{{count}} internships found",
+    "count": "Listings: {{count}}",
+    "empty": "No internships match this filter. Try a simpler search.",
+    "noLocation": "Location not specified",
+    "source": "Source: {{source}}",
+    "new": "New",
+    "apply": "Apply",
+    "field": {
+      "all": "All fields"
+    },
+    "popular": {
+      "europe": "Internships across Europe",
+      "marketingSpain": "Marketing — Spain",
+      "engineeringGermany": "Engineering — Germany",
+      "businessNetherlands": "Business — Netherlands",
+      "singapore": "Internships in Singapore",
+      "remote": "Remote, worldwide",
+      "summer2027": "Summer internship 2027"
+    },
+    "sources": {
+      "title": "Continue this search on other sites",
+      "text": "These sites keep their own listings — the link opens the search there. Also check the Careers pages on companies' official websites."
+    }
+  },
+  "companies": {
+    "eyebrow": "Employers",
+    "title": "Partner and target companies",
+    "lead": "Companies with internship programmes in Italy, South Korea, Malaysia and the United Kingdom. Priority is set after our team's review.",
+    "searchPlaceholder": "Company, field or city",
+    "priorityLabel": "Status",
+    "filter": {
+      "all": "All statuses",
+      "A": "Priority (A)",
+      "B": "Promising (B)",
+      "verified": "Verified by WAYU"
+    },
+    "priority": {
+      "A": "Priority",
+      "B": "Promising",
+      "none": "Under review"
+    },
+    "priorityHint": {
+      "A": "Current internship confirmed",
+      "B": "Works with students, terms being clarified",
+      "none": "Our team is checking the details"
+    },
+    "duration": "Duration",
+    "eligibility": "International students",
+    "fromShortlist": "WAYU shortlist",
+    "fromBase": "Initial database",
+    "officialPage": "Official page",
+    "found": "{{count}} companies",
+    "empty": "No companies found.",
+    "note": "Rules for international students differ from company to company. Check the official page before applying, or use the \"through InternWay\" service."
+  },
+  "students": {
+    "eyebrow": "For students",
+    "title": "Start your international career here",
+    "lead": "Explore the platform for free. You pay only for a service with clear value — the price is shown up front.",
+    "browse": "Browse internships",
+    "plansEyebrow": "Plans",
+    "plansTitle": "The right path for you",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "price": "0 UZS",
+        "text": "Get to know the platform",
+        "items": [
+          "Create a profile",
+          "Upload your CV",
+          "General information on companies and internships",
+          "Follow new listings"
+        ],
+        "cta": "Get started"
+      },
+      "platform": {
+        "name": "Platform features",
+        "price": "Price coming soon",
+        "text": "One-time payment or membership",
+        "items": [
+          "Full vacancy details",
+          "Apply through the platform",
+          "Track your application status",
+          "Extra features"
+        ],
+        "cta": "Keep me posted"
+      },
+      "full": {
+        "name": "Through InternWay",
+        "price": "By agreement",
+        "text": "Full support service",
+        "items": [
+          "Initial consultation",
+          "Choosing the right internships",
+          "Help with CV and documents",
+          "Contact with the employer",
+          "Interview preparation",
+          "Guidance on the visa process"
+        ],
+        "cta": "Get a consultation"
+      }
+    },
+    "payEyebrow": "Payment",
+    "payTitle": "How payment works",
+    "pay": {
+      "1": {
+        "title": "Choose a service",
+        "text": "You see exactly what you get for the payment."
+      },
+      "2": {
+        "title": "Pay",
+        "text": "The final price, currency and terms are shown in advance."
+      },
+      "3": {
+        "title": "Get confirmation",
+        "text": "The system checks the payment and sends an electronic receipt."
+      },
+      "4": {
+        "title": "Use it",
+        "text": "The service or feature opens right away."
+      }
+    }
+  },
+  "employers": {
+    "eyebrow": "For employers",
+    "title": "Find talented young people from Uzbekistan",
+    "lead": "Create a company profile, get your vacancy verified and receive motivated candidates. Getting started is free.",
+    "featuresEyebrow": "Features",
+    "featuresTitle": "What you get",
+    "features": {
+      "profile": {
+        "title": "Company profile",
+        "text": "Industry, country, partnership status and open internships on one page."
+      },
+      "verified": {
+        "title": "Verified listings",
+        "text": "Every vacancy is published after our team's review — students trust it."
+      },
+      "candidates": {
+        "title": "Candidate flow",
+        "text": "Review applications sorted by profile, skills and languages in one place."
+      }
+    },
+    "modelEyebrow": "Model",
+    "modelTitle": "Partnership terms",
+    "plans": {
+      "now": {
+        "name": "Now — free",
+        "price": "0 UZS",
+        "text": "Join the platform",
+        "items": ["Create a company profile", "Apply for partnership", "Get your vacancy verified"],
+        "cta": "Send a request"
+      },
+      "later": {
+        "name": "Later — packages",
+        "price": "Subscription",
+        "text": "HR tools",
+        "items": [
+          "Full candidate profiles",
+          "Direct contact with candidates",
+          "Featured vacancy placement",
+          "Interview scheduling and statistics"
+        ],
+        "cta": "Details"
+      }
+    },
+    "formTitle": "Partnership request"
+  },
+  "universities": {
+    "eyebrow": "Universities",
+    "title": "Send your students into the world",
+    "lead": "Together with universities we guide students to the right international internships and track the results.",
+    "featuresTitle": "What partnership brings",
+    "features": {
+      "guide": {
+        "title": "Guidance",
+        "text": "A list of internships that fit each student's field, plus help with preparation."
+      },
+      "stats": {
+        "title": "Statistics",
+        "text": "Which students applied, were accepted and in which country they intern."
+      },
+      "cabinet": {
+        "title": "University account",
+        "text": "In development — a separate account and packages for universities."
+      }
+    },
+    "formTitle": "Start a partnership"
+  },
+  "portfolio": {
+    "eyebrow": "Student portfolio",
+    "title": "Your skills are your business card",
+    "lead": "A student profile shows employers the whole picture. You decide who sees it.",
+    "create": "Create a profile",
+    "fieldsTitle": "What goes into a profile",
+    "fields": {
+      "education": {
+        "title": "Education and field",
+        "text": "University, faculty, year and major."
+      },
+      "skills": {
+        "title": "Skills and languages",
+        "text": "Technical and soft skills, language levels (IELTS, TOPIK, Goethe...)."
+      },
+      "experience": {
+        "title": "Experience and projects",
+        "text": "Work experience, projects, certificates and a CV file."
+      }
+    },
+    "privacyTitle": "Your privacy, your choice",
+    "privacy": {
+      "visibility": {
+        "title": "Control visibility",
+        "text": "Make your profile public, visible to verified employers only, or private."
+      },
+      "documents": {
+        "title": "Documents protected",
+        "text": "Passports and personal documents are never shown publicly."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "About InternWay",
+    "lead": "InternWay is a platform that connects students and graduates with internships abroad. We help you find the right programme, prepare and apply.",
+    "photoAlt": "The InternWay team",
+    "goalTitle": "Our goal",
+    "goalText": "To make finding an international internship, preparing for it and applying simple and clear for every student.",
+    "whoTitle": "Who it is for",
+    "who": {
+      "students": {
+        "title": "Students",
+        "text": "Bachelor's and master's students who want experience abroad."
+      },
+      "graduates": {
+        "title": "Graduates",
+        "text": "Young people starting their career with an international internship."
+      },
+      "partners": {
+        "title": "Companies and universities",
+        "text": "Employers looking for talented candidates and universities sending students abroad."
+      }
+    },
+    "experienceTitle": "Our experience",
+    "experienceText": "InternWay builds on the USTravel team's experience in working with students and international partnerships. Our partner companies are in Italy, South Korea, Malaysia and the United Kingdom.",
+    "valuesTitle": "Our values",
+    "values": {
+      "trust": {
+        "title": "Trust",
+        "text": "Only official sources and verified companies. Paid intermediaries are clearly marked."
+      },
+      "growth": {
+        "title": "Growth",
+        "text": "Every internship is a step towards your future career."
+      },
+      "openness": {
+        "title": "Openness",
+        "text": "Prices and terms are shown before payment. No guarantees are promised."
+      }
+    },
+    "contactEyebrow": "Contact",
+    "contactTitle": "Get in touch"
+  },
+  "contact": {
+    "send": "Send",
+    "notConfigured": "The contact address is not set yet — fill VITE_CONTACT_EMAIL in the .env file.",
+    "topic": {
+      "general": "General enquiry",
+      "employer": "Employer partnership",
+      "university": "University partnership"
+    },
+    "field": {
+      "name": "Name",
+      "contact": "Phone or email",
+      "company": "Company",
+      "country": "Country",
+      "university": "University",
+      "message": "Message"
+    }
+  },
+  "login": {
+    "title": "Your account",
+    "lead": "Student, employer and admin accounts launch with the first version.",
+    "roles": {
+      "student": {
+        "title": "Student",
+        "text": "Profile, CV, application status"
+      },
+      "employer": {
+        "title": "Employer",
+        "text": "Vacancies, candidates"
+      }
+    },
+    "notify": "Notify me at launch",
+    "browse": "Browse internships for now"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This address does not exist or has moved.",
+    "home": "Back to home"
+  }
+}

@@ -17,7 +17,11 @@ export function StudentsPage() {
         title={t("students.title")}
         lead={t("students.lead")}
         actions={
-          <Button asChild size="lg" className="rounded-full bg-green-500 px-7 font-bold hover:bg-green-600">
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full bg-gold px-7 font-bold text-navy-950 hover:bg-gold-hover"
+          >
             <Link to={ROUTES.internships}>{t("students.browse")}</Link>
           </Button>
         }

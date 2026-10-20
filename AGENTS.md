@@ -17,7 +17,7 @@
 
 **InternWay** is a web platform that gathers international internships, traineeships
 and programmes for students and graduates from Uzbekistan, and connects them with
-employers and universities. UI copy is Uzbek (default) and Russian.
+employers and universities. UI copy is Uzbek (default), English and Russian.
 
 Today it is a **frontend only**: data comes from static JSON in `public/data/`,
 produced by the Python scripts in `scripts/`. Accounts, applications, the admin
@@ -28,7 +28,7 @@ Known gaps).
 
 Stack: **React 19** · Vite 7 · TypeScript 5.9 (strict) · **TanStack Router**
 (code-based) · TanStack Query v5 · **Zustand** · **Tailwind 4** (CSS-first) ·
-**shadcn/ui + Radix** · **Biome 2.3** (not ESLint/Prettier) · react-i18next (uz/ru) ·
+**shadcn/ui + Radix** · **Biome 2.3** (not ESLint/Prettier) · react-i18next (uz/en/ru) ·
 Vitest 4 + Testing Library · axios.
 
 Layout — imports point **downward only**:
@@ -156,10 +156,10 @@ If the symbol is not exported from that feature's `index.ts`, **export it** — 
 reach past the barrel. Keep each barrel to what other slices and `routes/` actually
 need. `pnpm boundaries` fails on a deep import. See §15.
 
-### §10 — Every user-facing string goes through i18n, in **both** locales
+### §10 — Every user-facing string goes through i18n, in **all three** locales
 
-`src/config/i18n/locales/{uz,ru}.json`. `fallbackLng` is `false`, so a key missing
-from one file renders as the raw dotted path. Add the key to both files, in the same
+`src/config/i18n/locales/{uz,en,ru}.json`. `fallbackLng` is `false`, so a key missing
+from one file renders as the raw dotted path. Add the key to every file, in the same
 place. `pnpm i18n` (part of the gate) fails when the key sets differ. Option lists in
 `constants.ts` store the **i18n key** (`label: "regions.germany"`), not the text.
 Data from `public/data` (titles, company names) is shown as-is and is not translated.
@@ -213,7 +213,9 @@ deliberately and say so — that is a decision, not a workaround.
 (Greenhouse, Lever, Ashby), with an honest `User-Agent`. No LinkedIn scraping, no
 logged-in sessions, no bot-detection evasion, no copying of full articles — store
 title, company, location, date and link only. A new source is added to `RSS` or
-`BOARDS` in that file.
+`BOARDS` in that file. A site that cannot be read this way (LinkedIn, Indeed…) is
+offered as a link in `SEARCH_SITES` (`src/features/internships/constants.ts`), which the
+visitor opens themselves.
 
 ---
 

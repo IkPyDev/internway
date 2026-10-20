@@ -16,7 +16,7 @@ export function Section({ eyebrow, title, lead, tint, id, children }: SectionPro
       <div className="container-page">
         <div className="mb-10 max-w-2xl">
           {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-          <h2 className="text-3xl font-extrabold sm:text-4xl">{title}</h2>
+          <h2 className="text-3xl sm:text-[2.6rem] sm:leading-tight">{title}</h2>
           {lead && <p className="mt-3 text-lg text-muted-foreground">{lead}</p>}
         </div>
         {children}

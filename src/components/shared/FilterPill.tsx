@@ -20,7 +20,7 @@ export function FilterPill({ label, count, active, onClick }: FilterPillProps) {
     >
       {label}
       {count !== undefined && (
-        <b className={cn("text-xs", active ? "text-[#9fb2ef]" : "text-muted-foreground")}>{count}</b>
+        <b className={cn("text-xs", active ? "text-gold" : "text-muted-foreground")}>{count}</b>
       )}
     </button>
   )

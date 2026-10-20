@@ -23,5 +23,6 @@ export const NAV_ITEMS = [
 
 export const LANGUAGES = [
   { value: "uz", label: "O'z" },
+  { value: "en", label: "En" },
   { value: "ru", label: "Ру" },
 ] as const

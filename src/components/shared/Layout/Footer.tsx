@@ -22,11 +22,11 @@ const LINK_LABELS: Record<string, string> = {
 export function Footer() {
   const { t } = useTranslation()
   return (
-    <footer className="bg-navy-950 pt-16 pb-6 text-[#c9d3f2]">
+    <footer className="bg-navy-950 pt-16 pb-6 text-mist">
       <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
         <div className="sm:col-span-2 lg:col-span-1">
           <Logo inverted />
-          <p className="mt-3 max-w-sm text-[#8e9bc6]">{t("footer.about")}</p>
+          <p className="mt-3 max-w-sm text-mist/70">{t("footer.about")}</p>
         </div>
         {COLUMNS.map((col) => (
           <div key={col.title}>
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="container-page mt-12 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-5 text-xs text-[#8e9bc6]">
+      <div className="container-page mt-12 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-5 text-xs text-mist/70">
         <span>© {new Date().getFullYear()} InternWay</span>
         <span>{t("footer.disclaimer")}</span>
       </div>

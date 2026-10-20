@@ -1,13 +1,12 @@
 import { Link } from "@tanstack/react-router"
-import { Building2, GraduationCap, TrendingUp } from "lucide-react"
+import { Building2, FileCheck2, GraduationCap } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { CtaBand, FeatureCard, Section, Steps } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
 import { TopCompanies } from "@/features/companies"
-import { LatestInternships } from "@/features/internships"
+import { DestinationGrid, FieldGrid, LatestInternships, PopularSearches } from "@/features/internships"
 import { Hero } from "../components/Hero"
-import { StatsStrip } from "../components/StatsStrip"
 import { useHomeStats } from "../hooks/useHomeStats"
 
 export function HomePage() {
@@ -16,11 +15,13 @@ export function HomePage() {
 
   return (
     <>
-      <Hero today={internships?.today ?? null} regions={internships?.regions ?? null} />
-      <StatsStrip
-        total={internships?.total ?? null}
-        programs={internships?.programs ?? null}
-        companies={companies}
+      <Hero
+        stats={[
+          { value: internships?.total ?? null, label: t("home.stats.total") },
+          { value: internships?.today ?? null, label: t("home.today") },
+          { value: companies, label: t("home.stats.companies") },
+          { value: internships?.programs ?? null, label: t("home.stats.programs") },
+        ]}
       />
 
       <Section
@@ -28,26 +29,62 @@ export function HomePage() {
         title={t("home.directions.title")}
         lead={t("home.directions.lead")}
       >
-        <div className="grid gap-5 md:grid-cols-3">
-          <FeatureCard
-            icon={GraduationCap}
-            title={t("home.directions.students.title")}
-            text={t("home.directions.students.text")}
+        <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
+          <img
+            src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1100&q=70"
+            alt={t("home.directions.photoAlt")}
+            width={1100}
+            height={800}
+            loading="lazy"
+            className="size-full min-h-72 rounded-xl object-cover shadow-card"
           />
-          <FeatureCard
-            icon={Building2}
-            title={t("home.directions.employers.title")}
-            text={t("home.directions.employers.text")}
-          />
-          <FeatureCard
-            icon={TrendingUp}
-            title={t("home.directions.internships.title")}
-            text={t("home.directions.internships.text")}
-          />
+          <div className="grid gap-4">
+            <FeatureCard
+              icon={GraduationCap}
+              title={t("home.directions.students.title")}
+              text={t("home.directions.students.text")}
+            />
+            <FeatureCard
+              icon={Building2}
+              title={t("home.directions.employers.title")}
+              text={t("home.directions.employers.text")}
+            />
+            <FeatureCard
+              icon={FileCheck2}
+              title={t("home.directions.internships.title")}
+              text={t("home.directions.internships.text")}
+            />
+          </div>
         </div>
       </Section>
 
-      <Section tint eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
+      <Section
+        tint
+        eyebrow={t("home.fields.eyebrow")}
+        title={t("home.fields.title")}
+        lead={t("home.fields.lead")}
+      >
+        <FieldGrid />
+      </Section>
+
+      <Section
+        eyebrow={t("home.destinations.eyebrow")}
+        title={t("home.destinations.title")}
+        lead={t("home.destinations.lead")}
+      >
+        <DestinationGrid />
+      </Section>
+
+      <Section
+        tint
+        eyebrow={t("home.popular.eyebrow")}
+        title={t("home.popular.title")}
+        lead={t("home.popular.lead")}
+      >
+        <PopularSearches />
+      </Section>
+
+      <Section eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
         <LatestInternships />
         <div className="mt-10 text-center">
           <Button asChild size="lg" className="rounded-full px-7 font-bold">
@@ -57,6 +94,7 @@ export function HomePage() {
       </Section>
 
       <Section
+        tint
         eyebrow={t("home.partners.eyebrow")}
         title={t("home.partners.title")}
         lead={t("home.partners.lead")}
@@ -69,7 +107,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section tint eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
+      <Section eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
         <Steps
           items={[1, 2, 3, 4].map((i) => ({
             title: t(`home.how.${i}.title`),

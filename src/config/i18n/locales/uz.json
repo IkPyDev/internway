@@ -50,6 +50,16 @@
     "usa": "AQSh",
     "remote": "Masofaviy"
   },
+  "fields": {
+    "software": "Dasturlash",
+    "data": "Ma'lumotlar va AI",
+    "engineering": "Muhandislik",
+    "business": "Biznes va boshqaruv",
+    "finance": "Moliya",
+    "marketing": "Marketing va PR",
+    "design": "Dizayn va media",
+    "research": "Tadqiqot va fan"
+  },
   "countries": {
     "italy": "Italiya",
     "southKorea": "Janubiy Koreya",
@@ -58,35 +68,52 @@
   },
   "home": {
     "eyebrow": "Xalqaro amaliyot platformasi",
-    "titleStart": "Har bir katta yurish",
-    "titleAccent": "bitta qadamdan",
-    "titleEnd": "boshlanadi",
-    "lead": "Dunyo bo'ylab internship, traineeship va xalqaro dasturlar bitta joyda. Har kuni yangilanadi, rasmiy manbalardan olinadi, sanaga ko'ra saralanadi.",
+    "titleStart": "Xalqaro karyerangiz sari",
+    "titleAccent": "ilk qadamni",
+    "titleEnd": "biz bilan boshlang!",
+    "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi xalqaro platforma. Biz sizga mos dasturlarni topish, ish beruvchilar bilan bog'lanish va ariza topshirish jarayonida yordam beramiz.",
     "searchPlaceholder": "Masalan: software, marketing, Germany...",
-    "logoAlt": "InternWay logotipi",
+    "ctaPrimary": "Amaliyot dasturlarini ko'rish",
+    "ctaSecondary": "Biz haqimizda",
+    "photoAlt": "InternWay jamoasi",
     "today": "bugungi e'lon",
-    "regions": "hudud",
     "stats": {
       "total": "faol amaliyot",
       "companies": "ish beruvchi",
-      "programs": "xalqaro dastur",
-      "sources": "rasmiy manba"
+      "programs": "xalqaro dastur"
+    },
+    "fields": {
+      "eyebrow": "Sohalar",
+      "title": "Qaysi sohada tajriba olmoqchisiz?",
+      "lead": "Sohani tanlang — mos amaliyotlar darhol ochiladi."
+    },
+    "destinations": {
+      "eyebrow": "Davlatlar",
+      "title": "Qayerga borishni xohlaysiz?",
+      "lead": "Davlatni tanlang — o'sha yerdagi amaliyotlar ochiladi.",
+      "cta": "Imkoniyatlarni ko'rish"
+    },
+    "popular": {
+      "eyebrow": "Tez qidiruv",
+      "title": "Mashhur so'rovlar",
+      "lead": "Bir bosishda tayyor qidiruv."
     },
     "directions": {
-      "eyebrow": "Platforma",
-      "title": "Uch yo'nalish, bitta maqsad",
-      "lead": "Talaba o'z yo'lini topadi, ish beruvchi o'z nomzodini topadi.",
+      "eyebrow": "Xizmatlar",
+      "title": "Biz qanday yordam beramiz?",
+      "lead": "Amaliyot topishdan ariza topshirishgacha — yoningizdamiz.",
+      "photoAlt": "Ofisda birga ishlayotgan yoshlar",
       "students": {
-        "title": "Talabalar profili",
-        "text": "Ta'lim, yo'nalish, ko'nikmalar, tillar, tajriba va loyihalar. CV joylang va profilingizni kim ko'rishini o'zingiz boshqaring."
+        "title": "Profil va CV",
+        "text": "CV joylang, ko'nikma va tillaringizni ko'rsating. Profilni kim ko'rishini o'zingiz tanlaysiz."
       },
       "employers": {
-        "title": "Ish beruvchilar profili",
-        "text": "Kompaniya haqida ma'lumot, faoliyat sohasi, mamlakat, hamkorlik holati va ochiq amaliyot vakansiyalari."
+        "title": "Ish beruvchilar bilan aloqa",
+        "text": "Tekshirilgan kompaniyalar va ularning ochiq amaliyotlari bir joyda."
       },
       "internships": {
-        "title": "Amaliyotlar bo'limi",
-        "text": "Mamlakat, soha, davomiylik, til talabi, boshlanish sanasi va haq to'lanishiga qarab qidiring."
+        "title": "Ariza topshirishda yordam",
+        "text": "CV, hujjatlar va suhbatga tayyorgarlikda jamoamiz yoningizda."
       }
     },
     "latest": {
@@ -96,8 +123,8 @@
     },
     "partners": {
       "eyebrow": "Ish beruvchilar",
-      "title": "Ustuvor hamkorlar",
-      "lead": "Jamoamiz tomonidan tekshirilgan, joriy amaliyot dasturi bor kompaniyalar.",
+      "title": "Xalqaro hamkorlarimiz",
+      "lead": "Amaliyot dasturi tasdiqlangan kompaniyalar.",
       "all": "Barcha kompaniyalar"
     },
     "how": {
@@ -121,18 +148,19 @@
       }
     },
     "cta": {
-      "title": "InternWay orqali ariza topshiring",
-      "text": "Konsultatsiya, mos amaliyotni tanlash, CV va suhbatga tayyorlanish — bir joyda.",
+      "title": "Ariza topshirishda yordam kerakmi?",
+      "text": "Mos amaliyot, CV va suhbatga tayyorgarlik — barchasida yoningizdamiz.",
       "label": "Xizmatlar bilan tanishish"
     }
   },
   "internships": {
     "eyebrow": "Amaliyotlar",
-    "title": "Xalqaro amaliyotlarni qidiring",
-    "lead": "Kompaniyalarning rasmiy sahifalari va xalqaro dasturlardan har kuni yig'iladi. Eng yangisi — tepada.",
+    "title": "Amaliyot dasturlari",
+    "lead": "Davlat va soha bo'yicha qidiring. Har kuni yangilanadi, eng yangisi tepada.",
     "searchPlaceholder": "Lavozim, kompaniya yoki shahar",
     "kindLabel": "Turi",
     "freshLabel": "Sana",
+    "fieldLabel": "Soha",
     "kind": {
       "all": "Barcha turlar",
       "job": "Kompaniya amaliyoti",
@@ -145,10 +173,28 @@
       "30": "Oxirgi oy"
     },
     "found": "{{count}} ta amaliyot topildi",
+    "count": "E'lonlar: {{count}}",
     "empty": "Bu filtr bo'yicha amaliyot topilmadi. Qidiruvni soddalashtirib ko'ring.",
     "noLocation": "Joy ko'rsatilmagan",
     "source": "Manba: {{source}}",
-    "new": "Yangi"
+    "new": "Yangi",
+    "apply": "Ariza topshirish",
+    "field": {
+      "all": "Barcha sohalar"
+    },
+    "popular": {
+      "europe": "Yevropa bo'ylab amaliyot",
+      "marketingSpain": "Marketing — Ispaniya",
+      "engineeringGermany": "Muhandislik — Germaniya",
+      "businessNetherlands": "Biznes — Niderlandiya",
+      "singapore": "Singapurda amaliyot",
+      "remote": "Masofaviy, dunyo bo'ylab",
+      "summer2027": "Yozgi amaliyot 2027"
+    },
+    "sources": {
+      "title": "Shu qidiruvni boshqa saytlarda davom ettiring",
+      "text": "Bu saytlar e'lonlarni o'zida saqlaydi — havola qidiruvni o'sha saytda ochadi. Kompaniyalarning rasmiy Careers sahifalarini ham tekshiring."
+    }
   },
   "companies": {
     "eyebrow": "Ish beruvchilar",
@@ -231,10 +277,22 @@
     "payEyebrow": "To'lov",
     "payTitle": "To'lov qanday ishlaydi",
     "pay": {
-      "1": { "title": "Xizmatni tanlang", "text": "To'lov evaziga aynan nima olishingizni ko'rasiz." },
-      "2": { "title": "To'lang", "text": "Yakuniy narx, valyuta va shartlar oldindan ko'rsatiladi." },
-      "3": { "title": "Tasdiq oling", "text": "Tizim to'lovni tekshiradi va elektron chek yuboradi." },
-      "4": { "title": "Foydalaning", "text": "Tegishli xizmat yoki funksiya darhol ochiladi." }
+      "1": {
+        "title": "Xizmatni tanlang",
+        "text": "To'lov evaziga aynan nima olishingizni ko'rasiz."
+      },
+      "2": {
+        "title": "To'lang",
+        "text": "Yakuniy narx, valyuta va shartlar oldindan ko'rsatiladi."
+      },
+      "3": {
+        "title": "Tasdiq oling",
+        "text": "Tizim to'lovni tekshiradi va elektron chek yuboradi."
+      },
+      "4": {
+        "title": "Foydalaning",
+        "text": "Tegishli xizmat yoki funksiya darhol ochiladi."
+      }
     }
   },
   "employers": {
@@ -337,15 +395,38 @@
   },
   "about": {
     "eyebrow": "Biz haqimizda",
-    "title": "InternWay — xalqaro amaliyotga ishonchli yo'l",
-    "lead": "Maqsadimiz: talabalar va bitiruvchilarni O'zbekiston hamda xorijdagi ish beruvchilar bilan bog'lash, amaliyot topish va nomzod tanlashni osonlashtirish.",
+    "title": "InternWay haqida",
+    "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi platforma. Biz mos dasturni topish, tayyorlanish va ariza topshirishda yordam beramiz.",
+    "photoAlt": "InternWay jamoasi",
+    "goalTitle": "Maqsadimiz",
+    "goalText": "Har bir talaba uchun xalqaro amaliyotni topish, unga tayyorlanish va ariza topshirishni oson va tushunarli qilish.",
+    "whoTitle": "Kimlar uchun",
+    "who": {
+      "students": {
+        "title": "Talabalar",
+        "text": "Xorijda tajriba olishni istagan bakalavr va magistrantlar."
+      },
+      "graduates": {
+        "title": "Bitiruvchilar",
+        "text": "Karyerasini xalqaro amaliyotdan boshlamoqchi bo'lgan yoshlar."
+      },
+      "partners": {
+        "title": "Kompaniya va universitetlar",
+        "text": "Iqtidorli nomzod izlayotgan ish beruvchilar va talabalarini xorijga yo'naltirmoqchi bo'lgan OTMlar."
+      }
+    },
+    "experienceTitle": "Tajribamiz",
+    "experienceText": "InternWay USTravel jamoasining talabalar bilan ishlash va xalqaro hamkorlik tajribasiga tayanadi. Hamkor kompaniyalarimiz Italiya, Janubiy Koreya, Malayziya va Buyuk Britaniyada joylashgan.",
     "valuesTitle": "Qadriyatlarimiz",
     "values": {
       "trust": {
         "title": "Ishonch",
         "text": "Faqat rasmiy manbalar va tekshirilgan kompaniyalar. Pullik vositachilar aniq belgilanadi."
       },
-      "growth": { "title": "O'sish", "text": "Har bir amaliyot — kelajakdagi karyera uchun bir qadam." },
+      "growth": {
+        "title": "O'sish",
+        "text": "Har bir amaliyot — kelajakdagi karyera uchun bir qadam."
+      },
       "openness": {
         "title": "Ochiqlik",
         "text": "Narx va shartlar to'lovdan oldin ko'rsatiladi. Kafolat va'dalari berilmaydi."
@@ -375,8 +456,14 @@
     "title": "Shaxsiy kabinet",
     "lead": "Talaba, ish beruvchi va administrator kabinetlari birinchi versiyada ishga tushadi.",
     "roles": {
-      "student": { "title": "Talaba", "text": "Profil, CV, arizalar holati" },
-      "employer": { "title": "Ish beruvchi", "text": "Vakansiyalar, nomzodlar" }
+      "student": {
+        "title": "Talaba",
+        "text": "Profil, CV, arizalar holati"
+      },
+      "employer": {
+        "title": "Ish beruvchi",
+        "text": "Vakansiyalar, nomzodlar"
+      }
     },
     "notify": "Ishga tushganda xabar berish",
     "browse": "Hozircha amaliyotlarni ko'rish"

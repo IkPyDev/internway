@@ -20,7 +20,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
         )}
       />
       <span className={inverted ? "text-white" : "text-navy-900"}>
-        Intern<span className="text-green-500">Way</span>
+        Intern<span className={inverted ? "text-gold" : "text-green-500"}>Way</span>
       </span>
     </Link>
   )

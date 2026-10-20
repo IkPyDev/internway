@@ -49,9 +49,13 @@ export function InternshipCard({ item }: { item: Internship }) {
         <span className="text-xs text-muted-foreground">
           {t("internships.source", { source: item.source.split(":")[0] })}
         </span>
-        <Button asChild size="sm" className="rounded-full font-bold">
+        <Button
+          asChild
+          size="sm"
+          className="rounded-full bg-gold font-bold text-navy-950 hover:bg-gold-hover"
+        >
           <a href={safeUrl(item.url)} target="_blank" rel="noopener noreferrer">
-            {t("common.details")} <ExternalLink />
+            {t("internships.apply")} <ExternalLink />
           </a>
         </Button>
       </div>

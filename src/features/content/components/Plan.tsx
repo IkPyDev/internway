@@ -19,11 +19,11 @@ export function Plan({ name, price, text, items, cta, to, hash, flag }: PlanProp
     <article
       className={cn(
         "relative flex flex-col rounded-xl border-[1.5px] bg-card p-8",
-        flag && "border-green-500 shadow-[0_20px_50px_rgb(31_178_74/18%)]",
+        flag && "border-gold shadow-[0_20px_50px_rgb(232_188_74/22%)]",
       )}
     >
       {flag && (
-        <span className="absolute -top-3 right-6 rounded-full bg-green-500 px-3 py-1 text-xs font-extrabold text-white">
+        <span className="absolute -top-3 right-6 rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-navy-950">
           {flag}
         </span>
       )}
@@ -43,7 +43,7 @@ export function Plan({ name, price, text, items, cta, to, hash, flag }: PlanProp
       <Button
         asChild
         variant={flag ? "default" : "outline"}
-        className={cn("mt-auto rounded-full font-bold", flag && "bg-green-500 hover:bg-green-600")}
+        className={cn("mt-auto rounded-full font-bold", flag && "bg-gold text-navy-950 hover:bg-gold-hover")}
       >
         <Link to={to} hash={hash}>
           {cta}

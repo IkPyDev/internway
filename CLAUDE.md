@@ -28,7 +28,7 @@ look for it: `src/components/shared`, `src/lib`, the target slice's `lib/` and
 | anything structural | `ARCHITECTURE.md`, `architecture.json` |
 | a list page or its filters | `src/features/internships/` end to end (types → lib → api → hooks → components → page) |
 | a new page | `src/routes/router.tsx`, `src/constants/routes.ts`, one page in `src/features/content/pages/` |
-| copy / translations | both `src/config/i18n/locales/{uz,ru}.json` |
+| copy / translations | all three `src/config/i18n/locales/{uz,en,ru}.json` |
 | colours, radius, shadows, animation | `src/styles.css` (`:root` + `@theme inline` + `@utility`) |
 | a button / input / select look | `src/components/ui/*` (generated — §11) |
 | deploy / CI | `vercel.json`, `.github/workflows/*.yml` |
@@ -60,7 +60,7 @@ pnpm dev                  # http://localhost:5173
 pnpm gate                 # biome ci → tsc → boundaries → i18n → vitest → build
 pnpm format               # biome check --write
 pnpm boundaries           # R1–R3 only
-pnpm i18n                 # uz/ru key parity only
+pnpm i18n                 # uz/en/ru key parity only
 pnpm test                 # vitest
 pnpm collect              # refresh public/data/internships.json (Python 3, network)
 pnpm import:companies     # rebuild public/data/companies.json from data/*.xlsx (needs openpyxl)
@@ -92,7 +92,7 @@ pnpm dlx shadcn@3.5.0 add <component>   # new UI primitive (§11)
 ## Done means
 
 - `pnpm gate` exits 0, and you have quoted the result;
-- new strings exist in both locales;
+- new strings exist in all three locales;
 - new logic in `lib/` has a test next to it;
 - UI checked in the browser at both widths;
 - `ARCHITECTURE.md` updated if a measured number or a known gap changed (with the date).

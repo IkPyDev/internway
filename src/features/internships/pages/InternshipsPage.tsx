@@ -3,11 +3,12 @@ import { CardGridSkeleton, EmptyState, ErrorState, PageHero, Pager } from "@/com
 import { InternshipCard } from "../components/InternshipCard"
 import { InternshipFilters } from "../components/InternshipFilters"
 import { RegionPills } from "../components/RegionPills"
+import { SourceLinks } from "../components/SourceLinks"
 import { useInternshipsList } from "../hooks/useInternshipsList"
 
 export function InternshipsPage() {
   const { t } = useTranslation()
-  const { search, update, base, counts, page, status, error, refetch } = useInternshipsList()
+  const { search, update, base, counts, page, links, status, error, refetch } = useInternshipsList()
 
   return (
     <>
@@ -47,6 +48,7 @@ export function InternshipsPage() {
             />
           </>
         )}
+        <SourceLinks links={links} />
       </section>
     </>
   )

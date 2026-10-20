@@ -14,7 +14,11 @@ export function PortfolioPage() {
         title={t("portfolio.title")}
         lead={t("portfolio.lead")}
         actions={
-          <Button asChild size="lg" className="rounded-full bg-green-500 px-7 font-bold hover:bg-green-600">
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full bg-gold px-7 font-bold text-navy-950 hover:bg-gold-hover"
+          >
             <Link to={ROUTES.login}>{t("portfolio.create")}</Link>
           </Button>
         }

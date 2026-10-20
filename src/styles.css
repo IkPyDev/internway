@@ -1,39 +1,43 @@
 @import "tailwindcss";
 
-/* Brand tokens are taken from the InternWay logo. */
+/* Brand tokens: ink and brass from the team's concept, green from the logo arrow. */
 :root {
-  --navy-950: #071338;
-  --navy-900: #0b1d52;
-  --navy-700: #13297a;
-  --navy-500: #2a4bc4;
+  --navy-950: #061629;
+  --navy-900: #0a2340;
+  --navy-700: #16365f;
+  --navy-500: #2e5a8f;
+  --mist: #c6d6ea;
   --green-600: #13923a;
   --green-500: #1fb24a;
   --green-100: #e3f7e9;
-  --gold: #e0a526;
+  --gold: #e8bc4a;
+  --gold-hover: #f4cc5e;
+  --gold-700: #8a6510;
 
   --radius: 1rem;
   --background: #ffffff;
-  --foreground: #0e1a3a;
+  --foreground: #0b1a2e;
   --card: #ffffff;
-  --card-foreground: #0e1a3a;
+  --card-foreground: #0b1a2e;
   --popover: #ffffff;
-  --popover-foreground: #0e1a3a;
+  --popover-foreground: #0b1a2e;
   --primary: var(--navy-900);
   --primary-foreground: #ffffff;
-  --secondary: #f4f7fd;
+  --secondary: #f3f6fa;
   --secondary-foreground: var(--navy-900);
-  --muted: #f4f7fd;
-  --muted-foreground: #5d6886;
+  --muted: #f3f6fa;
+  --muted-foreground: #586679;
   --accent: var(--green-500);
   --accent-foreground: #ffffff;
   --destructive: #c2410c;
-  --border: #e3e8f3;
-  --input: #e3e8f3;
+  --border: #e1e7ef;
+  --input: #e1e7ef;
   --ring: var(--navy-500);
 }
 
 @theme inline {
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   --color-navy-950: var(--navy-950);
   --color-navy-900: var(--navy-900);
   --color-navy-700: var(--navy-700);
@@ -42,6 +46,9 @@
   --color-green-500: var(--green-500);
   --color-green-100: var(--green-100);
   --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-gold-700: var(--gold-700);
+  --color-mist: var(--mist);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -107,6 +114,12 @@
   h3 {
     letter-spacing: -0.02em;
   }
+  h1,
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
 }
 
 @utility chessboard {
@@ -116,12 +129,12 @@
 
 @utility hero-bg {
   background:
-    radial-gradient(1200px 600px at 85% 10%, #1d3aa8 0%, transparent 60%),
-    radial-gradient(800px 500px at 0% 100%, rgb(31 178 74 / 30%) 0%, transparent 60%), var(--navy-950);
+    radial-gradient(1200px 600px at 85% 10%, #123257 0%, transparent 60%),
+    radial-gradient(800px 500px at 0% 100%, rgb(232 188 74 / 12%) 0%, transparent 60%), var(--navy-950);
 }
 
 @utility text-gradient {
-  background: linear-gradient(90deg, var(--green-500), #7fe39b);
+  background: linear-gradient(90deg, var(--gold), #f6dc93);
   background-clip: text;
   color: transparent;
 }
@@ -147,11 +160,28 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--green-600);
+  color: var(--gold-700);
 }
 
 @utility card-grid {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+@utility hero-scrim {
+  background:
+    linear-gradient(to bottom, rgb(6 22 41 / 0%) 48%, rgb(6 22 41 / 92%)),
+    linear-gradient(
+      100deg,
+      rgb(4 15 29 / 96%) 0%,
+      rgb(4 16 31 / 88%) 34%,
+      rgb(5 20 38 / 60%) 60%,
+      rgb(6 24 45 / 38%) 100%
+    );
+  @media (width < 860px) {
+    background:
+      linear-gradient(to bottom, rgb(6 22 41 / 0%) 48%, rgb(6 22 41 / 92%)),
+      linear-gradient(175deg, rgb(4 15 29 / 92%) 0%, rgb(4 16 31 / 80%) 45%, rgb(5 20 38 / 90%) 100%);
+  }
 }

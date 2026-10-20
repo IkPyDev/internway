@@ -2,6 +2,16 @@ export type InternshipKind = "job" | "program"
 
 export type RegionKey = "germany" | "uk" | "europe" | "canada" | "asia" | "usa" | "remote"
 
+export type FieldKey =
+  | "software"
+  | "data"
+  | "engineering"
+  | "business"
+  | "finance"
+  | "marketing"
+  | "design"
+  | "research"
+
 /** One row of public/data/internships.json, as written by scripts/collect.py. */
 export interface InternshipDto {
   source: string
@@ -16,6 +26,7 @@ export interface InternshipDto {
 
 export interface Internship extends InternshipDto {
   regions: RegionKey[]
+  fields: FieldKey[]
   search: string
 }
 
@@ -24,6 +35,7 @@ export interface InternshipsSearch {
   q?: string
   kind?: InternshipKind
   region?: RegionKey
+  field?: FieldKey
   fresh?: FreshWindow
   page?: number
 }
@@ -35,4 +47,16 @@ export interface InternshipStats {
   programs: number
   today: number
   regions: number
+}
+
+/** A ready-made search shortcut: the filters it applies and its i18n label. */
+export interface PopularSearch {
+  label: string
+  search: InternshipsSearch
+}
+
+/** A link that runs the current search on an outside job site. */
+export interface SourceLink {
+  name: string
+  url: string
 }
