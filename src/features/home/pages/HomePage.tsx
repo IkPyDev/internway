@@ -32,12 +32,12 @@ export function HomePage() {
       >
         <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
           <img
-            src="/img/team-hotel.jpg"
+            src="/img/team-sea.jpg"
             alt={t("home.directions.photoAlt")}
-            width={960}
-            height={1280}
+            width={1280}
+            height={960}
             loading="lazy"
-            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover object-[center_35%] shadow-card"
+            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover object-[center_70%] shadow-card"
           />
           <div className="grid gap-4">
             <FeatureCard

@@ -21,12 +21,12 @@ export function Hero({ stats }: HeroProps) {
   return (
     <section className="relative isolate flex flex-col overflow-hidden bg-navy-950 text-white lg:min-h-[calc(100svh-5rem)]">
       <img
-        src="/img/hero.jpg"
+        src="/img/team-hotel.jpg"
         alt={t("home.photoAlt")}
-        width={1280}
-        height={960}
+        width={960}
+        height={1280}
         fetchPriority="high"
-        className="absolute inset-0 -z-20 size-full object-cover object-[center_62%]"
+        className="absolute inset-y-0 right-0 -z-20 h-full w-full object-cover object-[center_30%] lg:w-[58%] lg:[mask-image:linear-gradient(to_right,transparent,black_22%)]"
       />
       <div className="hero-scrim absolute inset-0 -z-10" aria-hidden />
 

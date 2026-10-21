@@ -11,7 +11,7 @@ export function AboutPage() {
 
       <section className="container-page grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2">
         <img
-          src="/img/hero.jpg"
+          src="/img/team-sea.jpg"
           alt={t("about.photoAlt")}
           width={1280}
           height={960}
