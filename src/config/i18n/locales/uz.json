@@ -82,7 +82,7 @@
     "searchPlaceholder": "Masalan: software, marketing, Germany...",
     "ctaPrimary": "Amaliyot dasturlarini ko'rish",
     "ctaSecondary": "Biz haqimizda",
-    "photoAlt": "InternWay jamoasi",
+    "photoAlt": "Mehmonxonada amaliyot o'tayotgan talabalar",
     "today": "bugungi e'lon",
     "stats": {
       "total": "faol amaliyot",
@@ -109,8 +109,8 @@
         "louvre": "Luvr, Parij",
         "cologne": "Kyoln, Germaniya",
         "istanbul": "Istanbul, Turkiya",
-        "rome": "Rim, Italiya",
-        "milan": "Milan, Italiya"
+        "milan": "Milan, Italiya",
+        "cologneNight": "Kyoln, kechki payt"
       }
     },
     "popular": {
@@ -122,7 +122,7 @@
       "eyebrow": "Xizmatlar",
       "title": "Biz qanday yordam beramiz?",
       "lead": "Amaliyot topishdan ariza topshirishgacha — yoningizdamiz.",
-      "photoAlt": "Ofisda birga ishlayotgan yoshlar",
+      "photoAlt": "USTravel bilan xorijdagi talabalar",
       "students": {
         "title": "Profil va CV",
         "text": "CV joylang, ko'nikma va tillaringizni ko'rsating. Profilni kim ko'rishini o'zingiz tanlaysiz."
@@ -417,7 +417,7 @@
     "eyebrow": "Biz haqimizda",
     "title": "InternWay haqida",
     "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi platforma. Biz mos dasturni topish, tayyorlanish va ariza topshirishda yordam beramiz.",
-    "photoAlt": "InternWay jamoasi",
+    "photoAlt": "Vizasini olgan talabalar",
     "goalTitle": "Maqsadimiz",
     "goalText": "Har bir talaba uchun xalqaro amaliyotni topish, unga tayyorlanish va ariza topshirishni oson va tushunarli qilish.",
     "whoTitle": "Kimlar uchun",

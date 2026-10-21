@@ -25,7 +25,7 @@ export function CtaBand({ title, text, to, label, image, position = "center 35%"
             className="absolute inset-0 -z-20 size-full object-cover"
           />
           <div
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/55"
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/90 via-navy-950/65 to-navy-950/30"
             aria-hidden
           />
         </>

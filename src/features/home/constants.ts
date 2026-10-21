@@ -4,6 +4,6 @@ export const ABROAD_PHOTOS = [
   { src: "/img/louvre.jpg", label: "home.abroad.places.louvre" },
   { src: "/img/cologne-rhine.jpg", label: "home.abroad.places.cologne" },
   { src: "/img/istanbul.jpg", label: "home.abroad.places.istanbul" },
-  { src: "/img/rome.jpg", label: "home.abroad.places.rome" },
+  { src: "/img/cologne-night.jpg", label: "home.abroad.places.cologneNight" },
   { src: "/img/milan.jpg", label: "home.abroad.places.milan" },
 ]

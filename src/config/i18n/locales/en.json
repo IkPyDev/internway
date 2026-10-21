@@ -82,7 +82,7 @@
     "searchPlaceholder": "e.g. software, marketing, Germany...",
     "ctaPrimary": "Browse internship programmes",
     "ctaSecondary": "About us",
-    "photoAlt": "The InternWay team",
+    "photoAlt": "Students at their hotel internship",
     "today": "posted today",
     "stats": {
       "total": "open internships",
@@ -109,8 +109,8 @@
         "louvre": "Louvre, Paris",
         "cologne": "Cologne, Germany",
         "istanbul": "Istanbul, Türkiye",
-        "rome": "Rome, Italy",
-        "milan": "Milan, Italy"
+        "milan": "Milan, Italy",
+        "cologneNight": "Cologne at night"
       }
     },
     "popular": {
@@ -122,7 +122,7 @@
       "eyebrow": "Services",
       "title": "How we help",
       "lead": "From finding an internship to applying — we are with you.",
-      "photoAlt": "Young people working together in an office",
+      "photoAlt": "Students abroad with USTravel",
       "students": {
         "title": "Profile and CV",
         "text": "Upload your CV, show your skills and languages. You decide who sees your profile."
@@ -417,7 +417,7 @@
     "eyebrow": "About us",
     "title": "About InternWay",
     "lead": "InternWay is a platform that connects students and graduates with internships abroad. We help you find the right programme, prepare and apply.",
-    "photoAlt": "The InternWay team",
+    "photoAlt": "Students holding their visas",
     "goalTitle": "Our goal",
     "goalText": "To make finding an international internship, preparing for it and applying simple and clear for every student.",
     "whoTitle": "Who it is for",

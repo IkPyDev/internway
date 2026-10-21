@@ -11,7 +11,13 @@ export function LoginPage() {
     { icon: Building2, key: "employer" },
   ] as const
   return (
-    <section className="grid min-h-[calc(100vh-72px)] place-items-center bg-[radial-gradient(800px_400px_at_50%_0%,#e8edfb,transparent)] px-4 py-12">
+    <section className="relative isolate grid min-h-[calc(100vh-72px)] place-items-center bg-navy-950 px-4 py-12">
+      <img
+        src="/img/team-sea.jpg"
+        alt=""
+        className="absolute inset-0 -z-20 size-full object-cover object-[center_70%]"
+      />
+      <div className="absolute inset-0 -z-10 bg-navy-950/55" aria-hidden />
       <div className="grid w-full max-w-md gap-3 rounded-2xl border bg-card px-7 py-10 text-center shadow-card">
         <img
           src="/img/logo.jpg"

@@ -182,7 +182,8 @@ True as of 2026-10-20:
   turns the current filters into a search on each site instead — see AGENTS.md §16.
 - **Five destination photos are hot-linked from Unsplash** (free licence) in
   `REGIONS[].photo`; Germany and Europe use real USTravel student photos. All other
-  photos are real ones in `public/img/`. If Unsplash is down they fail
+  photos are real ones in `public/img/`, kept at their original quality (every page
+  hero has one). If Unsplash is down they fail
   to load; copy them into `public/img/` once the content team picks final photos.
 - **Duration, paid/unpaid and language-level filters do not exist** — the sources
   only give title, company, location, date and link. They need a backend where

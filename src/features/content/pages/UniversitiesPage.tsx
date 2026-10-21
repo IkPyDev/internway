@@ -11,6 +11,8 @@ export function UniversitiesPage() {
         eyebrow={t("universities.eyebrow")}
         title={t("universities.title")}
         lead={t("universities.lead")}
+        image="/img/istanbul.jpg"
+        position="center 45%"
       />
       <Section title={t("universities.featuresTitle")}>
         <div className="grid gap-5 md:grid-cols-3">

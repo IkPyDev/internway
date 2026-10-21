@@ -11,7 +11,13 @@ export function EmployersPage() {
   const list = useTList()
   return (
     <>
-      <PageHero eyebrow={t("employers.eyebrow")} title={t("employers.title")} lead={t("employers.lead")} />
+      <PageHero
+        eyebrow={t("employers.eyebrow")}
+        title={t("employers.title")}
+        lead={t("employers.lead")}
+        image="/img/hotel-team-selfie.jpg"
+        position="center 45%"
+      />
       <Section eyebrow={t("employers.featuresEyebrow")} title={t("employers.featuresTitle")}>
         <div className="grid gap-5 md:grid-cols-3">
           <FeatureCard

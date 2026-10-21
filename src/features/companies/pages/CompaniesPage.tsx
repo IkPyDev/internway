@@ -10,7 +10,13 @@ export function CompaniesPage() {
 
   return (
     <>
-      <PageHero eyebrow={t("companies.eyebrow")} title={t("companies.title")} lead={t("companies.lead")} />
+      <PageHero
+        eyebrow={t("companies.eyebrow")}
+        title={t("companies.title")}
+        lead={t("companies.lead")}
+        image="/img/paris-evening.jpg"
+        position="center 30%"
+      />
       <section className="container-page pb-20">
         <CompanyFilters search={search} total={base} countries={countries} onChange={update} />
         <p className="my-4 font-semibold text-muted-foreground">

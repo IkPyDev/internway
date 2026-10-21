@@ -7,16 +7,22 @@ export function AboutPage() {
   const { t } = useTranslation()
   return (
     <>
-      <PageHero eyebrow={t("about.eyebrow")} title={t("about.title")} lead={t("about.lead")} />
+      <PageHero
+        eyebrow={t("about.eyebrow")}
+        title={t("about.title")}
+        lead={t("about.lead")}
+        image="/img/team-sea.jpg"
+        position="center 45%"
+      />
 
       <section className="container-page grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2">
         <img
-          src="/img/team-sea.jpg"
+          src="/img/visas.jpg"
           alt={t("about.photoAlt")}
-          width={1280}
-          height={960}
+          width={1024}
+          height={809}
           loading="lazy"
-          className="aspect-[4/3] w-full rounded-xl object-cover shadow-card"
+          className="w-full rounded-xl shadow-card"
         />
         <div className="grid gap-8">
           <div>
