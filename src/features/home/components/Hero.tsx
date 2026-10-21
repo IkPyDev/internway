@@ -23,10 +23,10 @@ export function Hero({ stats }: HeroProps) {
       <img
         src="/img/hero.jpg"
         alt={t("home.photoAlt")}
-        width={1600}
-        height={900}
+        width={1280}
+        height={960}
         fetchPriority="high"
-        className="absolute inset-0 -z-20 size-full object-cover object-[center_38%]"
+        className="absolute inset-0 -z-20 size-full object-cover object-[center_62%]"
       />
       <div className="hero-scrim absolute inset-0 -z-10" aria-hidden />
 

@@ -13,8 +13,8 @@ export function AboutPage() {
         <img
           src="/img/hero.jpg"
           alt={t("about.photoAlt")}
-          width={1600}
-          height={900}
+          width={1280}
+          height={960}
           loading="lazy"
           className="aspect-[4/3] w-full rounded-xl object-cover shadow-card"
         />
