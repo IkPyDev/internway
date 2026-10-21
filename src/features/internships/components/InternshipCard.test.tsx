@@ -18,6 +18,6 @@ describe("InternshipCard", () => {
     render(<InternshipCard item={item} />)
     expect(screen.getByText("Data Intern")).toBeInTheDocument()
     expect(screen.getByRole("link")).toHaveAttribute("href", "#")
-    expect(screen.getByText("Germaniya")).toBeInTheDocument()
+    expect(screen.getByText("Germany")).toBeInTheDocument()
   })
 })

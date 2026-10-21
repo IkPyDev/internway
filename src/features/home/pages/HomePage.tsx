@@ -31,10 +31,10 @@ export function HomePage() {
       >
         <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
           <img
-            src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1100&q=70"
+            src="/img/office.jpg"
             alt={t("home.directions.photoAlt")}
-            width={1100}
-            height={800}
+            width={1600}
+            height={1067}
             loading="lazy"
             className="size-full min-h-72 rounded-xl object-cover shadow-card"
           />
@@ -120,6 +120,7 @@ export function HomePage() {
         title={t("home.cta.title")}
         text={t("home.cta.text")}
         to={ROUTES.students}
+        image="/img/students.jpg"
         label={t("home.cta.label")}
       />
     </>

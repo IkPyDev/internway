@@ -17,7 +17,7 @@
 
 **InternWay** is a web platform that gathers international internships, traineeships
 and programmes for students and graduates from Uzbekistan, and connects them with
-employers and universities. UI copy is Uzbek (default), English and Russian.
+employers and universities. UI copy is English (default), Uzbek and Russian.
 
 Today it is a **frontend only**: data comes from static JSON in `public/data/`,
 produced by the Python scripts in `scripts/`. Accounts, applications, the admin

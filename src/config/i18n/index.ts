@@ -10,9 +10,9 @@ const STORAGE_KEY = "internway.lang"
 function savedLanguage(): Language {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
-    return saved === "ru" || saved === "en" ? saved : "uz"
+    return saved === "uz" || saved === "ru" ? saved : "en"
   } catch {
-    return "uz"
+    return "en"
   }
 }
 

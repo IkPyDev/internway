@@ -145,7 +145,7 @@ another is how values go stale.
 | Query keys | `src/constants/query-keys.ts` | the registry; `createEntityKeys` builds it |
 | Endpoints | `src/constants/api-endpoints.ts` | never a URL literal |
 | Routes | `src/constants/routes.ts` + `src/routes/router.tsx` | paths, nav items, the route table |
-| i18n | `src/config/i18n/` | uz default, en, ru; no fallback; choice kept in `localStorage` |
+| i18n | `src/config/i18n/` | en default, uz, ru; no fallback; choice kept in `localStorage` |
 | Runtime settings | `src/config/app.ts` ← `.env` | `VITE_CONTACT_EMAIL`, `VITE_API_URL` |
 | Styling | Tailwind 4 CSS-first, `@theme inline` in `src/styles.css` | **no `tailwind.config.ts` exists** |
 | Brand tokens | `src/styles.css` `:root` | navy / green / gold from the logo |
@@ -180,8 +180,8 @@ True as of 2026-10-20:
   sources.** The content team suggested them; none offers a public feed we may poll
   (login walls, Cloudflare challenge, robots.txt blocks AI agents, no RSS). `SEARCH_SITES`
   turns the current filters into a search on each site instead — see AGENTS.md §16.
-- **Photos are hot-linked from Unsplash** (free licence): destination cards
-  (`REGIONS[].photo`) and the home "how we help" image. If Unsplash is down they fail
+- **Destination photos are hot-linked from Unsplash** (free licence):
+  `REGIONS[].photo`. Team, office and student photos are local in `public/img/`. If Unsplash is down they fail
   to load; copy them into `public/img/` once the content team picks final photos.
 - **Duration, paid/unpaid and language-level filters do not exist** — the sources
   only give title, company, location, date and link. They need a backend where
