@@ -51,14 +51,21 @@
     "remote": "Remote"
   },
   "fields": {
-    "software": "Software",
-    "data": "Data & AI",
+    "software": "IT & Software Development",
+    "data": "Data Science & AI",
     "engineering": "Engineering",
-    "business": "Business & management",
-    "finance": "Finance",
+    "business": "Business & Management",
+    "finance": "Finance & Accounting",
     "marketing": "Marketing & PR",
-    "design": "Design & media",
-    "research": "Research & science"
+    "design": "Design & Media",
+    "research": "Research & Science",
+    "healthcare": "Healthcare & Medicine",
+    "education": "Education & Teaching",
+    "hospitality": "Hospitality & Tourism",
+    "logistics": "Logistics & Supply Chain",
+    "law": "Law & Legal Services",
+    "agriculture": "Agriculture & Environment",
+    "ngo": "International Relations & NGOs"
   },
   "countries": {
     "italy": "Italy",

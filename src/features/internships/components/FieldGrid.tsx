@@ -5,10 +5,17 @@ import {
   Code2,
   Cog,
   FlaskConical,
+  Globe2,
+  GraduationCap,
+  HeartPulse,
+  Hotel,
   Landmark,
+  Leaf,
   type LucideIcon,
   Megaphone,
   Palette,
+  Scale,
+  Truck,
 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { ROUTES } from "@/constants"
@@ -25,6 +32,13 @@ const ICONS: Record<FieldKey, LucideIcon> = {
   marketing: Megaphone,
   design: Palette,
   research: FlaskConical,
+  healthcare: HeartPulse,
+  education: GraduationCap,
+  hospitality: Hotel,
+  logistics: Truck,
+  law: Scale,
+  agriculture: Leaf,
+  ngo: Globe2,
 }
 
 export function FieldGrid() {
@@ -32,7 +46,7 @@ export function FieldGrid() {
   const facets = useInternshipFacets()
 
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {FIELDS.map((f) => {
         const Icon = ICONS[f.key]
         return (

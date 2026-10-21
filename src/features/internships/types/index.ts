@@ -11,6 +11,13 @@ export type FieldKey =
   | "marketing"
   | "design"
   | "research"
+  | "healthcare"
+  | "education"
+  | "hospitality"
+  | "logistics"
+  | "law"
+  | "agriculture"
+  | "ngo"
 
 /** One row of public/data/internships.json, as written by scripts/collect.py. */
 export interface InternshipDto {

@@ -51,14 +51,21 @@
     "remote": "Masofaviy"
   },
   "fields": {
-    "software": "Dasturlash",
-    "data": "Ma'lumotlar va AI",
+    "software": "IT va dasturlash",
+    "data": "Ma’lumotlar tahlili va sun’iy intellekt",
     "engineering": "Muhandislik",
     "business": "Biznes va boshqaruv",
-    "finance": "Moliya",
+    "finance": "Moliya va buxgalteriya",
     "marketing": "Marketing va PR",
     "design": "Dizayn va media",
-    "research": "Tadqiqot va fan"
+    "research": "Ilmiy tadqiqotlar",
+    "healthcare": "Sog‘liqni saqlash va tibbiyot",
+    "education": "Ta’lim va pedagogika",
+    "hospitality": "Mehmonxona ishi va turizm",
+    "logistics": "Logistika va ta’minot zanjiri",
+    "law": "Huquqshunoslik",
+    "agriculture": "Qishloq xo‘jaligi va ekologiya",
+    "ngo": "Xalqaro munosabatlar va NNTlar"
   },
   "countries": {
     "italy": "Italiya",
