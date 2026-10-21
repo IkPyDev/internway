@@ -100,6 +100,19 @@
       "lead": "Pick a country — its internships open right away.",
       "cta": "See opportunities"
     },
+    "abroad": {
+      "eyebrow": "Real stories",
+      "title": "Our students abroad",
+      "lead": "Real photos of students who went abroad with USTravel — your journey can start the same way.",
+      "places": {
+        "paris": "Paris, France",
+        "louvre": "Louvre, Paris",
+        "cologne": "Cologne, Germany",
+        "istanbul": "Istanbul, Türkiye",
+        "rome": "Rome, Italy",
+        "milan": "Milan, Italy"
+      }
+    },
     "popular": {
       "eyebrow": "Quick search",
       "title": "Popular searches",

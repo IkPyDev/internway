@@ -7,9 +7,11 @@ interface PageHeroProps {
   actions?: ReactNode
   /** Background photo; a dark scrim keeps the text readable. */
   image?: string
+  /** CSS object-position for the photo. */
+  position?: string
 }
 
-export function PageHero({ eyebrow, title, lead, actions, image }: PageHeroProps) {
+export function PageHero({ eyebrow, title, lead, actions, image, position = "center 20%" }: PageHeroProps) {
   return (
     <section className="hero-bg relative isolate overflow-hidden pt-16 pb-24 text-white">
       {image ? (
@@ -18,7 +20,8 @@ export function PageHero({ eyebrow, title, lead, actions, image }: PageHeroProps
             src={image}
             alt=""
             fetchPriority="high"
-            className="absolute inset-0 -z-20 size-full object-cover object-[center_20%]"
+            style={{ objectPosition: position }}
+            className="absolute inset-0 -z-20 size-full object-cover"
           />
           <div className="hero-scrim absolute inset-0 -z-10" aria-hidden />
         </>

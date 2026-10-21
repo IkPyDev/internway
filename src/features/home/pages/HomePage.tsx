@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
 import { TopCompanies } from "@/features/companies"
 import { DestinationGrid, FieldGrid, LatestInternships, PopularSearches } from "@/features/internships"
+import { AbroadGallery } from "../components/AbroadGallery"
 import { Hero } from "../components/Hero"
 import { useHomeStats } from "../hooks/useHomeStats"
 
@@ -31,12 +32,12 @@ export function HomePage() {
       >
         <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
           <img
-            src="/img/office.jpg"
+            src="/img/team-hotel.jpg"
             alt={t("home.directions.photoAlt")}
-            width={1600}
-            height={1067}
+            width={960}
+            height={1280}
             loading="lazy"
-            className="size-full min-h-72 rounded-xl object-cover shadow-card"
+            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover object-[center_35%] shadow-card"
           />
           <div className="grid gap-4">
             <FeatureCard
@@ -77,6 +78,14 @@ export function HomePage() {
 
       <Section
         tint
+        eyebrow={t("home.abroad.eyebrow")}
+        title={t("home.abroad.title")}
+        lead={t("home.abroad.lead")}
+      >
+        <AbroadGallery />
+      </Section>
+
+      <Section
         eyebrow={t("home.popular.eyebrow")}
         title={t("home.popular.title")}
         lead={t("home.popular.lead")}
@@ -84,7 +93,7 @@ export function HomePage() {
         <PopularSearches />
       </Section>
 
-      <Section eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
+      <Section tint eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
         <LatestInternships />
         <div className="mt-10 text-center">
           <Button asChild size="lg" className="rounded-full px-7 font-bold">
@@ -94,7 +103,6 @@ export function HomePage() {
       </Section>
 
       <Section
-        tint
         eyebrow={t("home.partners.eyebrow")}
         title={t("home.partners.title")}
         lead={t("home.partners.lead")}
@@ -107,7 +115,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
+      <Section tint eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
         <Steps
           items={[1, 2, 3, 4].map((i) => ({
             title: t(`home.how.${i}.title`),
@@ -120,7 +128,8 @@ export function HomePage() {
         title={t("home.cta.title")}
         text={t("home.cta.text")}
         to={ROUTES.students}
-        image="/img/students.jpg"
+        image="/img/hotel-team-selfie.jpg"
+        position="center 50%"
         label={t("home.cta.label")}
       />
     </>

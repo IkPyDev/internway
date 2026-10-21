@@ -8,9 +8,11 @@ interface CtaBandProps {
   label: string
   /** Background photo under a navy overlay. */
   image?: string
+  /** CSS object-position for the photo. */
+  position?: string
 }
 
-export function CtaBand({ title, text, to, label, image }: CtaBandProps) {
+export function CtaBand({ title, text, to, label, image, position = "center 35%" }: CtaBandProps) {
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-r from-navy-950 via-navy-900 to-navy-700 py-16 text-white sm:py-24">
       {image && (
@@ -19,7 +21,8 @@ export function CtaBand({ title, text, to, label, image }: CtaBandProps) {
             src={image}
             alt=""
             loading="lazy"
-            className="absolute inset-0 -z-20 size-full object-cover object-[center_35%]"
+            style={{ objectPosition: position }}
+            className="absolute inset-0 -z-20 size-full object-cover"
           />
           <div
             className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-950/95 via-navy-950/80 to-navy-950/55"

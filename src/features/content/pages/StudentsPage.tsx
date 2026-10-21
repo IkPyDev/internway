@@ -16,7 +16,8 @@ export function StudentsPage() {
         eyebrow={t("students.eyebrow")}
         title={t("students.title")}
         lead={t("students.lead")}
-        image="/img/students.jpg"
+        image="/img/cologne-night.jpg"
+        position="center 50%"
         actions={
           <Button
             asChild

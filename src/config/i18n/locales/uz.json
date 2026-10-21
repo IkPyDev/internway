@@ -100,6 +100,19 @@
       "lead": "Davlatni tanlang — o'sha yerdagi amaliyotlar ochiladi.",
       "cta": "Imkoniyatlarni ko'rish"
     },
+    "abroad": {
+      "eyebrow": "Haqiqiy hikoyalar",
+      "title": "Xorijdagi talabalarimiz",
+      "lead": "USTravel orqali xorijga borgan talabalarning haqiqiy suratlari — sizning yo'lingiz ham shunday boshlanishi mumkin.",
+      "places": {
+        "paris": "Parij, Fransiya",
+        "louvre": "Luvr, Parij",
+        "cologne": "Kyoln, Germaniya",
+        "istanbul": "Istanbul, Turkiya",
+        "rome": "Rim, Italiya",
+        "milan": "Milan, Italiya"
+      }
+    },
     "popular": {
       "eyebrow": "Tez qidiruv",
       "title": "Mashhur so'rovlar",

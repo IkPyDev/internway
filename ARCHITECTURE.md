@@ -180,8 +180,9 @@ True as of 2026-10-20:
   sources.** The content team suggested them; none offers a public feed we may poll
   (login walls, Cloudflare challenge, robots.txt blocks AI agents, no RSS). `SEARCH_SITES`
   turns the current filters into a search on each site instead — see AGENTS.md §16.
-- **Destination photos are hot-linked from Unsplash** (free licence):
-  `REGIONS[].photo`. Team, office and student photos are local in `public/img/`. If Unsplash is down they fail
+- **Five destination photos are hot-linked from Unsplash** (free licence) in
+  `REGIONS[].photo`; Germany and Europe use real USTravel student photos. All other
+  photos are real ones in `public/img/`. If Unsplash is down they fail
   to load; copy them into `public/img/` once the content team picks final photos.
 - **Duration, paid/unpaid and language-level filters do not exist** — the sources
   only give title, company, location, date and link. They need a backend where

@@ -16,7 +16,8 @@ export function InternshipsPage() {
         eyebrow={t("internships.eyebrow")}
         title={t("internships.title")}
         lead={t("internships.lead")}
-        image="/img/office.jpg"
+        image="/img/milan.jpg"
+        position="center 70%"
       />
       <section className="container-page pb-20">
         <InternshipFilters search={search} onChange={update} />
