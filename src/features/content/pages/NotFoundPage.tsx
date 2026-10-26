@@ -10,8 +10,8 @@ export function NotFoundPage() {
       text={t("notFound.text")}
       to={ROUTES.home}
       label={t("notFound.home")}
-      image="/img/milan.jpg"
-      position="center 60%"
+      image="/img/airport.jpg"
+      position="center 85%"
     />
   )
 }

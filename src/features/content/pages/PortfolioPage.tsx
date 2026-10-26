@@ -13,7 +13,7 @@ export function PortfolioPage() {
         eyebrow={t("portfolio.eyebrow")}
         title={t("portfolio.title")}
         lead={t("portfolio.lead")}
-        image="/img/cologne-rhine.jpg"
+        image="/img/laptop.jpg"
         position="center 45%"
         actions={
           <Button

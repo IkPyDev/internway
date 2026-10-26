@@ -9,9 +9,22 @@ export const ROUTES = {
   universities: "/universities",
   about: "/about",
   login: "/login",
+  vacancies: "/vacancies",
+  vacancy: "/vacancies/$id",
+  resume: "/account/resume",
+  myApplications: "/account/applications",
+  myVacancies: "/account/vacancies",
+  newVacancy: "/account/vacancies/new",
+  editVacancy: "/account/vacancies/$id/edit",
+  candidates: "/account/vacancies/$id/candidates",
+  saved: "/account/saved",
+  company: "/account/company",
+  publicCompany: "/company/$id",
+  admin: "/admin",
 } as const
 
 export const NAV_ITEMS = [
+  { to: ROUTES.vacancies, label: "nav.vacancies" },
   { to: ROUTES.internships, label: "nav.internships" },
   { to: ROUTES.companies, label: "nav.companies" },
   { to: ROUTES.portfolio, label: "nav.portfolio" },

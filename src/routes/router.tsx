@@ -1,11 +1,14 @@
 import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router"
+import type { ComponentType } from "react"
 import { RootLayout } from "@/components/shared"
 import { ROUTES } from "@/constants"
+import { AdminPage, parseAdminSearch } from "@/features/admin"
+import { AccountButton, LoginPage, parseLoginSearch, RequireRole } from "@/features/auth"
 import { CompaniesPage, parseCompaniesSearch } from "@/features/companies"
+import { CompanyPage, PublicCompanyPage } from "@/features/company"
 import {
   AboutPage,
   EmployersPage,
-  LoginPage,
   NotFoundPage,
   PortfolioPage,
   StudentsPage,
@@ -13,8 +16,30 @@ import {
 } from "@/features/content"
 import { HomePage } from "@/features/home"
 import { InternshipsPage, parseInternshipsSearch } from "@/features/internships"
+import { MyApplicationsPage, ResumePage } from "@/features/student"
+import {
+  CandidatesPage,
+  MyVacanciesPage,
+  parseCandidatesSearch,
+  parseVacanciesSearch,
+  SavedVacanciesPage,
+  VacanciesPage,
+  VacancyFormPage,
+  VacancyPage,
+} from "@/features/vacancies"
+import type { Role } from "@/types"
 
-const rootRoute = createRootRoute({ component: RootLayout, notFoundComponent: NotFoundPage })
+/** A page that only the given roles may open. */
+const guarded = (roles: Role[], Page: ComponentType) => () => (
+  <RequireRole roles={roles}>
+    <Page />
+  </RequireRole>
+)
+
+const rootRoute = createRootRoute({
+  component: () => <RootLayout account={<AccountButton />} />,
+  notFoundComponent: NotFoundPage,
+})
 
 const homeRoute = createRoute({ getParentRoute: () => rootRoute, path: ROUTES.home, component: HomePage })
 const internshipsRoute = createRoute({
@@ -50,7 +75,75 @@ const universitiesRoute = createRoute({
   component: UniversitiesPage,
 })
 const aboutRoute = createRoute({ getParentRoute: () => rootRoute, path: ROUTES.about, component: AboutPage })
-const loginRoute = createRoute({ getParentRoute: () => rootRoute, path: ROUTES.login, component: LoginPage })
+const loginRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.login,
+  component: LoginPage,
+  validateSearch: parseLoginSearch,
+})
+const vacanciesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.vacancies,
+  component: VacanciesPage,
+  validateSearch: parseVacanciesSearch,
+})
+const vacancyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.vacancy,
+  component: VacancyPage,
+})
+const resumeRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.resume,
+  component: guarded(["student"], ResumePage),
+})
+const myApplicationsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.myApplications,
+  component: guarded(["student"], MyApplicationsPage),
+})
+const myVacanciesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.myVacancies,
+  component: guarded(["employer"], MyVacanciesPage),
+})
+const newVacancyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.newVacancy,
+  component: guarded(["employer"], VacancyFormPage),
+})
+const editVacancyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.editVacancy,
+  component: guarded(["employer"], VacancyFormPage),
+})
+const candidatesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.candidates,
+  component: guarded(["employer", "admin"], CandidatesPage),
+  validateSearch: parseCandidatesSearch,
+})
+const savedRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.saved,
+  component: guarded(["student"], SavedVacanciesPage),
+})
+const companyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.company,
+  component: guarded(["employer"], CompanyPage),
+})
+const publicCompanyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.publicCompany,
+  component: PublicCompanyPage,
+})
+const adminRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: ROUTES.admin,
+  component: guarded(["admin"], AdminPage),
+  validateSearch: parseAdminSearch,
+})
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
@@ -62,6 +155,18 @@ const routeTree = rootRoute.addChildren([
   universitiesRoute,
   aboutRoute,
   loginRoute,
+  vacanciesRoute,
+  vacancyRoute,
+  resumeRoute,
+  myApplicationsRoute,
+  myVacanciesRoute,
+  newVacancyRoute,
+  editVacancyRoute,
+  candidatesRoute,
+  savedRoute,
+  companyRoute,
+  publicCompanyRoute,
+  adminRoute,
 ])
 
 export const router = createRouter({

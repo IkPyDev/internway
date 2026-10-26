@@ -1,11 +1,13 @@
 import { Outlet } from "@tanstack/react-router"
+import type { ReactNode } from "react"
 import { Footer } from "./Footer"
 import { Header } from "./Header"
 
-export function RootLayout() {
+/** `account` is the header's sign-in / account slot, filled by the routes layer. */
+export function RootLayout({ account }: { account: ReactNode }) {
   return (
     <>
-      <Header />
+      <Header account={account} />
       <main id="main">
         <Outlet />
       </main>

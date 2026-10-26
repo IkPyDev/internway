@@ -1,6 +1,5 @@
 export { AboutPage } from "./pages/AboutPage"
 export { EmployersPage } from "./pages/EmployersPage"
-export { LoginPage } from "./pages/LoginPage"
 export { NotFoundPage } from "./pages/NotFoundPage"
 export { PortfolioPage } from "./pages/PortfolioPage"
 export { StudentsPage } from "./pages/StudentsPage"

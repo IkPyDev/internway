@@ -32,12 +32,12 @@ export function HomePage() {
       >
         <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
           <img
-            src="/img/team-sea.jpg"
+            src="/img/students-walking.jpg"
             alt={t("home.directions.photoAlt")}
-            width={1280}
-            height={960}
+            width={2400}
+            height={1347}
             loading="lazy"
-            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover object-[center_70%] shadow-card"
+            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover shadow-card"
           />
           <div className="grid gap-4">
             <FeatureCard
@@ -102,6 +102,15 @@ export function HomePage() {
         </div>
       </Section>
 
+      <CtaBand
+        title={t("home.cta.title")}
+        text={t("home.cta.text")}
+        to={ROUTES.students}
+        image="/img/students-cafe.jpg"
+        position="center 50%"
+        label={t("home.cta.label")}
+      />
+
       <Section
         eyebrow={t("home.partners.eyebrow")}
         title={t("home.partners.title")}
@@ -123,15 +132,6 @@ export function HomePage() {
           }))}
         />
       </Section>
-
-      <CtaBand
-        title={t("home.cta.title")}
-        text={t("home.cta.text")}
-        to={ROUTES.students}
-        image="/img/hotel-team-selfie.jpg"
-        position="center 50%"
-        label={t("home.cta.label")}
-      />
     </>
   )
 }

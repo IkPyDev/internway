@@ -11,8 +11,8 @@ export function AboutPage() {
         eyebrow={t("about.eyebrow")}
         title={t("about.title")}
         lead={t("about.lead")}
-        image="/img/team-sea.jpg"
-        position="center 45%"
+        image="/img/students-walking.jpg"
+        position="center 30%"
       />
 
       <section className="container-page grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2">

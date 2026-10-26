@@ -51,23 +51,27 @@ Data on 2026-10-26: 5,150 internships, 174 companies.
 
 ### Photos — `public/img/`
 
-All are real photos of students USTravel sent abroad, as the owner sent them.
-**Do not re-compress them** (the owner rejected blurry results) and do not stretch a
+Heroes, the CTA band and two destination cards use landscape Unsplash photos
+(free licence, 2400px wide, downloaded 2026-10-26). The owner's team found the
+USTravel student photos weak as hero backgrounds (portrait, cropped faces), so those
+remain only in the "Our students abroad" gallery and the About page body.
+**Do not re-compress photos** (the owner rejected blurry results) and do not stretch a
 portrait or <1280px photo across a full-width hero — it upscales and blurs.
 
 | File | Used in |
 | --- | --- |
-| `team-hotel.jpg` (960×1280) | home hero — right-hand panel on `lg`, faded in with a mask |
-| `team-sea.jpg` | home "How we help", About hero, Login background |
-| `visas.jpg` (collage) | About page body |
-| `hotel-team-selfie.jpg` | home CTA band, Employers hero |
-| `milan.jpg` | Internships hero, 404, gallery |
-| `cologne-night.jpg` | Students hero, gallery |
-| `cologne.jpg` | Germany destination card |
-| `paris-evening.jpg` | Europe destination card, Companies hero, gallery |
-| `istanbul.jpg` | Universities hero, gallery |
-| `cologne-rhine.jpg` | Portfolio hero, gallery |
-| `louvre.jpg` | gallery |
+| `graduates.jpg` (Unsplash) | home hero — right-hand panel on `lg`, faded in with a mask |
+| `students-walking.jpg` (Unsplash) | home "How we help", About hero, Login background |
+| `students-cafe.jpg` (Unsplash) | home CTA band |
+| `students-library.jpg` (Unsplash) | Students hero |
+| `office-meeting.jpg` (Unsplash) | Employers hero |
+| `office.jpg` (Unsplash) | Companies hero |
+| `graduates-selfie.jpg` (Unsplash) | Universities hero |
+| `laptop.jpg` (Unsplash) | Portfolio hero |
+| `airport.jpg` (Unsplash) | Internships hero, 404 |
+| `berlin.jpg`, `paris.jpg` (Unsplash) | Germany / Europe destination cards |
+| `visas.jpg` (USTravel collage) | About page body |
+| `milan.jpg` `cologne-night.jpg` `paris-evening.jpg` `istanbul.jpg` `cologne-rhine.jpg` `louvre.jpg` (USTravel) | gallery |
 
 The gallery list is `ABROAD_PHOTOS` in `src/features/home/constants.ts`. `PageHero` and
 `CtaBand` take `image` + `position` (CSS `object-position`).
@@ -78,8 +82,18 @@ The gallery list is `ABROAD_PHOTOS` in `src/features/home/constants.ts`. `PageHe
   Remote) — swap in real photos when the owner sends them (`REGIONS[].photo`).
 - **Duration, paid/unpaid and language-level filters** — the data has no such
   fields; they need the backend.
-- **No backend**: accounts, applications, admin, payments.
-- Technical gaps from `ARCHITECTURE.md` § Known gaps: one 670 kB bundle, no
+- **HH-style platform (2026-10-26, uncommitted here)**: the API moved to its own repo
+  `IkPyDev/internway_back` (pushed; clone at `../internway_back`, GitHub Actions deploys it
+  to the owner's server over SSH once the `SSH_*` secrets and the server `.env` exist) and the
+  `auth`, `student`, `vacancies`, `company`, `admin` slices — companies with teams and
+  verification, salary / format filters, saved vacancies, an application pipeline.
+  Works end to end locally; demo sign-in code (never shown in the UI; the owner hands it
+  out), demo data seeded. `vercel.json` rewrites `/api` to `http://89.167.30.131:3000` (no domain
+  yet; plain HTTP between Vercel and the server). Still to do: an API domain + HTTPS,
+  a real email provider before launch (`ARCHITECTURE.md` §
+  The API server, § Known gaps). Header nav now collapses below 1680px (9 items).
+- **No payments.**
+- Technical gaps from `ARCHITECTURE.md` § Known gaps: one 726 kB bundle, no
   per-page `document.title`, no error boundary.
 - **Owner to confirm**: the students in the photos agreed to be shown; the ru
   translations of the owner's uz/en copy (ours, not checked by a native speaker).
@@ -106,6 +120,7 @@ The gallery list is `ABROAD_PHOTOS` in `src/features/home/constants.ts`. `PageHe
 | colours, radius, shadows, animation | `src/styles.css` (`:root` + `@theme inline` + `@utility`) |
 | a button / input / select look | `src/components/ui/*` (generated — §11) |
 | deploy / CI | `vercel.json`, `.github/workflows/*.yml` |
+| the API, accounts, moderation | `../internway_back/src/app.ts`, `../internway_back/src/schema.sql`, `src/types/api.ts`, `src/constants/api-endpoints.ts` |
 | the data | `scripts/collect.py`, `scripts/import_companies.py`, `public/data/` (generated — §1) |
 | the product scope | the PDFs the owner shared (website brief, payment model) — summarised in `ARCHITECTURE.md` § Known gaps |
 
@@ -130,7 +145,7 @@ The gallery list is `ABROAD_PHOTOS` in `src/features/home/constants.ts`. `PageHe
 
 ```bash
 pnpm install              # first time
-pnpm dev                  # http://localhost:5173
+pnpm dev                  # http://localhost:5173 (proxies /api to :3000 — run the API from ../internway_back)
 pnpm gate                 # biome ci → tsc → boundaries → i18n → vitest → build
 pnpm format               # biome check --write
 pnpm boundaries           # R1–R3 only
@@ -151,7 +166,8 @@ pnpm dlx shadcn@3.5.0 add <component>   # new UI primitive (§11)
   slices feel;
 - adding a data source to `scripts/collect.py` (§16 — confirm it is public and allows
   automated access);
-- anything with money, accounts or personal data — those wait for the backend.
+- anything with money, or a change to how accounts and personal data are stored or sent
+  (the `internway_back` repo).
 
 ### Never
 

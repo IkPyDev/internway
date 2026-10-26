@@ -15,7 +15,7 @@ export function EmployersPage() {
         eyebrow={t("employers.eyebrow")}
         title={t("employers.title")}
         lead={t("employers.lead")}
-        image="/img/hotel-team-selfie.jpg"
+        image="/img/office-meeting.jpg"
         position="center 45%"
       />
       <Section eyebrow={t("employers.featuresEyebrow")} title={t("employers.featuresTitle")}>

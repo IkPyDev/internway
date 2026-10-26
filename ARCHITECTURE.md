@@ -47,10 +47,15 @@ changes what the build allows.
 | `internships` | the internships list, filters, region and field detection, stats, outside search links | — |
 | `companies` | the employers list, priority badges, country filter | — |
 | `contact` | the contact form (mailto until a backend exists) | — |
-| `content` | static pages: students, employers, universities, portfolio, about, login, 404 | `contact` |
+| `content` | static pages: students, employers, universities, portfolio, about, 404 | `contact` |
 | `home` | the landing page | `internships`, `companies` |
+| `auth` | email + code sign-in, the session, the header account button, `RequireRole` + cabinet tabs | — |
+| `student` | the student's resume and applications (withdraw, employer's note); `ResumeView` | — |
+| `vacancies` | public search with filters and paging, detail, apply, save; the employer's vacancies (close / reopen), form and candidate pipeline; saved list | `auth`, `student` |
+| `company` | the employer's company profile and team (invite / remove managers); the public company page | `vacancies` |
+| `admin` | overview numbers; moderation of companies, resumes and vacancies; users (block); all applications | `auth`, `student`, `vacancies` |
 
-Three feature → feature edges, no cycles. `home` and `content` are composition slices:
+Nine feature → feature edges, no cycles. `home` and `content` are composition slices:
 they own pages that assemble other slices' public components.
 
 ---
@@ -110,9 +115,41 @@ compare against the fork point from `main` and fail only on violations a branch
   scripts/import_companies.py ─┴→ public/data/*.json
 
   route → page → feature hook → api hook → apiClient → public/data/*.json
-                      ↓                                (later: the backend)
+                      ↓                              → /api/* → internway_back (Hono) → Postgres
                 TanStack Query cache
 ```
+
+### The API server (2026-10-26)
+
+Lives in its own repo, [`IkPyDev/internway_back`](https://github.com/IkPyDev/internway_back), cloned next to this one
+(`../internway_back`). Hono + Postgres, Node 24 runs the TypeScript directly. Every push
+to its `main` is checked and deployed to the owner's server over SSH with Docker
+(its `README.md` § Deploy). In production Vercel rewrites `/api/*` to that server, so
+the browser sees one origin; in dev `vite.config.ts` proxies `/api` to `:3000`.
+What this frontend relies on:
+
+- **Sign-in:** email → code → session. The code is `OTP_DEMO_CODE` until an email
+  provider is wired into `POST /api/auth/otp`; the server refuses to start with it in
+  production. A first sign-in picks the role (student or employer) once; the email in
+  `ADMIN_EMAIL` becomes the admin. The code is never sent to the browser.
+- **Demo data:** with `OTP_DEMO_CODE` set, an empty database is filled from
+  `src/seed.sql` on start (accounts listed in `README.md` § Demo data).
+- **Sessions:** a random token in an httpOnly, SameSite=Lax cookie; only its SHA-256 is
+  stored. Blocking a user deletes their sessions.
+- **Companies:** an employer's first sign-in creates their company (they own it). The
+  owner edits the profile and invites managers by email; an invited email joins the
+  company on its first sign-in. Removing a manager clears their role and signs them out.
+- **Moderation:** companies, resumes and vacancies start `pending`; the admin approves or
+  rejects with a reason the author sees. Resume and vacancy edits go back to `pending`; a
+  company edit does only after a rejection. A vacancy is public only when it **and** its
+  company are approved; closing hides it, reopening sends it back to review. A student
+  can apply only with an approved resume.
+- **Pipeline:** sent → viewed (when the company opens the list) → invited → offer →
+  hired, or rejected; the company attaches a note the student sees. The student may
+  withdraw while the outcome is open (`src/rules.ts` in the API repo).
+- **Errors** are `{ error: "<code>" }`; the client shows `errors.<code>` from i18n.
+
+Run it: in `../internway_back`, `pnpm db` and `pnpm dev` (port 3000); here, `pnpm dev`.
 
 - **Pages compose.** No query, no `useMemo` over data, no business branching.
 - **Feature hooks hold logic.** `useInternshipsList` reads the URL, the query, and
@@ -159,13 +196,21 @@ another is how values go stale.
 
 ## Known gaps — deliberately recorded, not hidden
 
-True as of 2026-10-20:
+True as of 2026-10-26:
 
-- **No backend.** Accounts, applications and their status, the admin panel,
-  company/listing approval and payments from the product brief cannot work yet. The
-  login page says so. The contact form opens a `mailto:` and is disabled until
+- **The API server is not deployed.** It runs locally only; Vercel hosts the static
+  frontend, where `/api` answers 404 and sign-in shows an error. Hosting (Railway,
+  Render, a VPS) and a Vercel rewrite of `/api/*` to it are open. Same-origin keeps the
+  SameSite=Lax cookie working; a cross-origin API would need CORS and SameSite=None.
+- **Sign-in codes are a demo.** One shared code, no email, no rate limit on attempts.
+  Before launch: per-email random codes with expiry, an email provider, attempt limits.
+- **No payments.** The contact form opens a `mailto:` and is disabled until
   `VITE_CONTACT_EMAIL` is set.
-- **One 650 kB JS bundle** (212 kB gzip). Routes are not code-split yet; Vite warns.
+- **Admin lists are unpaged** (whole tables). Vacancy search pages by 20 with `ILIKE`;
+  move to full-text search when listings grow.
+- **No notifications.** Students see status changes and notes only in their cabinet;
+  email notices need the same provider as sign-in codes. No company logos (no uploads).
+- **One 726 kB JS bundle** (233 kB gzip). Routes are not code-split yet; Vite warns.
   Fix: `lazyRouteComponent` per page.
 - **`document.title` never changes** per page; every tab says "InternWay". Matters for
   SEO once the site is public.
@@ -193,8 +238,9 @@ True as of 2026-10-20:
   GitHub. Not yet verified that every source answers from GitHub's datacenter IPs —
   check the run log. Each refresh commits the full ≈1.5 MB JSON, so git history grows
   roughly 0.5 GB a year; move the data to storage or the backend before that matters.
-- **Tests:** 4 files, 14 tests — `lib` helpers, both slices' `lib/`, one component
-  test. No page or routing tests.
+- **Tests:** 11 files, 32 tests (2026-10-26) — `lib` helpers, every slice's `lib/`, the
+  server's input validation and pipeline rules, one component test. No page, routing or API-route tests;
+  the API was checked end to end by hand (curl and the browser).
 
 ---
 

@@ -14,8 +14,8 @@ export function CompaniesPage() {
         eyebrow={t("companies.eyebrow")}
         title={t("companies.title")}
         lead={t("companies.lead")}
-        image="/img/paris-evening.jpg"
-        position="center 30%"
+        image="/img/office.jpg"
+        position="center 50%"
       />
       <section className="container-page pb-20">
         <CompanyFilters search={search} total={base} countries={countries} onChange={update} />

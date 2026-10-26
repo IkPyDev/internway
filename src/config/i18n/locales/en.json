@@ -24,7 +24,8 @@
     "about": "About us",
     "login": "Log in",
     "start": "Get started",
-    "menu": "Menu"
+    "menu": "Menu",
+    "vacancies": "Vacancies"
   },
   "footer": {
     "about": "An international internship platform connecting students and graduates from Uzbekistan with employers around the world.",
@@ -82,7 +83,7 @@
     "searchPlaceholder": "e.g. software, marketing, Germany...",
     "ctaPrimary": "Browse internship programmes",
     "ctaSecondary": "About us",
-    "photoAlt": "Students at their hotel internship",
+    "photoAlt": "Graduates throwing their caps",
     "today": "posted today",
     "stats": {
       "total": "open internships",
@@ -122,7 +123,7 @@
       "eyebrow": "Services",
       "title": "How we help",
       "lead": "From finding an internship to applying — we are with you.",
-      "photoAlt": "Students abroad with USTravel",
+      "photoAlt": "Students walking together",
       "students": {
         "title": "Profile and CV",
         "text": "Upload your CV, show your skills and languages. You decide who sees your profile."
@@ -473,24 +474,299 @@
     }
   },
   "login": {
-    "title": "Your account",
-    "lead": "Student, employer and admin accounts launch with the first version.",
+    "email": {
+      "title": "Sign in",
+      "lead": "Enter your email and we will send you a one-time code. No password needed."
+    },
+    "code": {
+      "title": "Enter the code",
+      "lead": "We sent a code to {{email}}."
+    },
+    "profile": {
+      "title": "Who are you?",
+      "lead": "Choose an account type. It cannot be changed later."
+    },
     "roles": {
       "student": {
         "title": "Student",
-        "text": "Profile, CV, application status"
+        "text": "Resume, applications"
       },
       "employer": {
         "title": "Employer",
         "text": "Vacancies, candidates"
       }
     },
-    "notify": "Notify me at launch",
-    "browse": "Browse internships for now"
+    "emailLabel": "Email",
+    "getCode": "Get code",
+    "codeLabel": "Code",
+    "signIn": "Sign in",
+    "changeEmail": "Use another email",
+    "role": "Account type",
+    "name": "Full name",
+    "company": "Company name",
+    "continue": "Continue"
   },
   "notFound": {
     "title": "Page not found",
     "text": "This address does not exist or has moved.",
     "home": "Back to home"
+  },
+  "auth": {
+    "account": "Account",
+    "logout": "Log out",
+    "signInRequired": "Sign in to open this page.",
+    "forbidden": "This page is for another type of account."
+  },
+  "roles": {
+    "student": "Student",
+    "employer": "Employer",
+    "admin": "Admin",
+    "none": "No role yet"
+  },
+  "status": {
+    "pending": "Under review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "sent": "Sent",
+    "viewed": "Viewed",
+    "accepted": "Invited",
+    "invited": "Interview",
+    "offer": "Offer",
+    "hired": "Hired",
+    "withdrawn": "Withdrawn",
+    "closed": "Closed"
+  },
+  "errors": {
+    "invalid_email": "Enter a valid email address.",
+    "invalid_code": "Wrong code. Check it and try again.",
+    "invalid_input": "Check the form: a required field is empty or too long.",
+    "unauthorized": "Your session has ended. Sign in again.",
+    "forbidden": "You do not have access to this.",
+    "blocked": "This account is blocked. Contact the administrator.",
+    "not_found": "Not found.",
+    "resume_required": "You can apply once your resume is approved by the moderator.",
+    "already_applied": "You have already applied to this vacancy.",
+    "otp_unavailable": "Sign-in codes cannot be sent right now. Try again later.",
+    "server_error": "Something went wrong. Try again.",
+    "company_required": "Create your company first.",
+    "owner_only": "Only the company owner can do this.",
+    "user_exists": "This email already has an account. Invite only new emails.",
+    "already_invited": "This email is already invited.",
+    "invalid_salary": "The lower salary must not exceed the upper one.",
+    "cannot_withdraw": "This application can no longer be withdrawn.",
+    "application_withdrawn": "The student withdrew this application."
+  },
+  "vacancies": {
+    "eyebrow": "Vacancies",
+    "title": "Vacancies from employers",
+    "lead": "Internships and jobs posted on InternWay by employers and checked by our moderator.",
+    "searchPlaceholder": "Title, company, country or city",
+    "found": "Vacancies found: {{count}}",
+    "empty": "No vacancies yet. Check back soon.",
+    "deadline": "Apply by",
+    "back": "All vacancies",
+    "kind": {
+      "internship": "Internship",
+      "job": "Job",
+      "program": "Programme"
+    },
+    "schedule": {
+      "office": "Office",
+      "remote": "Remote",
+      "hybrid": "Hybrid"
+    },
+    "employment": {
+      "full": "Full time",
+      "part": "Part time",
+      "project": "Project"
+    },
+    "experience": {
+      "none": "No experience",
+      "1-3": "1–3 years",
+      "3-6": "3–6 years",
+      "6+": "6+ years"
+    },
+    "filters": {
+      "anyKind": "Any type",
+      "anySchedule": "Any format",
+      "anyExperience": "Any experience",
+      "anyCountry": "Any country",
+      "salary": "Salary from",
+      "reset": "Reset filters"
+    },
+    "skills": "Key skills"
+  },
+  "apply": {
+    "title": "Apply",
+    "signIn": "Sign in as a student to apply with your resume.",
+    "coverLetter": "Cover letter (optional)",
+    "submit": "Send application",
+    "done": "Application sent. Track it under My applications.",
+    "studentsOnly": "Only students can apply."
+  },
+  "resume": {
+    "title": "My resume",
+    "lead": "Employers see this resume when you apply. Every change is checked by the moderator first.",
+    "save": "Save and send for review",
+    "saved": "Saved. The moderator will review it.",
+    "fields": {
+      "title": "Desired position",
+      "phone": "Phone",
+      "city": "City",
+      "about": "About me",
+      "skills": "Skills",
+      "education": "Education",
+      "experience": "Experience",
+      "languages": "Languages"
+    },
+    "statusHint": {
+      "pending": "The moderator is reviewing your resume.",
+      "approved": "You can apply to vacancies.",
+      "rejected": "Fix the resume and save it again."
+    }
+  },
+  "myApplications": {
+    "title": "My applications",
+    "lead": "Every vacancy you applied to and what the employer decided.",
+    "empty": "No applications yet. Find a vacancy and apply.",
+    "withdraw": "Withdraw application"
+  },
+  "myVacancies": {
+    "title": "My vacancies",
+    "lead": "A vacancy is published after the moderator approves it. Editing sends it back for review.",
+    "new": "New vacancy",
+    "empty": "No vacancies yet. Post your first one.",
+    "candidates": "Candidates: {{count}}",
+    "edit": "Edit",
+    "close": "Close",
+    "reopen": "Reopen",
+    "company": {
+      "pending": "Your company is awaiting verification. Vacancies go live once both the company and the vacancy are approved.",
+      "rejected": "Your company was not verified. Fix the profile to send it back for review."
+    }
+  },
+  "vacancyForm": {
+    "newTitle": "New vacancy",
+    "editTitle": "Edit vacancy",
+    "title": "Title",
+    "kind": "Type",
+    "country": "Country",
+    "city": "City",
+    "description": "Description: duties, requirements, conditions",
+    "submit": "Send for review",
+    "moderationNote": "The moderator checks every vacancy before it is published, usually within one working day.",
+    "schedule": "Work format",
+    "employment": "Employment",
+    "experience": "Experience",
+    "currency": "Currency",
+    "salaryFrom": "Salary from (per month)",
+    "salaryTo": "Salary to (per month)",
+    "skills": "Key skills",
+    "skillsHint": "React, TypeScript, English B2"
+  },
+  "candidates": {
+    "title": "Candidates",
+    "lead": "Students who applied. Opening this page marks new applications as viewed.",
+    "empty": "No applications yet.",
+    "resume": "Resume",
+    "accept": "Invite",
+    "reject": "Decline",
+    "note": "Message to the candidate",
+    "notePlaceholder": "Message the candidate sees: interview time, offer details or why not",
+    "actions": {
+      "invited": "Invite to interview",
+      "offer": "Make an offer",
+      "hired": "Hired",
+      "rejected": "Decline"
+    }
+  },
+  "moderation": {
+    "approve": "Approve",
+    "reject": "Reject",
+    "cancel": "Cancel",
+    "reason": "Reason",
+    "reasonPlaceholder": "Why is it rejected? The author will see this.",
+    "details": "Details"
+  },
+  "admin": {
+    "title": "Administration",
+    "lead": "Moderate resumes and vacancies, manage users and follow applications.",
+    "tabs": {
+      "resumes": "Resumes",
+      "vacancies": "Vacancies",
+      "users": "Users",
+      "applications": "Applications",
+      "overview": "Overview",
+      "companies": "Companies"
+    },
+    "empty": "Nothing here.",
+    "block": "Block",
+    "unblock": "Unblock",
+    "queues": "Waiting for review",
+    "totals": "Platform",
+    "stats": {
+      "students": "Students",
+      "employers": "Employers",
+      "companies": "Verified companies",
+      "live_vacancies": "Live vacancies",
+      "applications": "Applications",
+      "hired": "Hired",
+      "pending_companies": "Companies",
+      "pending_vacancies": "Vacancies",
+      "pending_resumes": "Resumes"
+    },
+    "companyCounts": "managers: {{members}} · vacancies: {{vacancies}}",
+    "companyNotApproved": "The company is not verified yet: this vacancy stays hidden even if approved.",
+    "applicationsCount": "applications: {{count}}"
+  },
+  "salary": {
+    "range": "{{from}} – {{to}} {{currency}}",
+    "from": "from {{from}} {{currency}}",
+    "to": "up to {{to}} {{currency}}",
+    "none": "Salary not specified"
+  },
+  "saved": {
+    "title": "Saved",
+    "lead": "Vacancies you bookmarked.",
+    "empty": "Nothing saved yet. Use \"Save\" on a vacancy.",
+    "add": "Save",
+    "remove": "Remove from saved"
+  },
+  "company": {
+    "title": "Company",
+    "eyebrow": "Company",
+    "lead": "Your public company page. Students see it next to every vacancy.",
+    "fields": {
+      "name": "Company name",
+      "industry": "Industry",
+      "website": "Website",
+      "country": "Country",
+      "city": "City",
+      "size": "Size",
+      "sizePlaceholder": "Number of employees",
+      "description": "About the company"
+    },
+    "employees": "{{size}} employees",
+    "save": "Save",
+    "saved": "Saved.",
+    "ownerOnly": "Only the company owner can edit the profile.",
+    "statusHint": {
+      "pending": "The moderator is verifying your company.",
+      "approved": "Verified. Approved vacancies are public.",
+      "rejected": "Not verified. Fix the profile and save it again."
+    },
+    "team": {
+      "title": "Team",
+      "lead": "Managers post vacancies and work with candidates.",
+      "owner": "Owner",
+      "remove": "Remove",
+      "invited": "Invited, has not signed in yet",
+      "cancel": "Cancel",
+      "emailPlaceholder": "manager@company.com",
+      "invite": "Invite",
+      "inviteHint": "The invited person signs in with this email and joins your company automatically."
+    },
+    "openVacancies": "Open vacancies: {{count}}",
+    "noVacancies": "No open vacancies right now."
   }
 }

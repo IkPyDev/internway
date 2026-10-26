@@ -1,4 +1,13 @@
-import { createEntityKeys, paginate, readEnum, readPage, relativeDate, safeUrl, toWords } from "@/lib"
+import {
+  apiErrorCode,
+  createEntityKeys,
+  paginate,
+  readEnum,
+  readPage,
+  relativeDate,
+  safeUrl,
+  toWords,
+} from "@/lib"
 
 describe("lib", () => {
   it("createEntityKeys shares a prefix", () => {
@@ -30,5 +39,11 @@ describe("lib", () => {
     expect(relativeDate("2026-10-20T01:00:00Z", now)).toEqual({ key: "today" })
     expect(relativeDate("2026-10-15T12:00:00Z", now)).toEqual({ key: "daysAgo", count: 5 })
     expect(relativeDate(null, now)).toEqual({ key: "unknown" })
+  })
+
+  it("apiErrorCode reads the server's code and falls back", () => {
+    expect(apiErrorCode({ response: { data: { error: "resume_required" } } })).toBe("resume_required")
+    expect(apiErrorCode(new Error("Network Error"))).toBe("server_error")
+    expect(apiErrorCode(null)).toBe("server_error")
   })
 })

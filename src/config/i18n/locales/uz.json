@@ -24,7 +24,8 @@
     "about": "Biz haqimizda",
     "login": "Kirish",
     "start": "Boshlash",
-    "menu": "Menyu"
+    "menu": "Menyu",
+    "vacancies": "Vakansiyalar"
   },
   "footer": {
     "about": "O'zbekistonlik talabalar va bitiruvchilarni dunyo bo'ylab ish beruvchilar bilan bog'laydigan xalqaro amaliyot platformasi.",
@@ -82,7 +83,7 @@
     "searchPlaceholder": "Masalan: software, marketing, Germany...",
     "ctaPrimary": "Amaliyot dasturlarini ko'rish",
     "ctaSecondary": "Biz haqimizda",
-    "photoAlt": "Mehmonxonada amaliyot o'tayotgan talabalar",
+    "photoAlt": "Bitiruvchilar shlyapalarini osmonga otmoqda",
     "today": "bugungi e'lon",
     "stats": {
       "total": "faol amaliyot",
@@ -122,7 +123,7 @@
       "eyebrow": "Xizmatlar",
       "title": "Biz qanday yordam beramiz?",
       "lead": "Amaliyot topishdan ariza topshirishgacha — yoningizdamiz.",
-      "photoAlt": "USTravel bilan xorijdagi talabalar",
+      "photoAlt": "Birga ketayotgan talabalar",
       "students": {
         "title": "Profil va CV",
         "text": "CV joylang, ko'nikma va tillaringizni ko'rsating. Profilni kim ko'rishini o'zingiz tanlaysiz."
@@ -473,24 +474,299 @@
     }
   },
   "login": {
-    "title": "Shaxsiy kabinet",
-    "lead": "Talaba, ish beruvchi va administrator kabinetlari birinchi versiyada ishga tushadi.",
+    "email": {
+      "title": "Kirish",
+      "lead": "Emailingizni kiriting, bir martalik kod yuboramiz. Parol shart emas."
+    },
+    "code": {
+      "title": "Kodni kiriting",
+      "lead": "{{email}} manziliga kod yubordik."
+    },
+    "profile": {
+      "title": "Siz kimsiz?",
+      "lead": "Akkaunt turini tanlang. Keyin o'zgartirib bo'lmaydi."
+    },
     "roles": {
       "student": {
         "title": "Talaba",
-        "text": "Profil, CV, arizalar holati"
+        "text": "Rezyume, arizalar"
       },
       "employer": {
         "title": "Ish beruvchi",
         "text": "Vakansiyalar, nomzodlar"
       }
     },
-    "notify": "Ishga tushganda xabar berish",
-    "browse": "Hozircha amaliyotlarni ko'rish"
+    "emailLabel": "Email",
+    "getCode": "Kod olish",
+    "codeLabel": "Kod",
+    "signIn": "Kirish",
+    "changeEmail": "Boshqa email",
+    "role": "Akkaunt turi",
+    "name": "Ism-familiya",
+    "company": "Kompaniya nomi",
+    "continue": "Davom etish"
   },
   "notFound": {
     "title": "Sahifa topilmadi",
     "text": "Bu manzil mavjud emas yoki ko'chirilgan.",
     "home": "Bosh sahifaga"
+  },
+  "auth": {
+    "account": "Kabinet",
+    "logout": "Chiqish",
+    "signInRequired": "Bu sahifani ochish uchun tizimga kiring.",
+    "forbidden": "Bu sahifa boshqa turdagi akkaunt uchun."
+  },
+  "roles": {
+    "student": "Talaba",
+    "employer": "Ish beruvchi",
+    "admin": "Administrator",
+    "none": "Rol tanlanmagan"
+  },
+  "status": {
+    "pending": "Tekshiruvda",
+    "approved": "Tasdiqlangan",
+    "rejected": "Rad etilgan",
+    "sent": "Yuborilgan",
+    "viewed": "Ko'rilgan",
+    "accepted": "Taklif qilingan",
+    "invited": "Suhbatga taklif",
+    "offer": "Taklif (offer)",
+    "hired": "Ishga olindi",
+    "withdrawn": "Qaytarib olingan",
+    "closed": "Yopilgan"
+  },
+  "errors": {
+    "invalid_email": "To'g'ri email manzil kiriting.",
+    "invalid_code": "Kod noto'g'ri. Tekshirib, qayta urining.",
+    "invalid_input": "Formani tekshiring: majburiy maydon bo'sh yoki juda uzun.",
+    "unauthorized": "Sessiya tugadi. Qaytadan kiring.",
+    "forbidden": "Bunga ruxsatingiz yo'q.",
+    "blocked": "Bu akkaunt bloklangan. Administratorga murojaat qiling.",
+    "not_found": "Topilmadi.",
+    "resume_required": "Rezyumeingiz moderator tomonidan tasdiqlangach ariza yubora olasiz.",
+    "already_applied": "Bu vakansiyaga allaqachon ariza yuborgansiz.",
+    "otp_unavailable": "Hozir kirish kodini yuborib bo'lmaydi. Keyinroq urinib ko'ring.",
+    "server_error": "Xatolik yuz berdi. Qayta urinib ko'ring.",
+    "company_required": "Avval kompaniyangizni yarating.",
+    "owner_only": "Buni faqat kompaniya egasi qila oladi.",
+    "user_exists": "Bu email bilan akkaunt allaqachon bor. Faqat yangi emaillarni taklif qiling.",
+    "already_invited": "Bu email allaqachon taklif qilingan.",
+    "invalid_salary": "Maoshning quyi chegarasi yuqorisidan katta bo'lmasin.",
+    "cannot_withdraw": "Bu arizani endi qaytarib bo'lmaydi.",
+    "application_withdrawn": "Talaba bu arizani qaytarib olgan."
+  },
+  "vacancies": {
+    "eyebrow": "Vakansiyalar",
+    "title": "Ish beruvchilardan vakansiyalar",
+    "lead": "Ish beruvchilar InternWay'da joylagan va moderatorimiz tekshirgan amaliyot va ish o'rinlari.",
+    "searchPlaceholder": "Lavozim, kompaniya, davlat yoki shahar",
+    "found": "{{count}} ta vakansiya topildi",
+    "empty": "Hozircha vakansiya yo'q. Tez orada qayting.",
+    "deadline": "Muddat",
+    "back": "Barcha vakansiyalar",
+    "kind": {
+      "internship": "Amaliyot",
+      "job": "Ish",
+      "program": "Dastur"
+    },
+    "schedule": {
+      "office": "Ofisda",
+      "remote": "Masofaviy",
+      "hybrid": "Gibrid"
+    },
+    "employment": {
+      "full": "To'liq stavka",
+      "part": "Yarim stavka",
+      "project": "Loyiha"
+    },
+    "experience": {
+      "none": "Tajribasiz",
+      "1-3": "1–3 yil",
+      "3-6": "3–6 yil",
+      "6+": "6 yildan ko'p"
+    },
+    "filters": {
+      "anyKind": "Istalgan tur",
+      "anySchedule": "Istalgan format",
+      "anyExperience": "Istalgan tajriba",
+      "anyCountry": "Istalgan davlat",
+      "salary": "Maosh (dan)",
+      "reset": "Filtrlarni tozalash"
+    },
+    "skills": "Asosiy ko'nikmalar"
+  },
+  "apply": {
+    "title": "Ariza yuborish",
+    "signIn": "Rezyume bilan ariza yuborish uchun talaba sifatida kiring.",
+    "coverLetter": "Qo'shimcha xat (ixtiyoriy)",
+    "submit": "Ariza yuborish",
+    "done": "Ariza yuborildi. Holatini \"Arizalarim\" bo'limida kuzating.",
+    "studentsOnly": "Faqat talabalar ariza yubora oladi."
+  },
+  "resume": {
+    "title": "Mening rezyumem",
+    "lead": "Ariza yuborganingizda ish beruvchi shu rezyumeni ko'radi. Har bir o'zgarishni avval moderator tekshiradi.",
+    "save": "Saqlash va tekshiruvga yuborish",
+    "saved": "Saqlandi. Moderator tekshiradi.",
+    "fields": {
+      "title": "Istalgan lavozim",
+      "phone": "Telefon",
+      "city": "Shahar",
+      "about": "O'zim haqimda",
+      "skills": "Ko'nikmalar",
+      "education": "Ta'lim",
+      "experience": "Tajriba",
+      "languages": "Tillar"
+    },
+    "statusHint": {
+      "pending": "Moderator rezyumeingizni tekshirmoqda.",
+      "approved": "Vakansiyalarga ariza yuborishingiz mumkin.",
+      "rejected": "Rezyumeni tuzatib, qayta saqlang."
+    }
+  },
+  "myApplications": {
+    "title": "Arizalarim",
+    "lead": "Ariza yuborgan barcha vakansiyalar va ish beruvchining qarori.",
+    "empty": "Hozircha ariza yo'q. Vakansiya toping va ariza yuboring.",
+    "withdraw": "Arizani qaytarib olish"
+  },
+  "myVacancies": {
+    "title": "Mening vakansiyalarim",
+    "lead": "Vakansiya moderator tasdiqlagach e'lon qilinadi. Tahrirlash uni qayta tekshiruvga yuboradi.",
+    "new": "Yangi vakansiya",
+    "empty": "Hozircha vakansiya yo'q. Birinchisini joylang.",
+    "candidates": "Nomzodlar: {{count}}",
+    "edit": "Tahrirlash",
+    "close": "Yopish",
+    "reopen": "Qayta ochish",
+    "company": {
+      "pending": "Kompaniyangiz tekshiruvda. Kompaniya va vakansiya ikkalasi tasdiqlangach e'lon saytda chiqadi.",
+      "rejected": "Kompaniyangiz tasdiqlanmadi. Profilni tuzatib, qayta tekshiruvga yuboring."
+    }
+  },
+  "vacancyForm": {
+    "newTitle": "Yangi vakansiya",
+    "editTitle": "Vakansiyani tahrirlash",
+    "title": "Nomi",
+    "kind": "Turi",
+    "country": "Davlat",
+    "city": "Shahar",
+    "description": "Tavsif: vazifalar, talablar, shartlar",
+    "submit": "Tekshiruvga yuborish",
+    "moderationNote": "Moderator har bir vakansiyani e'lon qilishdan oldin tekshiradi, odatda bir ish kuni ichida.",
+    "schedule": "Ish formati",
+    "employment": "Bandlik",
+    "experience": "Tajriba",
+    "currency": "Valyuta",
+    "salaryFrom": "Maosh (oyiga, dan)",
+    "salaryTo": "Maosh (oyiga, gacha)",
+    "skills": "Asosiy ko'nikmalar",
+    "skillsHint": "React, TypeScript, English B2"
+  },
+  "candidates": {
+    "title": "Nomzodlar",
+    "lead": "Ariza yuborgan talabalar. Sahifani ochganingizda yangi arizalar \"ko'rilgan\" bo'ladi.",
+    "empty": "Hozircha ariza yo'q.",
+    "resume": "Rezyume",
+    "accept": "Taklif qilish",
+    "reject": "Rad etish",
+    "note": "Nomzodga xabar",
+    "notePlaceholder": "Nomzod ko'radigan xabar: suhbat vaqti, taklif shartlari yoki rad sababi",
+    "actions": {
+      "invited": "Suhbatga taklif qilish",
+      "offer": "Taklif (offer) berish",
+      "hired": "Ishga olindi",
+      "rejected": "Rad etish"
+    }
+  },
+  "moderation": {
+    "approve": "Tasdiqlash",
+    "reject": "Rad etish",
+    "cancel": "Bekor qilish",
+    "reason": "Sabab",
+    "reasonPlaceholder": "Nega rad etildi? Muallif buni ko'radi.",
+    "details": "Batafsil"
+  },
+  "admin": {
+    "title": "Boshqaruv",
+    "lead": "Rezyume va vakansiyalarni moderatsiya qiling, foydalanuvchilarni boshqaring, arizalarni kuzating.",
+    "tabs": {
+      "resumes": "Rezyumelar",
+      "vacancies": "Vakansiyalar",
+      "users": "Foydalanuvchilar",
+      "applications": "Arizalar",
+      "overview": "Umumiy",
+      "companies": "Kompaniyalar"
+    },
+    "empty": "Bu yerda hech narsa yo'q.",
+    "block": "Bloklash",
+    "unblock": "Blokdan chiqarish",
+    "queues": "Tekshiruvni kutmoqda",
+    "totals": "Platforma",
+    "stats": {
+      "students": "Talabalar",
+      "employers": "Ish beruvchilar",
+      "companies": "Tasdiqlangan kompaniyalar",
+      "live_vacancies": "Faol vakansiyalar",
+      "applications": "Arizalar",
+      "hired": "Ishga olinganlar",
+      "pending_companies": "Kompaniyalar",
+      "pending_vacancies": "Vakansiyalar",
+      "pending_resumes": "Rezyumelar"
+    },
+    "companyCounts": "menejerlar: {{members}} · vakansiyalar: {{vacancies}}",
+    "companyNotApproved": "Kompaniya hali tasdiqlanmagan: vakansiya tasdiqlansa ham ko'rinmaydi.",
+    "applicationsCount": "arizalar: {{count}}"
+  },
+  "salary": {
+    "range": "{{from}} – {{to}} {{currency}}",
+    "from": "{{from}} {{currency}} dan",
+    "to": "{{to}} {{currency}} gacha",
+    "none": "Maosh ko'rsatilmagan"
+  },
+  "saved": {
+    "title": "Saqlanganlar",
+    "lead": "Siz belgilagan vakansiyalar.",
+    "empty": "Hozircha hech narsa saqlanmagan. Vakansiyada \"Saqlash\" tugmasini bosing.",
+    "add": "Saqlash",
+    "remove": "Saqlanganlardan olib tashlash"
+  },
+  "company": {
+    "title": "Kompaniya",
+    "eyebrow": "Kompaniya",
+    "lead": "Kompaniyangizning ommaviy sahifasi. Talabalar uni har bir vakansiya yonida ko'radi.",
+    "fields": {
+      "name": "Kompaniya nomi",
+      "industry": "Soha",
+      "website": "Veb-sayt",
+      "country": "Davlat",
+      "city": "Shahar",
+      "size": "Hajmi",
+      "sizePlaceholder": "Xodimlar soni",
+      "description": "Kompaniya haqida"
+    },
+    "employees": "{{size}} xodim",
+    "save": "Saqlash",
+    "saved": "Saqlandi.",
+    "ownerOnly": "Profilni faqat kompaniya egasi tahrirlay oladi.",
+    "statusHint": {
+      "pending": "Moderator kompaniyangizni tekshirmoqda.",
+      "approved": "Tasdiqlangan. Tasdiqlangan vakansiyalar saytda ko'rinadi.",
+      "rejected": "Tasdiqlanmadi. Profilni tuzatib, qayta saqlang."
+    },
+    "team": {
+      "title": "Jamoa",
+      "lead": "Menejerlar vakansiya joylaydi va nomzodlar bilan ishlaydi.",
+      "owner": "Egasi",
+      "remove": "Chiqarish",
+      "invited": "Taklif qilingan, hali kirmagan",
+      "cancel": "Bekor qilish",
+      "emailPlaceholder": "menejer@kompaniya.uz",
+      "invite": "Taklif qilish",
+      "inviteHint": "Taklif qilingan odam shu email bilan kirganda avtomatik kompaniyangizga qo'shiladi."
+    },
+    "openVacancies": "Ochiq vakansiyalar: {{count}}",
+    "noVacancies": "Hozircha ochiq vakansiya yo'q."
   }
 }

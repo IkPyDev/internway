@@ -1,3 +1,4 @@
+export { apiErrorCode } from "./api-error"
 export { type Page, paginate } from "./paginate"
 export { createEntityKeys } from "./query-keys"
 export { type RelativeDate, relativeDate } from "./relative-date"

@@ -16,7 +16,7 @@ export const REGIONS: { key: RegionKey; label: string; en: string; photo: string
   {
     key: "germany",
     label: "regions.germany",
-    photo: "/img/cologne.jpg",
+    photo: "/img/berlin.jpg",
     en: "Germany",
     words: [
       "germany",
@@ -57,7 +57,7 @@ export const REGIONS: { key: RegionKey; label: string; en: string; photo: string
   {
     key: "europe",
     label: "regions.europe",
-    photo: "/img/paris-evening.jpg",
+    photo: "/img/paris.jpg",
     en: "Europe",
     words: [
       "europe",

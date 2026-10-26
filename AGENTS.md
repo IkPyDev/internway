@@ -19,9 +19,10 @@
 and programmes for students and graduates from Uzbekistan, and connects them with
 employers and universities. UI copy is English (default), Uzbek and Russian.
 
-Today it is a **frontend only**: data comes from static JSON in `public/data/`,
-produced by the Python scripts in `scripts/`. Accounts, applications, the admin
-panel and payments need a backend that does not exist yet (see `ARCHITECTURE.md` §
+Scraped listings come from static JSON in `public/data/`, produced by the Python
+scripts in `scripts/`. Accounts (email + one-time code), resumes, employer vacancies,
+applications and admin moderation go through the API server, a separate repo
+(`IkPyDev/internway_back`: Hono + Postgres, proxied at `/api`). Payments do not exist yet (see `ARCHITECTURE.md` §
 Known gaps).
 
 **pnpm only** (`pnpm@9.12.3` via `packageManager`, Node ≥20). Not a monorepo.
