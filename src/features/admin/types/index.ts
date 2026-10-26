@@ -1,12 +1,32 @@
-import type { ApplicationStatus, CompanyFields, ModerationStatus, Resume, Role, Vacancy } from "@/types"
+import type {
+  ApplicationStatus,
+  CompanyFields,
+  CompanySummary,
+  ModerationStatus,
+  Resume,
+  Role,
+  Vacancy,
+  VacancyStatus,
+} from "@/types"
 
 export type AdminTab = "overview" | "companies" | "vacancies" | "resumes" | "users" | "applications"
 export type ModeratedTable = "companies" | "resumes" | "vacancies"
 
+export type RoleFilter = Role | "none"
+
+/** Everything the admin page keeps in the URL: tab, filters and the open detail. */
 export interface AdminSearch {
   tab?: AdminTab
   status?: ModerationStatus
+  q?: string
+  role?: RoleFilter
+  blocked?: boolean
+  user?: number
+  company?: number
+  vacancy?: number
 }
+
+export type AdminView = Pick<AdminSearch, "user" | "company" | "vacancy">
 
 export interface AdminStats {
   students: number
@@ -29,6 +49,7 @@ export interface AdminUser {
   created_at: string
   company: string | null
   applications: number
+  resume_status: ModerationStatus | null
 }
 
 export interface AdminCompany extends CompanyFields {
@@ -58,6 +79,7 @@ export interface AdminApplication {
   vacancy_id: number
   title: string
   company: string
+  student_id: number
   email: string
   name: string
 }
@@ -68,4 +90,23 @@ export interface AdminRows {
   vacancies: AdminVacancy[]
   users: AdminUser[]
   applications: AdminApplication[]
+}
+
+export interface AdminUserDetail {
+  id: number
+  email: string
+  role: Role | null
+  name: string
+  blocked: boolean
+  created_at: string
+  company: CompanySummary | null
+  resume: Resume | null
+  applications: Omit<AdminApplication, "student_id" | "email" | "name">[]
+}
+
+export interface AdminCompanyDetail extends Omit<AdminCompany, "members" | "vacancies"> {
+  owner_id: number
+  created_at: string
+  members: { id: number; email: string; name: string; blocked: boolean; isOwner: boolean }[]
+  vacancies: { id: number; title: string; status: VacancyStatus; created_at: string; applications: number }[]
 }

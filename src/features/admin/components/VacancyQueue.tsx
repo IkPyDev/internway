@@ -1,14 +1,20 @@
-import { useTranslation } from "react-i18next"
 import { Salary } from "@/features/vacancies"
 import { useModerationQueue } from "../hooks/useAdminList"
 import { useAdminPanel } from "../hooks/useAdminPanel"
+import type { AdminVacancy } from "../types"
 import { ModerationCard } from "./ModerationCard"
 import { QueueStates } from "./QueueStates"
 
+const SEARCH_KEYS: (keyof AdminVacancy)[] = ["title", "company", "city", "country", "skills"]
+
 export function VacancyQueue() {
-  const { t } = useTranslation()
   const panel = useAdminPanel()
-  const { items, status, error, refetch } = useModerationQueue("vacancies", panel.status)
+  const { items, status, error, refetch } = useModerationQueue(
+    "vacancies",
+    panel.status,
+    panel.q,
+    SEARCH_KEYS,
+  )
   return (
     <QueueStates status={status} error={error} refetch={() => refetch()} empty={items.length === 0}>
       <ul className="grid gap-4">
@@ -20,24 +26,14 @@ export function VacancyQueue() {
             status={v.status}
             reason={v.reject_reason}
             busy={panel.busy}
+            onOpen={() => panel.open({ vacancy: v.id })}
             onApprove={() => panel.approve("vacancies", v.id)}
             onReject={(reason) => panel.reject("vacancies", v.id, reason)}
           >
-            {v.company_status !== "approved" && (
-              <p className="mb-2 rounded-md bg-amber-50 px-3 py-2 text-sm text-amber-800">
-                {t("admin.companyNotApproved")}
-              </p>
-            )}
-            <p className="mb-2 text-sm font-semibold">
+            <b className="text-foreground">
               <Salary from={v.salary_from} to={v.salary_to} currency={v.currency} />
-            </p>
-            <p className="mb-2 text-sm text-muted-foreground">
-              {t(`vacancies.kind.${v.kind}`)} · {t(`vacancies.schedule.${v.schedule}`)} ·{" "}
-              {t(`vacancies.employment.${v.employment}`)} · {t(`vacancies.experience.${v.experience}`)}
-              {v.deadline && ` · ${t("vacancies.deadline")}: ${v.deadline}`}
-            </p>
-            {v.skills && <p className="mb-2 text-sm">{v.skills}</p>}
-            <p className="text-sm whitespace-pre-line">{v.description}</p>
+            </b>{" "}
+            · {v.description}
           </ModerationCard>
         ))}
       </ul>

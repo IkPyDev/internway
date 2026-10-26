@@ -18,3 +18,9 @@ export function readPage(value: unknown): number | undefined {
 export function readEnum<T extends string>(value: unknown, allowed: readonly T[]): T | undefined {
   return allowed.includes(value as T) ? (value as T) : undefined
 }
+
+/** Reads a positive whole-number id. */
+export function readId(value: unknown): number | undefined {
+  const n = Number(value)
+  return Number.isInteger(n) && n > 0 ? n : undefined
+}

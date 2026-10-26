@@ -1,14 +1,19 @@
-import { useTranslation } from "react-i18next"
-import { safeUrl } from "@/lib"
 import { useModerationQueue } from "../hooks/useAdminList"
 import { useAdminPanel } from "../hooks/useAdminPanel"
+import type { AdminCompany } from "../types"
 import { ModerationCard } from "./ModerationCard"
 import { QueueStates } from "./QueueStates"
 
+const SEARCH_KEYS: (keyof AdminCompany)[] = ["name", "industry", "city", "country", "owner_email", "website"]
+
 export function CompanyQueue() {
-  const { t } = useTranslation()
   const panel = useAdminPanel()
-  const { items, status, error, refetch } = useModerationQueue("companies", panel.status)
+  const { items, status, error, refetch } = useModerationQueue(
+    "companies",
+    panel.status,
+    panel.q,
+    SEARCH_KEYS,
+  )
   return (
     <QueueStates status={status} error={error} refetch={() => refetch()} empty={items.length === 0}>
       <ul className="grid gap-4">
@@ -22,26 +27,11 @@ export function CompanyQueue() {
             status={c.status}
             reason={c.reject_reason}
             busy={panel.busy}
+            onOpen={() => panel.open({ company: c.id })}
             onApprove={() => panel.approve("companies", c.id)}
             onReject={(reason) => panel.reject("companies", c.id, reason)}
           >
-            <dl className="grid gap-2 text-sm">
-              {c.website && (
-                <a
-                  href={safeUrl(c.website)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="break-all text-navy-700 underline"
-                >
-                  {c.website}
-                </a>
-              )}
-              {c.size && <p>{t("company.employees", { size: c.size })}</p>}
-              <p className="text-muted-foreground">
-                {t("admin.companyCounts", { members: c.members, vacancies: c.vacancies })}
-              </p>
-              {c.description && <p className="whitespace-pre-line">{c.description}</p>}
-            </dl>
+            {c.description}
           </ModerationCard>
         ))}
       </ul>

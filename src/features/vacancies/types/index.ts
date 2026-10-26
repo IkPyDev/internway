@@ -4,10 +4,14 @@ import type {
   Currency,
   Experience,
   ModerationStatus,
+  ResumeCertificate,
+  ResumeJob,
+  ResumeLink,
   Schedule,
   Vacancy,
   VacancyKind,
   VacancySummary,
+  WorkStatus,
 } from "@/types"
 
 export interface VacanciesSearch {
@@ -72,6 +76,12 @@ export interface Candidate {
   languages: string | null
   education: string | null
   experience: string | null
+  work_status: WorkStatus | null
+  photo_id: string | null
+  file_id: string | null
+  jobs: ResumeJob[] | null
+  links: ResumeLink[] | null
+  certificates: ResumeCertificate[] | null
 }
 
 export interface CandidatesResponse {

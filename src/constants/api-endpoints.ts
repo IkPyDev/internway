@@ -7,6 +7,8 @@ export const API_ENDPOINTS = {
   logout: "api/auth/logout",
   me: "api/me",
   resume: "api/resume",
+  files: "api/files",
+  file: (id: string) => `api/files/${id}`,
   vacancies: "api/vacancies",
   vacancy: (id: number) => `api/vacancies/${id}`,
   apply: (id: number) => `api/vacancies/${id}/apply`,
@@ -26,4 +28,5 @@ export const API_ENDPOINTS = {
   adminList: (list: string) => `api/admin/${list}`,
   moderate: (table: string, id: number) => `api/admin/${table}/${id}/moderate`,
   adminUser: (id: number) => `api/admin/users/${id}`,
+  adminCompany: (id: number) => `api/admin/companies/${id}`,
 } as const

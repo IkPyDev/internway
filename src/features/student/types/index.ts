@@ -1,4 +1,4 @@
-import type { ApplicationStatus } from "@/types"
+import type { ApplicationStatus, ResumeFields } from "@/types"
 
 /** One row of the student's own applications. */
 export interface MyApplication {
@@ -15,3 +15,6 @@ export interface MyApplication {
   country: string
   city: string
 }
+
+/** Whatever part of a resume a screen has; a candidate without a resume has nulls. */
+export type ResumeViewData = { [K in keyof ResumeFields]?: ResumeFields[K] | null }

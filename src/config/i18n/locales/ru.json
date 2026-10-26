@@ -554,7 +554,11 @@
     "already_invited": "Этот email уже приглашён.",
     "invalid_salary": "Нижняя граница зарплаты не может быть больше верхней.",
     "cannot_withdraw": "Этот отклик уже нельзя отозвать.",
-    "application_withdrawn": "Студент отозвал этот отклик."
+    "application_withdrawn": "Студент отозвал этот отклик.",
+    "file_too_large": "Файл больше 4 МБ.",
+    "invalid_file": "Принимаются только изображения JPG, PNG, WEBP и файлы PDF.",
+    "too_many_files": "Вы загрузили слишком много файлов.",
+    "invalid_url": "Ссылка должна начинаться с http:// или https://."
   },
   "vacancies": {
     "eyebrow": "Вакансии",
@@ -616,14 +620,77 @@
       "about": "О себе",
       "skills": "Навыки",
       "education": "Образование",
-      "experience": "Опыт",
-      "languages": "Языки"
+      "experience": "Другой опыт (проекты, волонтёрство)",
+      "languages": "Языки",
+      "work_status": "Поиск работы"
     },
     "statusHint": {
       "pending": "Модератор проверяет ваше резюме.",
       "approved": "Можно откликаться на вакансии.",
       "rejected": "Исправьте резюме и сохраните снова."
-    }
+    },
+    "workStatus": {
+      "looking": "Активно ищу работу",
+      "open": "Рассматриваю предложения",
+      "not_looking": "Не ищу работу"
+    },
+    "sections": {
+      "basics": "Основное",
+      "about": "О себе",
+      "jobs": "Опыт работы",
+      "education": "Образование и навыки",
+      "certificates": "Сертификаты",
+      "links": "Ссылки и файлы"
+    },
+    "hints": {
+      "about": "Кто вы, что умеете, чем хотите заниматься. Пишите свободно.",
+      "jobs": "Все места работы и стажировок, начиная с последнего.",
+      "certificates": "Языковые тесты, курсы, олимпиады. Приложите скан, если есть.",
+      "links": "GitHub, LinkedIn, портфолио, Behance, личный сайт."
+    },
+    "placeholders": {
+      "about": "Например: студент 3 курса, делаю веб-приложения на React, хочу стажировку за рубежом…",
+      "skills": "React, TypeScript, Figma, английский B2",
+      "education": "Университет, факультет, годы",
+      "experience": "Проекты, волонтёрство, клубы"
+    },
+    "job": {
+      "company": "Компания или организация",
+      "position": "Должность",
+      "start": "Начало",
+      "end": "Окончание",
+      "endHint": "Оставьте окончание пустым, если работаете сейчас.",
+      "description": "Чем занимались",
+      "descriptionPlaceholder": "Задачи, результаты, инструменты"
+    },
+    "link": {
+      "label": "Название",
+      "url": "Ссылка"
+    },
+    "cert": {
+      "name": "Сертификат",
+      "issuer": "Кем выдан",
+      "year": "Год",
+      "file": "Приложить скан"
+    },
+    "add": {
+      "jobs": "Добавить место работы",
+      "links": "Добавить ссылку",
+      "certificates": "Добавить сертификат"
+    },
+    "remove": "Удалить",
+    "replace": "Заменить",
+    "uploading": "Загрузка…",
+    "openFile": "Открыть файл",
+    "resumeFile": "Файл резюме",
+    "uploadPhoto": "Загрузить фото",
+    "uploadFile": "Загрузить резюме (PDF)",
+    "photoHint": "JPG, PNG или WEBP, до 4 МБ.",
+    "fileHint": "PDF или изображение, до 4 МБ.",
+    "preview": "Предпросмотр",
+    "previewTitle": "Так работодатель видит ваше резюме",
+    "present": "по сей день",
+    "none": "Резюме пока нет."
   },
   "myApplications": {
     "title": "Мои отклики",
@@ -678,7 +745,9 @@
       "offer": "Сделать оффер",
       "hired": "Принят",
       "rejected": "Отказать"
-    }
+    },
+    "openResume": "Открыть полное резюме",
+    "coverLetter": "Сопроводительное письмо"
   },
   "moderation": {
     "approve": "Одобрить",
@@ -717,7 +786,30 @@
     },
     "companyCounts": "менеджеров: {{members}} · вакансий: {{vacancies}}",
     "companyNotApproved": "Компания ещё не проверена: вакансия не будет видна, даже если её одобрить.",
-    "applicationsCount": "откликов: {{count}}"
+    "applicationsCount": "откликов: {{count}}",
+    "searchPlaceholder": "Поиск по имени, email, городу…",
+    "roleFilters": {
+      "student": "Студенты",
+      "employer": "Компании",
+      "admin": "Админы",
+      "none": "Без роли"
+    },
+    "blockedOnly": "Заблокированные",
+    "blocked": "Заблокирован",
+    "joined": "с {{date}}",
+    "company": "Компания",
+    "owner": "владелец",
+    "manager": "менеджер",
+    "resume": "Резюме",
+    "updated": "обновлено {{date}}",
+    "applicationsTitle": "Отклики ({{count}})",
+    "about": "О компании",
+    "noDescription": "Описания пока нет.",
+    "team": "Команда ({{count}})",
+    "vacanciesTitle": "Вакансии ({{count}})",
+    "description": "Описание",
+    "openCandidates": "Смотреть кандидатов",
+    "openVacancy": "Открыть вакансию"
   },
   "salary": {
     "range": "{{from}} – {{to}} {{currency}}",

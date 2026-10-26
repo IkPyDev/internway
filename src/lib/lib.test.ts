@@ -3,6 +3,7 @@ import {
   createEntityKeys,
   paginate,
   readEnum,
+  readId,
   readPage,
   relativeDate,
   safeUrl,
@@ -27,6 +28,9 @@ describe("lib", () => {
     expect(readPage("-1")).toBeUndefined()
     expect(readEnum("uk", ["uk", "usa"] as const)).toBe("uk")
     expect(readEnum("mars", ["uk"] as const)).toBeUndefined()
+    expect(readId("12")).toBe(12)
+    expect(readId("0")).toBeUndefined()
+    expect(readId("x")).toBeUndefined()
   })
 
   it("safeUrl blocks non-http schemes", () => {

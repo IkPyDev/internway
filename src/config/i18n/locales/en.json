@@ -554,7 +554,11 @@
     "already_invited": "This email is already invited.",
     "invalid_salary": "The lower salary must not exceed the upper one.",
     "cannot_withdraw": "This application can no longer be withdrawn.",
-    "application_withdrawn": "The student withdrew this application."
+    "application_withdrawn": "The student withdrew this application.",
+    "file_too_large": "The file is larger than 4 MB.",
+    "invalid_file": "Only JPG, PNG, WEBP images and PDF files are accepted.",
+    "too_many_files": "You have uploaded too many files.",
+    "invalid_url": "A link must start with http:// or https://."
   },
   "vacancies": {
     "eyebrow": "Vacancies",
@@ -616,14 +620,77 @@
       "about": "About me",
       "skills": "Skills",
       "education": "Education",
-      "experience": "Experience",
-      "languages": "Languages"
+      "experience": "Other experience (projects, volunteering)",
+      "languages": "Languages",
+      "work_status": "Job search"
     },
     "statusHint": {
       "pending": "The moderator is reviewing your resume.",
       "approved": "You can apply to vacancies.",
       "rejected": "Fix the resume and save it again."
-    }
+    },
+    "workStatus": {
+      "looking": "Actively looking",
+      "open": "Open to offers",
+      "not_looking": "Not looking"
+    },
+    "sections": {
+      "basics": "Main",
+      "about": "About me",
+      "jobs": "Work experience",
+      "education": "Education and skills",
+      "certificates": "Certificates",
+      "links": "Links and files"
+    },
+    "hints": {
+      "about": "Who you are, what you are good at, what you want to do next. Write freely.",
+      "jobs": "Every place you worked or interned, newest first.",
+      "certificates": "Language tests, courses, olympiads. Attach a scan if you have one.",
+      "links": "GitHub, LinkedIn, portfolio, Behance, a personal site."
+    },
+    "placeholders": {
+      "about": "For example: 3rd-year student, I build web apps in React and want an internship abroad…",
+      "skills": "React, TypeScript, Figma, English B2",
+      "education": "University, faculty, years",
+      "experience": "Projects, volunteering, clubs"
+    },
+    "job": {
+      "company": "Company or organisation",
+      "position": "Position",
+      "start": "Start",
+      "end": "End",
+      "endHint": "Leave the end empty if you still work there.",
+      "description": "What you did",
+      "descriptionPlaceholder": "Tasks, results, tools"
+    },
+    "link": {
+      "label": "Name",
+      "url": "Link"
+    },
+    "cert": {
+      "name": "Certificate",
+      "issuer": "Issued by",
+      "year": "Year",
+      "file": "Attach a scan"
+    },
+    "add": {
+      "jobs": "Add a job",
+      "links": "Add a link",
+      "certificates": "Add a certificate"
+    },
+    "remove": "Remove",
+    "replace": "Replace",
+    "uploading": "Uploading…",
+    "openFile": "Open file",
+    "resumeFile": "Resume file",
+    "uploadPhoto": "Upload a photo",
+    "uploadFile": "Upload a resume (PDF)",
+    "photoHint": "JPG, PNG or WEBP, up to 4 MB.",
+    "fileHint": "PDF or an image, up to 4 MB.",
+    "preview": "Preview",
+    "previewTitle": "This is how employers see your resume",
+    "present": "now",
+    "none": "No resume yet."
   },
   "myApplications": {
     "title": "My applications",
@@ -678,7 +745,9 @@
       "offer": "Make an offer",
       "hired": "Hired",
       "rejected": "Decline"
-    }
+    },
+    "openResume": "Open the full resume",
+    "coverLetter": "Cover letter"
   },
   "moderation": {
     "approve": "Approve",
@@ -717,7 +786,30 @@
     },
     "companyCounts": "managers: {{members}} · vacancies: {{vacancies}}",
     "companyNotApproved": "The company is not verified yet: this vacancy stays hidden even if approved.",
-    "applicationsCount": "applications: {{count}}"
+    "applicationsCount": "applications: {{count}}",
+    "searchPlaceholder": "Search by name, email, city…",
+    "roleFilters": {
+      "student": "Students",
+      "employer": "Companies",
+      "admin": "Admins",
+      "none": "No role"
+    },
+    "blockedOnly": "Blocked",
+    "blocked": "Blocked",
+    "joined": "joined {{date}}",
+    "company": "Company",
+    "owner": "owner",
+    "manager": "manager",
+    "resume": "Resume",
+    "updated": "updated {{date}}",
+    "applicationsTitle": "Applications ({{count}})",
+    "about": "About the company",
+    "noDescription": "No description yet.",
+    "team": "Team ({{count}})",
+    "vacanciesTitle": "Vacancies ({{count}})",
+    "description": "Description",
+    "openCandidates": "See the candidates",
+    "openVacancy": "Open the vacancy"
   },
   "salary": {
     "range": "{{from}} – {{to}} {{currency}}",

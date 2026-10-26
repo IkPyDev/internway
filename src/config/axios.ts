@@ -12,3 +12,6 @@ apiClient.interceptors.request.use((config) => {
   config.headers.set("Accept-Language", i18n.language)
   return config
 })
+
+/** The absolute URL of an API path, for places that load it without axios (`<img src>`, links). */
+export const apiUrl = (path: string) => apiClient.getUri({ url: path })

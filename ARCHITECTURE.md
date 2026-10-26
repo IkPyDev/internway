@@ -50,10 +50,10 @@ changes what the build allows.
 | `content` | static pages: students, employers, universities, portfolio, about, 404 | `contact` |
 | `home` | the landing page | `internships`, `companies` |
 | `auth` | email + code sign-in, the session, the header account button, `RequireRole` + cabinet tabs | — |
-| `student` | the student's resume and applications (withdraw, employer's note); `ResumeView` | — |
+| `student` | the student's full profile (photo, job-search status, jobs, links, certificates, a resume file) and applications; `ResumeView`, `ResumePhoto` | — |
 | `vacancies` | public search with filters and paging, detail, apply, save; the employer's vacancies (close / reopen), form and candidate pipeline; saved list | `auth`, `student` |
 | `company` | the employer's company profile and team (invite / remove managers); the public company page | `vacancies` |
-| `admin` | overview numbers; moderation of companies, resumes and vacancies; users (block); all applications | `auth`, `student`, `vacancies` |
+| `admin` | overview numbers; moderation of companies, resumes and vacancies; users by role (block); all applications; a detail dialog for any user, company or vacancy (`?user=` / `?company=` / `?vacancy=`) | `auth`, `student`, `vacancies` |
 
 Nine feature → feature edges, no cycles. `home` and `content` are composition slices:
 they own pages that assemble other slices' public components.
@@ -209,7 +209,10 @@ True as of 2026-10-26:
 - **Admin lists are unpaged** (whole tables). Vacancy search pages by 20 with `ILIKE`;
   move to full-text search when listings grow.
 - **No notifications.** Students see status changes and notes only in their cabinet;
-  email notices need the same provider as sign-in codes. No company logos (no uploads).
+  email notices need the same provider as sign-in codes. No company logos yet.
+- **Uploads live in Postgres** (`files` table, `bytea`, 4 MB cap for Vercel's request limit, type read
+  from the bytes). Any signed-in user who knows a file's random id can open it; files a resume
+  stops using are never deleted. Move to object storage if volume grows (2026-10-26).
 - **One 726 kB JS bundle** (233 kB gzip). Routes are not code-split yet; Vite warns.
   Fix: `lazyRouteComponent` per page.
 - **`document.title` never changes** per page; every tab says "InternWay". Matters for

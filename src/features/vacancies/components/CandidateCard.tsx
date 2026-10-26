@@ -1,10 +1,11 @@
-import { Mail } from "lucide-react"
+import { FileUser, Mail } from "lucide-react"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { StatusBadge } from "@/components/shared"
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
-import { ResumeView } from "@/features/student"
+import { ResumePhoto, ResumeView } from "@/features/student"
 import type { ApplicationStatus } from "@/types"
 import { PIPELINE_ACTIONS } from "../constants"
 import type { Candidate } from "../types"
@@ -24,6 +25,7 @@ export function CandidateCard({ candidate: a, canDecide, busy, onDecide }: Candi
   return (
     <li className="grid gap-3 rounded-xl border bg-card p-5">
       <div className="flex flex-wrap items-center gap-3">
+        <ResumePhoto id={a.photo_id} className="size-14" />
         <div className="min-w-0 flex-1">
           <p className="font-bold">{a.name || a.email}</p>
           {a.title && <p className="text-sm text-muted-foreground">{a.title}</p>}
@@ -39,14 +41,25 @@ export function CandidateCard({ candidate: a, canDecide, busy, onDecide }: Candi
       {a.cover_letter && (
         <p className="rounded-md bg-muted p-3 text-sm whitespace-pre-line">{a.cover_letter}</p>
       )}
-      <details>
-        <summary className="cursor-pointer text-sm font-semibold text-navy-700">
-          {t("candidates.resume")}
-        </summary>
-        <div className="mt-3">
-          <ResumeView resume={a} />
-        </div>
-      </details>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button size="sm" variant="outline" className="w-fit rounded-full">
+            <FileUser aria-hidden /> {t("candidates.openResume")}
+          </Button>
+        </DialogTrigger>
+        <DialogContent className="max-h-[92vh] overflow-y-auto sm:max-w-2xl" aria-describedby={undefined}>
+          <DialogTitle className="sr-only">{t("candidates.resume")}</DialogTitle>
+          <ResumeView resume={a} name={a.name || a.email} />
+          {a.cover_letter && (
+            <div className="grid gap-2 border-t pt-4 text-sm">
+              <p className="text-xs font-bold tracking-wide text-muted-foreground uppercase">
+                {t("candidates.coverLetter")}
+              </p>
+              <p className="whitespace-pre-line">{a.cover_letter}</p>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
       {canDecide && a.status !== "withdrawn" && (
         <div className="grid gap-2 border-t pt-3">
           <Textarea

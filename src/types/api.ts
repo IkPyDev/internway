@@ -37,7 +37,39 @@ export interface CompanyFields {
   city: string
 }
 
-export interface ResumeFields {
+export type WorkStatus = "looking" | "open" | "not_looking"
+
+/** A past or current job; an empty `end` means it is current. Months are "YYYY-MM". */
+export interface ResumeJob {
+  company: string
+  position: string
+  start: string
+  end: string
+  description: string
+}
+
+export interface ResumeLink {
+  label: string
+  url: string
+}
+
+export interface ResumeCertificate {
+  name: string
+  issuer: string
+  year: number | null
+  file_id: string | null
+}
+
+/** A photo or PDF uploaded to the API; served at `api/files/:id` to signed-in users. */
+export interface UploadedFile {
+  id: string
+  name: string
+  mime: string
+  size: number
+}
+
+/** The plain-text part of a resume. */
+export interface ResumeTextFields {
   title: string
   phone: string
   city: string
@@ -46,6 +78,15 @@ export interface ResumeFields {
   languages: string
   education: string
   experience: string
+}
+
+export interface ResumeFields extends ResumeTextFields {
+  work_status: WorkStatus
+  photo_id: string | null
+  file_id: string | null
+  jobs: ResumeJob[]
+  links: ResumeLink[]
+  certificates: ResumeCertificate[]
 }
 
 export interface Resume extends ResumeFields {

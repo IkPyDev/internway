@@ -554,7 +554,11 @@
     "already_invited": "Bu email allaqachon taklif qilingan.",
     "invalid_salary": "Maoshning quyi chegarasi yuqorisidan katta bo'lmasin.",
     "cannot_withdraw": "Bu arizani endi qaytarib bo'lmaydi.",
-    "application_withdrawn": "Talaba bu arizani qaytarib olgan."
+    "application_withdrawn": "Talaba bu arizani qaytarib olgan.",
+    "file_too_large": "Fayl 4 MB dan katta.",
+    "invalid_file": "Faqat JPG, PNG, WEBP rasmlar va PDF fayllar qabul qilinadi.",
+    "too_many_files": "Juda ko'p fayl yuklagansiz.",
+    "invalid_url": "Havola http:// yoki https:// bilan boshlanishi kerak."
   },
   "vacancies": {
     "eyebrow": "Vakansiyalar",
@@ -616,14 +620,77 @@
       "about": "O'zim haqimda",
       "skills": "Ko'nikmalar",
       "education": "Ta'lim",
-      "experience": "Tajriba",
-      "languages": "Tillar"
+      "experience": "Boshqa tajriba (loyihalar, volontyorlik)",
+      "languages": "Tillar",
+      "work_status": "Ish qidirish holati"
     },
     "statusHint": {
       "pending": "Moderator rezyumeingizni tekshirmoqda.",
       "approved": "Vakansiyalarga ariza yuborishingiz mumkin.",
       "rejected": "Rezyumeni tuzatib, qayta saqlang."
-    }
+    },
+    "workStatus": {
+      "looking": "Faol ish qidiryapman",
+      "open": "Takliflarni ko'rib chiqaman",
+      "not_looking": "Ish qidirmayapman"
+    },
+    "sections": {
+      "basics": "Asosiy ma'lumotlar",
+      "about": "O'zim haqimda",
+      "jobs": "Ish tajribasi",
+      "education": "Ta'lim va ko'nikmalar",
+      "certificates": "Sertifikatlar",
+      "links": "Havolalar va fayllar"
+    },
+    "hints": {
+      "about": "Kimsiz, nimani yaxshi qilasiz, keyin nima qilmoqchisiz. Erkin yozing.",
+      "jobs": "Ishlagan yoki amaliyot o'tagan har bir joyingiz, eng yangisidan boshlab.",
+      "certificates": "Til sertifikatlari, kurslar, olimpiadalar. Skaner nusxasi bo'lsa, biriktiring.",
+      "links": "GitHub, LinkedIn, portfolio, Behance, shaxsiy sayt."
+    },
+    "placeholders": {
+      "about": "Masalan: 3-kurs talabasiman, React'da veb ilovalar yarataman, chet elda amaliyot o'tamoqchiman…",
+      "skills": "React, TypeScript, Figma, Ingliz tili B2",
+      "education": "Universitet, fakultet, yillar",
+      "experience": "Loyihalar, volontyorlik, klublar"
+    },
+    "job": {
+      "company": "Kompaniya yoki tashkilot",
+      "position": "Lavozim",
+      "start": "Boshlangan",
+      "end": "Tugagan",
+      "endHint": "Hozir ham ishlayotgan bo'lsangiz, tugagan sanani bo'sh qoldiring.",
+      "description": "Nima ish qildingiz",
+      "descriptionPlaceholder": "Vazifalar, natijalar, vositalar"
+    },
+    "link": {
+      "label": "Nomi",
+      "url": "Havola"
+    },
+    "cert": {
+      "name": "Sertifikat",
+      "issuer": "Kim bergan",
+      "year": "Yil",
+      "file": "Skanerni biriktirish"
+    },
+    "add": {
+      "jobs": "Ish joyi qo'shish",
+      "links": "Havola qo'shish",
+      "certificates": "Sertifikat qo'shish"
+    },
+    "remove": "O'chirish",
+    "replace": "Almashtirish",
+    "uploading": "Yuklanmoqda…",
+    "openFile": "Faylni ochish",
+    "resumeFile": "Rezyume fayli",
+    "uploadPhoto": "Rasm yuklash",
+    "uploadFile": "Rezyume yuklash (PDF)",
+    "photoHint": "JPG, PNG yoki WEBP, 4 MB gacha.",
+    "fileHint": "PDF yoki rasm, 4 MB gacha.",
+    "preview": "Ko'rinishi",
+    "previewTitle": "Ish beruvchi rezyumeingizni shunday ko'radi",
+    "present": "hozirgacha",
+    "none": "Rezyume hali yo'q."
   },
   "myApplications": {
     "title": "Arizalarim",
@@ -678,7 +745,9 @@
       "offer": "Taklif (offer) berish",
       "hired": "Ishga olindi",
       "rejected": "Rad etish"
-    }
+    },
+    "openResume": "To'liq rezyumeni ochish",
+    "coverLetter": "Xat"
   },
   "moderation": {
     "approve": "Tasdiqlash",
@@ -717,7 +786,30 @@
     },
     "companyCounts": "menejerlar: {{members}} · vakansiyalar: {{vacancies}}",
     "companyNotApproved": "Kompaniya hali tasdiqlanmagan: vakansiya tasdiqlansa ham ko'rinmaydi.",
-    "applicationsCount": "arizalar: {{count}}"
+    "applicationsCount": "arizalar: {{count}}",
+    "searchPlaceholder": "Ism, email, shahar bo'yicha qidirish…",
+    "roleFilters": {
+      "student": "Talabalar",
+      "employer": "Kompaniyalar",
+      "admin": "Adminlar",
+      "none": "Rolsiz"
+    },
+    "blockedOnly": "Bloklanganlar",
+    "blocked": "Bloklangan",
+    "joined": "{{date}} da qo'shilgan",
+    "company": "Kompaniya",
+    "owner": "egasi",
+    "manager": "menejer",
+    "resume": "Rezyume",
+    "updated": "{{date}} da yangilangan",
+    "applicationsTitle": "Arizalar ({{count}})",
+    "about": "Kompaniya haqida",
+    "noDescription": "Tavsif hali yo'q.",
+    "team": "Jamoa ({{count}})",
+    "vacanciesTitle": "Vakansiyalar ({{count}})",
+    "description": "Tavsif",
+    "openCandidates": "Nomzodlarni ko'rish",
+    "openVacancy": "Vakansiyani ochish"
   },
   "salary": {
     "range": "{{from}} – {{to}} {{currency}}",
