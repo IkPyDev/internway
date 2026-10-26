@@ -221,8 +221,8 @@ visitor opens themselves.
 
 ## Branching
 
-Git is initialised on `main` (2026-10-20) with no remote and no commits yet. Once a
-remote exists (GitLab or GitHub):
+The remote is GitHub `IkPyDev/internway` (public, since 2026-10-20). Until there is a
+team, the owner has work committed straight to `main`; once others join:
 
 - **§B1** — every branch is cut from `main`: `git checkout -b <type>/<description>`.
 - **§B2** — `<type>` is a conventional-commit type: `feat` `fix` `docs` `style`

@@ -21,6 +21,80 @@ look for it: `src/components/shared`, `src/lib`, the target slice's `lib/` and
 
 ---
 
+## Where things stand (2026-10-26)
+
+Read this first in a new session. Update it when you finish a piece of work.
+
+### Location
+
+| What | Where |
+| --- | --- |
+| local checkout | `/Users/ikpydev/StudioProjects/internway` — open new sessions **here**, so this file loads |
+| repo | `github.com/IkPyDev/internway` (public), branch `main` |
+| live site | https://internway.vercel.app — Vercel redeploys every push to `main` (verified 2026-10-26) |
+| CI | `gate.yml` runs `pnpm gate` on every push (last green: `fa2abf4`) |
+| data refresh | `collect.yml` commits `chore(data): refresh internships` to `main` daily, so `git pull --ff-only` before you start and fetch + rebase before you push, or the push is rejected |
+
+Data on 2026-10-26: 5,150 internships, 174 companies.
+
+### What has shipped
+
+| Commit | What |
+| --- | --- |
+| `e35d3b1` | Redesign from the content team's feedback: new hero copy and buttons, photo country cards, field grid, popular searches, outside search links (`SEARCH_SITES`), About page, English locale, navy/gold palette, serif headings |
+| `61d329e` | 15 fields (the owner's list, labels word for word in uz/en; ru is our translation) |
+| `0e950f5` | Sharper team photo |
+| `ac73638` | Photo backgrounds in page heroes and the CTA band; the owner's USTravel "Our experience" text; **English is the default language** on a first visit |
+| `17b8d2a` | Real USTravel student photos replace stock photos; "Our students abroad" gallery on home |
+| `eeb588f` | Hotel team photo in the home hero |
+| `fa2abf4` | A photo behind every page hero (and login, 404); images kept at original quality; lighter scrim |
+
+### Photos — `public/img/`
+
+All are real photos of students USTravel sent abroad, as the owner sent them.
+**Do not re-compress them** (the owner rejected blurry results) and do not stretch a
+portrait or <1280px photo across a full-width hero — it upscales and blurs.
+
+| File | Used in |
+| --- | --- |
+| `team-hotel.jpg` (960×1280) | home hero — right-hand panel on `lg`, faded in with a mask |
+| `team-sea.jpg` | home "How we help", About hero, Login background |
+| `visas.jpg` (collage) | About page body |
+| `hotel-team-selfie.jpg` | home CTA band, Employers hero |
+| `milan.jpg` | Internships hero, 404, gallery |
+| `cologne-night.jpg` | Students hero, gallery |
+| `cologne.jpg` | Germany destination card |
+| `paris-evening.jpg` | Europe destination card, Companies hero, gallery |
+| `istanbul.jpg` | Universities hero, gallery |
+| `cologne-rhine.jpg` | Portfolio hero, gallery |
+| `louvre.jpg` | gallery |
+
+The gallery list is `ABROAD_PHOTOS` in `src/features/home/constants.ts`. `PageHero` and
+`CtaBand` take `image` + `position` (CSS `object-position`).
+
+### Open — not done
+
+- **Five destination cards still use Unsplash hot-links** (UK, Canada, Asia, USA,
+  Remote) — swap in real photos when the owner sends them (`REGIONS[].photo`).
+- **Duration, paid/unpaid and language-level filters** — the data has no such
+  fields; they need the backend.
+- **No backend**: accounts, applications, admin, payments.
+- Technical gaps from `ARCHITECTURE.md` § Known gaps: one 670 kB bundle, no
+  per-page `document.title`, no error boundary.
+- **Owner to confirm**: the students in the photos agreed to be shown; the ru
+  translations of the owner's uz/en copy (ours, not checked by a native speaker).
+
+### How the owner works
+
+- Writes short messages in Uzbek, often with screenshots or photos; reply in Uzbek.
+- Sends photos in chat — copy the originals into `public/img/` as they are.
+- "Commit qil va GitHub'ga push qil" means: commit to `main`, push, then wait for the
+  `gate` run on GitHub and report it. Until then, never commit. So far every change
+  went straight to `main` at the owner's request, not through a branch (§B1).
+- Before reporting UI work, look at it in the browser at 1440px and 375px.
+
+---
+
 ## Context map — read before you touch
 
 | You are changing… | Read first |
@@ -67,7 +141,7 @@ pnpm import:companies     # rebuild public/data/companies.json from data/*.xlsx 
 pnpm dlx shadcn@3.5.0 add <component>   # new UI primitive (§11)
 ```
 
-`pnpm` comes from `corepack enable` (done 2026-10-20). Python tooling lives in `.venv`
+`pnpm` comes from `corepack enable` (done 2026-10-20); on this machine it is on the nvm Node 24 `PATH`. Python tooling lives in `.venv`
 (`pnpm setup:py` recreates it); `scripts/collect.py` needs only the standard library.
 
 ### Ask before
