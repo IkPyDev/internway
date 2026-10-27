@@ -124,7 +124,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section tint eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
+      <Section tint id="how" eyebrow={t("home.how.eyebrow")} title={t("home.how.title")}>
         <Steps
           items={[1, 2, 3, 4].map((i) => ({
             title: t(`home.how.${i}.title`),

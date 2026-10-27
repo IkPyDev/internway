@@ -25,7 +25,8 @@
     "login": "Kirish",
     "start": "Boshlash",
     "menu": "Menyu",
-    "vacancies": "Vakansiyalar"
+    "vacancies": "Vakansiyalar",
+    "help": "Ariza topshirishda yordam kerakmi?"
   },
   "footer": {
     "about": "O'zbekistonlik talabalar va bitiruvchilarni dunyo bo'ylab ish beruvchilar bilan bog'laydigan xalqaro amaliyot platformasi.",
@@ -77,13 +78,12 @@
   },
   "home": {
     "eyebrow": "Xalqaro amaliyot platformasi",
-    "titleStart": "Xalqaro karyerangiz sari",
-    "titleAccent": "ilk qadamni",
-    "titleEnd": "biz bilan boshlang!",
+    "titleStart": "Kelajagingiz",
+    "titleAccent": "chegara bilmaydi",
     "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi xalqaro platforma. Biz sizga mos dasturlarni topish, ish beruvchilar bilan bog'lanish va ariza topshirish jarayonida yordam beramiz.",
     "searchPlaceholder": "Masalan: software, marketing, Germany...",
     "ctaPrimary": "Amaliyot dasturlarini ko'rish",
-    "ctaSecondary": "Kompaniya haqida",
+    "ctaSecondary": "InternWay qanday ishlaydi",
     "photoAlt": "Bitiruvchilar shlyapalarini osmonga otmoqda",
     "today": "bugungi e'lon",
     "stats": {

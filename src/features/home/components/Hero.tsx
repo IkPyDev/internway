@@ -34,8 +34,7 @@ export function Hero({ stats }: HeroProps) {
         <div className="max-w-3xl animate-rise">
           <span className="eyebrow text-mist">{t("home.eyebrow")}</span>
           <h1 className="text-[clamp(2.5rem,6.8vw,5rem)] leading-[1.04] text-balance [text-shadow:0_2px_26px_rgb(2_10_22/85%)]">
-            {t("home.titleStart")} <span className="text-gold">{t("home.titleAccent")}</span>{" "}
-            {t("home.titleEnd")}
+            {t("home.titleStart")} <span className="block text-gold">{t("home.titleAccent")}</span>
           </h1>
           <p className="mt-6 max-w-[52ch] text-lg leading-relaxed text-[#e6eef8]">{t("home.lead")}</p>
 
@@ -53,7 +52,9 @@ export function Hero({ stats }: HeroProps) {
               variant="outline"
               className="h-12 rounded-lg border-white/40 bg-white/5 px-7 font-bold text-white hover:bg-white/15 hover:text-white"
             >
-              <Link to={ROUTES.about}>{t("home.ctaSecondary")}</Link>
+              <Link to={ROUTES.home} hash="how">
+                {t("home.ctaSecondary")}
+              </Link>
             </Button>
           </div>
 
