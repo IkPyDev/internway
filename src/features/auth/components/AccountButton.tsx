@@ -24,7 +24,7 @@ export function AccountButton() {
   }
   return (
     <div className="flex items-center gap-1">
-      <Button asChild variant="outline" className="max-w-48 rounded-full font-bold">
+      <Button asChild variant="outline" className="max-w-40 rounded-full font-bold">
         <Link to={home} title={user.email}>
           <UserRound aria-hidden />
           <span className="truncate">{user.name || t("auth.account")}</span>

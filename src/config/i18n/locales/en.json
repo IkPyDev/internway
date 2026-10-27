@@ -21,7 +21,7 @@
     "students": "For students",
     "employers": "For companies",
     "universities": "Universities",
-    "about": "About us",
+    "about": "About Company",
     "login": "Log in",
     "start": "Get started",
     "menu": "Menu",
@@ -83,7 +83,7 @@
     "lead": "InternWay is an international platform that connects students and graduates with internships abroad. We help you find the right programme, reach employers and apply.",
     "searchPlaceholder": "e.g. software, marketing, Germany...",
     "ctaPrimary": "Browse internship programmes",
-    "ctaSecondary": "About us",
+    "ctaSecondary": "About Company",
     "photoAlt": "Graduates throwing their caps",
     "today": "posted today",
     "stats": {
@@ -416,7 +416,7 @@
     }
   },
   "about": {
-    "eyebrow": "About us",
+    "eyebrow": "About Company",
     "title": "About InternWay",
     "lead": "InternWay is a platform that connects students and graduates with internships abroad. We help you find the right programme, prepare and apply.",
     "photoAlt": "Students holding their visas",

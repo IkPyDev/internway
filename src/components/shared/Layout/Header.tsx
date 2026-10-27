@@ -15,7 +15,7 @@ export function Header({ account }: { account: ReactNode }) {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-white/85 backdrop-blur-md backdrop-saturate-150">
-      <div className="mx-auto flex h-18 w-[min(1640px,100%-32px)] items-center gap-4">
+      <div className="mx-auto flex h-18 w-[min(1640px,100%-32px)] items-center gap-3">
         <Logo />
         <nav
           id="main-nav"

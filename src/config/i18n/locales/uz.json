@@ -21,7 +21,7 @@
     "students": "Talabalar uchun",
     "employers": "Kompaniyalar uchun",
     "universities": "Universitetlar",
-    "about": "Biz haqimizda",
+    "about": "Kompaniya haqida",
     "login": "Kirish",
     "start": "Boshlash",
     "menu": "Menyu",
@@ -83,7 +83,7 @@
     "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi xalqaro platforma. Biz sizga mos dasturlarni topish, ish beruvchilar bilan bog'lanish va ariza topshirish jarayonida yordam beramiz.",
     "searchPlaceholder": "Masalan: software, marketing, Germany...",
     "ctaPrimary": "Amaliyot dasturlarini ko'rish",
-    "ctaSecondary": "Biz haqimizda",
+    "ctaSecondary": "Kompaniya haqida",
     "photoAlt": "Bitiruvchilar shlyapalarini osmonga otmoqda",
     "today": "bugungi e'lon",
     "stats": {
@@ -416,7 +416,7 @@
     }
   },
   "about": {
-    "eyebrow": "Biz haqimizda",
+    "eyebrow": "Kompaniya haqida",
     "title": "InternWay haqida",
     "lead": "InternWay — talabalar va bitiruvchilarni xorijdagi amaliyot imkoniyatlari bilan bog'lovchi platforma. Biz mos dasturni topish, tayyorlanish va ariza topshirishda yordam beramiz.",
     "photoAlt": "Vizasini olgan talabalar",
