@@ -25,15 +25,6 @@ export function HomePage() {
         ]}
       />
 
-      <CtaBand
-        title={t("home.cta.title")}
-        text={t("home.cta.text")}
-        to={ROUTES.students}
-        image="/img/students-cafe.jpg"
-        position="center 50%"
-        label={t("home.cta.label")}
-      />
-
       <Section
         eyebrow={t("home.directions.eyebrow")}
         title={t("home.directions.title")}
@@ -110,6 +101,15 @@ export function HomePage() {
           </Button>
         </div>
       </Section>
+
+      <CtaBand
+        title={t("home.cta.title")}
+        text={t("home.cta.text")}
+        to={ROUTES.students}
+        image="/img/students-cafe.jpg"
+        position="center 50%"
+        label={t("home.cta.label")}
+      />
 
       <Section
         eyebrow={t("home.partners.eyebrow")}
