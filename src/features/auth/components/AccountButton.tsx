@@ -5,16 +5,21 @@ import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
 import { useSession } from "../hooks/useSession"
 
-/** Header slot: "Sign in" for visitors, the account link and sign-out for users. */
+/** Header slot: "Sign in" and "Get started" for visitors, the account link and sign-out for users. */
 export function AccountButton() {
   const { t } = useTranslation()
   const { user, home, logout } = useSession()
 
   if (!user) {
     return (
-      <Button asChild variant="outline" className="rounded-full font-bold">
-        <Link to={ROUTES.login}>{t("nav.login")}</Link>
-      </Button>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button asChild variant="outline" className="rounded-full font-bold">
+          <Link to={ROUTES.login}>{t("nav.login")}</Link>
+        </Button>
+        <Button asChild className="rounded-full font-bold">
+          <Link to={ROUTES.students}>{t("nav.start")}</Link>
+        </Button>
+      </div>
     )
   }
   return (

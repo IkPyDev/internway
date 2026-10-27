@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react"
 import type { ReactNode } from "react"
 import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
-import { NAV_ITEMS, ROUTES } from "@/constants"
+import { NAV_ITEMS } from "@/constants"
 import { cn } from "@/lib"
 import { useUiStore } from "@/store"
 import { LanguageSwitch } from "./LanguageSwitch"
@@ -21,9 +21,9 @@ export function Header({ account }: { account: ReactNode }) {
           id="main-nav"
           aria-label={t("nav.label")}
           className={cn(
-            "ml-auto flex gap-1",
-            "max-[1680px]:fixed max-[1680px]:inset-x-0 max-[1680px]:top-18 max-[1680px]:flex-col max-[1680px]:border-b max-[1680px]:bg-white max-[1680px]:px-4 max-[1680px]:pt-3 max-[1680px]:pb-5 max-[1680px]:shadow-card max-[1680px]:transition",
-            !navOpen && "max-[1680px]:pointer-events-none max-[1680px]:-translate-y-2 max-[1680px]:opacity-0",
+            "ml-auto flex gap-0.5",
+            "max-[1480px]:fixed max-[1480px]:inset-x-0 max-[1480px]:top-18 max-[1480px]:flex-col max-[1480px]:border-b max-[1480px]:bg-white max-[1480px]:px-4 max-[1480px]:pt-3 max-[1480px]:pb-5 max-[1480px]:shadow-card max-[1480px]:transition",
+            !navOpen && "max-[1480px]:pointer-events-none max-[1480px]:-translate-y-2 max-[1480px]:opacity-0",
           )}
         >
           {NAV_ITEMS.map((item) => (
@@ -31,7 +31,7 @@ export function Header({ account }: { account: ReactNode }) {
               key={item.to}
               to={item.to}
               onClick={closeNav}
-              className="rounded-full px-2.5 py-2 text-[0.9rem] font-semibold whitespace-nowrap transition hover:bg-muted max-[1680px]:px-4 max-[1680px]:py-3"
+              className="rounded-full px-2 py-2 text-[0.85rem] font-semibold whitespace-nowrap transition hover:bg-muted max-[1480px]:px-4 max-[1480px]:py-3"
               activeProps={{ className: "bg-navy-900 text-white hover:bg-navy-900" }}
             >
               {t(item.label)}
@@ -43,16 +43,13 @@ export function Header({ account }: { account: ReactNode }) {
             {account}
           </div>
         </nav>
-        <div className="flex items-center gap-2 max-[1680px]:ml-auto">
+        <div className="flex items-center gap-2 max-[1480px]:ml-auto">
           <LanguageSwitch />
           <div className="max-sm:hidden">{account}</div>
-          <Button asChild className="rounded-full font-bold max-sm:hidden">
-            <Link to={ROUTES.students}>{t("nav.start")}</Link>
-          </Button>
           <Button
             variant="ghost"
             size="icon"
-            className="hidden max-[1680px]:inline-flex"
+            className="hidden max-[1480px]:inline-flex"
             aria-label={t("nav.menu")}
             aria-controls="main-nav"
             aria-expanded={navOpen}
