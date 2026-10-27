@@ -17,8 +17,8 @@ export const ACCOUNT_LINKS: Record<Role, { to: CabinetRoute; label: string }[]> 
     { to: ROUTES.saved, label: "saved.title" },
   ],
   employer: [
-    { to: ROUTES.myVacancies, label: "myVacancies.title" },
     { to: ROUTES.company, label: "company.title" },
+    { to: ROUTES.myVacancies, label: "myVacancies.title" },
   ],
   admin: [{ to: ROUTES.admin, label: "admin.title" }],
 }

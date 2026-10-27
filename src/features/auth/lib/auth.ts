@@ -9,11 +9,11 @@ export function parseLoginSearch(search: Record<string, unknown>): LoginSearch {
   return { redirect: redirect?.startsWith("/") && !redirect.startsWith("//") ? redirect : undefined }
 }
 
-/** Where each role lands after signing in; an employer finishes the company form first. */
-export function roleHome(user: Pick<User, "role" | "company"> | null) {
+/** Where each role lands after signing in; an employer always starts at the company profile. */
+export function roleHome(user: Pick<User, "role"> | null) {
   const role = user?.role ?? null
   if (role === "student") return ROUTES.resume
-  if (role === "employer") return user?.company?.complete === false ? ROUTES.company : ROUTES.myVacancies
+  if (role === "employer") return ROUTES.company
   if (role === "admin") return ROUTES.admin
   return ROUTES.login
 }
