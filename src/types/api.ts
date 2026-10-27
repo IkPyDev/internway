@@ -18,13 +18,15 @@ export type PayPreference = "" | "paid" | "unpaid" | "either"
 /** Who may apply; the admin checks it when approving the vacancy. */
 export type Eligibility = "all" | "international" | "non_eu" | "eu_only" | "specific"
 export type VisaSupport = "" | "yes" | "no" | "negotiable"
-export type Housing = "" | "yes" | "no"
+export type Housing = "" | "yes" | "no" | "assist"
 
 export interface CompanySummary {
   id: number
   name: string
   status: ModerationStatus
   isOwner: boolean
+  /** Every required field of the company form is filled; only then can it post vacancies. */
+  complete: boolean
 }
 
 export interface User {

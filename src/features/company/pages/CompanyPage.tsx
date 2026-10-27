@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router"
 import { useTranslation } from "react-i18next"
 import {
   CardGridSkeleton,
@@ -12,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { ROUTES } from "@/constants"
 import { FileUpload, PHOTO_TYPES } from "@/features/student"
 import { cn } from "@/lib"
 import { TeamSection } from "../components/TeamSection"
@@ -41,6 +43,11 @@ export function CompanyPage() {
             <div className="flex flex-wrap items-center gap-2 text-sm sm:col-span-2">
               <StatusBadge status={p.company.status} />
               <span className="text-muted-foreground">{t(`company.statusHint.${p.company.status}`)}</span>
+              {!p.profileComplete && (
+                <p className="w-full rounded-md border border-gold/60 bg-gold/10 px-3 py-2 text-navy-900">
+                  {t("companyFirst.formHint")}
+                </p>
+              )}
               {p.company.status === "rejected" && p.company.reject_reason && (
                 <p className="w-full rounded-md bg-red-50 px-3 py-2 text-red-700">
                   {t("moderation.reason")}: {p.company.reject_reason}
@@ -142,6 +149,11 @@ export function CompanyPage() {
                     {t("company.save")}
                   </Button>
                   {p.saved && <span className="text-sm text-green-700">{t("company.saved")}</span>}
+                  {p.saved && p.profileComplete && (
+                    <Button asChild variant="outline" className="rounded-full">
+                      <Link to={ROUTES.newVacancy}>{t("companyFirst.post")} →</Link>
+                    </Button>
+                  )}
                 </div>
               ) : (
                 <p className="text-sm text-muted-foreground">{t("company.ownerOnly")}</p>

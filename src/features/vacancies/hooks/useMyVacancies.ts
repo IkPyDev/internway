@@ -13,6 +13,8 @@ export function useMyVacancies() {
     error: query.error,
     refetch: query.refetch,
     companyStatus: user?.company?.status,
+    /** False until the company form is filled in; posting is blocked until then. */
+    profileComplete: user?.company?.complete !== false,
     setClosed: (id: number, closed: boolean) => status.mutate({ id, closed }),
     busy: status.isPending,
   }

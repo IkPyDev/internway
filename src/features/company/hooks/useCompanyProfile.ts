@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useSession } from "@/features/auth"
 import { useFileUpload } from "@/features/student"
 import type { CompanyFields } from "@/types"
 import { useCreateInviteMutation } from "../api/mutations/useCreateInviteMutation"
@@ -16,6 +17,7 @@ export function useCompanyProfile() {
   const cancelInvite = useDeleteInviteMutation()
   const removeMember = useDeleteMemberMutation()
   const files = useFileUpload()
+  const { user } = useSession()
   const [fields, setFields] = useState<CompanyFields>(() => companyFields(undefined))
   const [inviteEmail, setInviteEmail] = useState("")
 
@@ -29,6 +31,8 @@ export function useCompanyProfile() {
     error: query.error,
     refetch: query.refetch,
     canEdit: query.data?.isOwner === true,
+    /** Vacancies can be posted once every required field is saved. */
+    profileComplete: user?.company?.complete !== false,
     fields,
     set: <K extends keyof CompanyFields>(key: K, value: CompanyFields[K]) =>
       setFields((f) => ({ ...f, [key]: value })),

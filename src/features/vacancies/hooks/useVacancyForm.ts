@@ -1,6 +1,7 @@
 import { useRouter } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 import { ROUTES } from "@/constants"
+import { useSession } from "@/features/auth"
 import type { VacancyFields } from "@/types"
 import { useCreateVacancyMutation } from "../api/mutations/useCreateVacancyMutation"
 import { useUpdateVacancyMutation } from "../api/mutations/useUpdateVacancyMutation"
@@ -16,6 +17,7 @@ export function useVacancyForm() {
   const create = useCreateVacancyMutation()
   const update = useUpdateVacancyMutation(id ?? 0)
   const save = id === undefined ? create : update
+  const { user } = useSession()
   const [fields, setFields] = useState<VacancyFields>(() => vacancyFields(undefined))
 
   useEffect(() => {
@@ -24,6 +26,8 @@ export function useVacancyForm() {
 
   return {
     editing: id !== undefined,
+    /** A new vacancy waits until the company form is filled in. */
+    blocked: id === undefined && user?.company?.complete === false,
     status: id === undefined ? "success" : query.status,
     error: query.error,
     refetch: query.refetch,

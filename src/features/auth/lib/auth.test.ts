@@ -9,9 +9,17 @@ describe("auth lib", () => {
   })
 
   it("sends each role to its own home", () => {
-    expect(roleHome("student")).toBe("/account/resume")
-    expect(roleHome("employer")).toBe("/account/vacancies")
-    expect(roleHome("admin")).toBe("/admin")
+    const company = (complete: boolean) => ({
+      id: 1,
+      name: "A",
+      status: "pending" as const,
+      isOwner: true,
+      complete,
+    })
+    expect(roleHome({ role: "student", company: null })).toBe("/account/resume")
+    expect(roleHome({ role: "employer", company: company(true) })).toBe("/account/vacancies")
+    expect(roleHome({ role: "employer", company: company(false) })).toBe("/account/company")
+    expect(roleHome({ role: "admin", company: null })).toBe("/admin")
     expect(roleHome(null)).toBe("/login")
   })
 })

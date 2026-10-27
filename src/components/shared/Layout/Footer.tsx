@@ -5,7 +5,7 @@ import { Logo } from "./Logo"
 
 const COLUMNS = [
   { title: "footer.platform", links: [ROUTES.internships, ROUTES.companies, ROUTES.portfolio] },
-  { title: "footer.partnership", links: [ROUTES.students, ROUTES.employers, ROUTES.universities] },
+  { title: "footer.partnership", links: [ROUTES.employers, ROUTES.universities] },
   { title: "footer.company", links: [ROUTES.about] },
 ] as const
 
@@ -13,7 +13,6 @@ const LINK_LABELS: Record<string, string> = {
   [ROUTES.internships]: "nav.internships",
   [ROUTES.companies]: "nav.companies",
   [ROUTES.portfolio]: "nav.portfolio",
-  [ROUTES.students]: "nav.students",
   [ROUTES.employers]: "nav.employers",
   [ROUTES.universities]: "nav.universities",
   [ROUTES.about]: "nav.about",

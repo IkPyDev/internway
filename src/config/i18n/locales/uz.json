@@ -558,7 +558,8 @@
     "file_too_large": "Fayl 4 MB dan katta.",
     "invalid_file": "Faqat JPG, PNG, WEBP rasmlar va PDF fayllar qabul qilinadi.",
     "too_many_files": "Juda ko'p fayl yuklagansiz.",
-    "invalid_url": "Havola http:// yoki https:// bilan boshlanishi kerak."
+    "invalid_url": "Havola http:// yoki https:// bilan boshlanishi kerak.",
+    "company_incomplete": "Avval kompaniya profilidagi majburiy maydonlarni to'ldiring."
   },
   "vacancies": {
     "eyebrow": "Vakansiyalar",
@@ -619,7 +620,8 @@
     },
     "housing": {
       "yes": "Ta'minlanadi",
-      "no": "Ta'minlanmaydi"
+      "no": "Ta'minlanmaydi",
+      "assist": "Topishda yordam beriladi"
     }
   },
   "apply": {
@@ -993,5 +995,12 @@
     "logoHint": "JPG, PNG yoki WebP, 4 MB gacha. Kvadrat rasm yaxshi ko'rinadi.",
     "verificationHint": "Faqat InternWay administratori ko'radi. Kompaniyani tekshirishni tezlashtiradi.",
     "contactPrivate": "Mas'ul shaxs ma'lumotlari talabalarga ko'rinmaydi."
+  },
+  "companyFirst": {
+    "title": "Avval kompaniya ma'lumotlarini to'ldiring",
+    "text": "Talabalar har bir e'lon yonida kompaniyangiz haqidagi ma'lumotni ko'radi. Majburiy maydonlar (*) to'ldirilgach, amaliyot e'lonini joylashtira olasiz.",
+    "action": "Kompaniya ma'lumotlarini to'ldirish",
+    "post": "Vakansiya joylash",
+    "formHint": "Vakansiya joylash uchun * belgili barcha maydonlarni to'ldirib, saqlang."
   }
 }

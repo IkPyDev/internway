@@ -12,7 +12,7 @@ export function useSession() {
   return {
     user,
     status: me.status,
-    home: roleHome(user?.role ?? null),
+    home: roleHome(user),
     logout: () => logout.mutate(undefined, { onSuccess: () => router.history.push("/") }),
   }
 }

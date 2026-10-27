@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { CompanyFirst } from "../components/CompanyFirst"
 import {
   CURRENCIES,
   DURATIONS,
@@ -44,7 +45,8 @@ export function VacancyFormPage() {
     <PageShell title={t(form.editing ? "vacancyForm.editTitle" : "vacancyForm.newTitle")}>
       {form.status === "pending" && <CardGridSkeleton count={2} />}
       {form.status === "error" && <ErrorState error={form.error} onRetry={() => form.refetch()} />}
-      {form.status === "success" && (
+      {form.blocked && <CompanyFirst />}
+      {form.status === "success" && !form.blocked && (
         <form
           className="grid max-w-3xl gap-5"
           onSubmit={(e) => {

@@ -25,12 +25,12 @@ export function useLoginFlow() {
   const [name, setName] = useState("")
   const [company, setCompany] = useState("")
 
-  const finish = (user: User) => router.history.replace(redirect ?? roleHome(user.role))
+  const finish = (user: User) => router.history.replace(redirect ?? roleHome(user))
 
   // A signed-in visitor with a role has nothing to do here.
   const user = me.data
   useEffect(() => {
-    if (user?.role) router.history.replace(redirect ?? roleHome(user.role))
+    if (user?.role) router.history.replace(redirect ?? roleHome(user))
   }, [user, redirect, router])
 
   return {

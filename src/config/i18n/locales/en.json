@@ -558,7 +558,8 @@
     "file_too_large": "The file is larger than 4 MB.",
     "invalid_file": "Only JPG, PNG, WEBP images and PDF files are accepted.",
     "too_many_files": "You have uploaded too many files.",
-    "invalid_url": "A link must start with http:// or https://."
+    "invalid_url": "A link must start with http:// or https://.",
+    "company_incomplete": "Fill in the required fields of your company profile first."
   },
   "vacancies": {
     "eyebrow": "Vacancies",
@@ -619,7 +620,8 @@
     },
     "housing": {
       "yes": "Provided",
-      "no": "Not provided"
+      "no": "Not provided",
+      "assist": "Assistance provided"
     }
   },
   "apply": {
@@ -993,5 +995,12 @@
     "logoHint": "JPG, PNG or WebP, up to 4 MB. A square image looks best.",
     "verificationHint": "Only the InternWay admin sees this. It speeds up the company check.",
     "contactPrivate": "Students do not see the contact person's details."
+  },
+  "companyFirst": {
+    "title": "Fill in your company details first",
+    "text": "Students see your company's details next to every posting. Once the required fields (*) are filled in, you can post internships.",
+    "action": "Fill in company details",
+    "post": "Post a vacancy",
+    "formHint": "To post vacancies, fill in every field marked * and save."
   }
 }

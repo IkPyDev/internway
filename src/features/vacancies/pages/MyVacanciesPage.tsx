@@ -4,27 +4,35 @@ import { useTranslation } from "react-i18next"
 import { CardGridSkeleton, EmptyState, ErrorState, Note, PageShell, StatusBadge } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
+import { CompanyFirst } from "../components/CompanyFirst"
 import { Salary } from "../components/Salary"
 import { useMyVacancies } from "../hooks/useMyVacancies"
 import { place } from "../lib/vacancies"
 
 export function MyVacanciesPage() {
   const { t } = useTranslation()
-  const { items, status, error, refetch, companyStatus, setClosed, busy } = useMyVacancies()
+  const { items, status, error, refetch, companyStatus, profileComplete, setClosed, busy } = useMyVacancies()
 
   return (
     <PageShell
       title={t("myVacancies.title")}
       lead={t("myVacancies.lead")}
       actions={
-        <Button asChild className="rounded-full font-bold">
-          <Link to={ROUTES.newVacancy}>
-            <Plus aria-hidden /> {t("myVacancies.new")}
-          </Link>
-        </Button>
+        profileComplete && (
+          <Button asChild className="rounded-full font-bold">
+            <Link to={ROUTES.newVacancy}>
+              <Plus aria-hidden /> {t("myVacancies.new")}
+            </Link>
+          </Button>
+        )
       }
     >
-      {companyStatus && companyStatus !== "approved" && (
+      {!profileComplete && (
+        <div className="mb-6">
+          <CompanyFirst />
+        </div>
+      )}
+      {profileComplete && companyStatus && companyStatus !== "approved" && (
         <div className="mb-6">
           <Note>
             {t(`myVacancies.company.${companyStatus}`)}{" "}
@@ -36,7 +44,9 @@ export function MyVacanciesPage() {
       )}
       {status === "pending" && <CardGridSkeleton count={3} />}
       {status === "error" && <ErrorState error={error} onRetry={() => refetch()} />}
-      {status === "success" && items.length === 0 && <EmptyState text={t("myVacancies.empty")} />}
+      {status === "success" && items.length === 0 && profileComplete && (
+        <EmptyState text={t("myVacancies.empty")} />
+      )}
       <ul className="grid gap-3">
         {items.map((v) => (
           <li key={v.id} className="grid gap-3 rounded-xl border bg-card p-4 lg:flex lg:items-center">
