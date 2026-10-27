@@ -26,7 +26,7 @@
     "start": "Get started",
     "menu": "Menu",
     "vacancies": "Vacancies",
-    "help": "Need Help Applying?"
+    "help": "Let Us Help You Apply"
   },
   "footer": {
     "about": "An international internship platform connecting students and graduates from Uzbekistan with employers around the world.",
@@ -83,7 +83,7 @@
     "lead": "InternWay is an international platform that connects students and graduates with internships abroad. We help you find the right programme, reach employers and apply.",
     "searchPlaceholder": "e.g. software, marketing, Germany...",
     "ctaPrimary": "Browse internship programmes",
-    "ctaSecondary": "How InternWay Works",
+    "ctaSecondary": "Start in 4 Easy Steps",
     "photoAlt": "Graduates throwing their caps",
     "today": "posted today",
     "stats": {
