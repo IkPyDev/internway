@@ -32,7 +32,8 @@
     "platform": "Platforma",
     "partnership": "Hamkorlik",
     "company": "InternWay",
-    "disclaimer": "E'lonlar rasmiy manbalardan olinadi. Ariza berishdan oldin shartlarni rasmiy sahifada tekshiring."
+    "disclaimer": "E'lonlar rasmiy manbalardan olinadi. Ariza berishdan oldin shartlarni rasmiy sahifada tekshiring.",
+    "aboutCompany": "Kompaniya haqida"
   },
   "date": {
     "unknown": "Sana noma'lum",
@@ -104,7 +105,7 @@
     "abroad": {
       "eyebrow": "Haqiqiy hikoyalar",
       "title": "Xorijdagi talabalarimiz",
-      "lead": "USTravel orqali xorijga borgan talabalarning haqiqiy suratlari — sizning yo'lingiz ham shunday boshlanishi mumkin.",
+      "lead": "Xalqaro tajriba orttirgan, yangi madaniyatlarni kashf etgan va chet elda unutilmas xotiralar yaratgan talabalarning yo'lini kuzating.",
       "places": {
         "paris": "Parij, Fransiya",
         "louvre": "Luvr, Parij",

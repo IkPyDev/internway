@@ -32,7 +32,8 @@
     "platform": "Platform",
     "partnership": "Partnership",
     "company": "InternWay",
-    "disclaimer": "Listings come from official sources. Check the terms on the official page before you apply."
+    "disclaimer": "Listings come from official sources. Check the terms on the official page before you apply.",
+    "aboutCompany": "About Company"
   },
   "date": {
     "unknown": "Date unknown",
@@ -104,7 +105,7 @@
     "abroad": {
       "eyebrow": "Real stories",
       "title": "Our students abroad",
-      "lead": "Real photos of students who went abroad with USTravel — your journey can start the same way.",
+      "lead": "Explore the journeys of students who gained international experience, discovered new cultures, and created unforgettable memories abroad.",
       "places": {
         "paris": "Paris, France",
         "louvre": "Louvre, Paris",

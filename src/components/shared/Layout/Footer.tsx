@@ -15,7 +15,7 @@ const LINK_LABELS: Record<string, string> = {
   [ROUTES.portfolio]: "nav.portfolio",
   [ROUTES.employers]: "nav.employers",
   [ROUTES.universities]: "nav.universities",
-  [ROUTES.about]: "nav.about",
+  [ROUTES.about]: "footer.aboutCompany",
 }
 
 export function Footer() {
