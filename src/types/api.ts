@@ -10,6 +10,15 @@ export type Employment = "full" | "part" | "project"
 export type Experience = "none" | "1-3" | "3-6" | "6+"
 export type Currency = "USD" | "EUR" | "UZS"
 export type CompanySize = "" | "1-10" | "11-50" | "51-200" | "201-1000" | "1000+"
+export type StudyLevel = "bachelor" | "master" | "phd" | "college" | "graduate"
+export type StudyYear = "1" | "2" | "3" | "4" | "graduate"
+/** Internship length in months; "" is not stated. */
+export type Duration = "" | "1-3" | "3-6" | "6-12" | "12+"
+export type PayPreference = "" | "paid" | "unpaid" | "either"
+/** Who may apply; the admin checks it when approving the vacancy. */
+export type Eligibility = "all" | "international" | "non_eu" | "eu_only" | "specific"
+export type VisaSupport = "" | "yes" | "no" | "negotiable"
+export type Housing = "" | "yes" | "no"
 
 export interface CompanySummary {
   id: number
@@ -27,14 +36,25 @@ export interface User {
   company: CompanySummary | null
 }
 
-export interface CompanyFields {
+/** The plain-text part of the company registration form. */
+export interface CompanyTextFields {
   name: string
   description: string
   website: string
   industry: string
-  size: CompanySize
   country: string
   city: string
+  contact_name: string
+  contact_position: string
+  contact_email: string
+  contact_phone: string
+  linkedin: string
+  registration_no: string
+}
+
+export interface CompanyFields extends CompanyTextFields {
+  size: CompanySize
+  logo_id: string | null
 }
 
 export type WorkStatus = "looking" | "open" | "not_looking"
@@ -68,11 +88,18 @@ export interface UploadedFile {
   size: number
 }
 
-/** The plain-text part of a resume. */
+/** The plain-text part of a resume. `title` is the desired internship field. */
 export interface ResumeTextFields {
+  first_name: string
+  last_name: string
+  citizenship: string
   title: string
   phone: string
   city: string
+  university: string
+  field_of_study: string
+  preferred_countries: string
+  availability: string
   about: string
   skills: string
   languages: string
@@ -81,6 +108,12 @@ export interface ResumeTextFields {
 }
 
 export interface ResumeFields extends ResumeTextFields {
+  /** "" until the student picks one; the server requires it. */
+  study_level: StudyLevel | ""
+  study_year: StudyYear | ""
+  graduation_year: number | null
+  duration: Duration
+  pay: PayPreference
   work_status: WorkStatus
   photo_id: string | null
   file_id: string | null
@@ -97,20 +130,34 @@ export interface Resume extends ResumeFields {
   updated_at: string
 }
 
+/** The internship posting form. `description` holds the main duties. */
 export interface VacancyFields {
   title: string
+  department: string
   country: string
   city: string
   kind: VacancyKind
   schedule: Schedule
   employment: Employment
   experience: Experience
+  paid: boolean
   salary_from: number | null
   salary_to: number | null
   currency: Currency
+  duration: Duration
+  /** "YYYY-MM" or "". */
+  start_month: string
+  deadline: string | null
+  openings: number | null
+  education_req: string
+  language_req: string
   skills: string
   description: string
-  deadline: string | null
+  eligibility: Eligibility
+  nationalities: string
+  visa: VisaSupport
+  housing: Housing
+  benefits: string
 }
 
 export interface VacancySummary {
@@ -129,6 +176,10 @@ export interface VacancySummary {
   created_at: string
   company_id: number
   company: string
+  logo_id: string | null
+  paid: boolean
+  duration: Duration
+  uz_eligible: boolean
 }
 
 export interface Vacancy extends VacancyFields {

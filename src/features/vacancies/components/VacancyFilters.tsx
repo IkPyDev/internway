@@ -1,5 +1,6 @@
 import { Search } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { FilterPill } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -93,6 +94,18 @@ export function VacancyFilters({ search, countries, onChange, onReset }: Vacancy
         aria-label={t("vacancies.filters.salary")}
         className="h-11"
       />
+      <div className="flex flex-wrap items-center gap-2 sm:col-span-2">
+        <FilterPill
+          label={t("vacancies.filters.uz")}
+          active={search.uz === true}
+          onClick={() => onChange({ uz: search.uz ? undefined : true })}
+        />
+        <FilterPill
+          label={t("vacancies.paid")}
+          active={search.paid === true}
+          onClick={() => onChange({ paid: search.paid ? undefined : true })}
+        />
+      </div>
       <Button type="button" variant="ghost" className="h-11 rounded-full" onClick={onReset}>
         {t("vacancies.filters.reset")}
       </Button>

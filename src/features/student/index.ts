@@ -1,4 +1,7 @@
+export { FileUpload } from "./components/FileUpload"
 export { ResumePhoto } from "./components/ResumePhoto"
 export { ResumeView } from "./components/ResumeView"
+export { PHOTO_TYPES } from "./constants"
+export { useFileUpload } from "./hooks/useFileUpload"
 export { MyApplicationsPage } from "./pages/MyApplicationsPage"
 export { ResumePage } from "./pages/ResumePage"

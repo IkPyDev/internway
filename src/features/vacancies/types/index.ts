@@ -2,12 +2,16 @@ import type {
   ApplicationStatus,
   CompanySize,
   Currency,
+  Duration,
   Experience,
   ModerationStatus,
+  PayPreference,
   ResumeCertificate,
   ResumeJob,
   ResumeLink,
   Schedule,
+  StudyLevel,
+  StudyYear,
   Vacancy,
   VacancyKind,
   VacancySummary,
@@ -21,6 +25,9 @@ export interface VacanciesSearch {
   schedule?: Schedule
   experience?: Experience
   salary?: number
+  /** Only postings open to Uzbekistan applicants. */
+  uz?: true
+  paid?: true
   page?: number
 }
 
@@ -41,7 +48,12 @@ export interface VacancyDetail extends Vacancy {
     industry: string
     size: CompanySize
     status: ModerationStatus
+    logo_id: string | null
+    description: string
+    country: string
+    city: string
   }
+  uz_eligible: boolean
   applied: boolean
   saved: boolean
 }
@@ -82,6 +94,18 @@ export interface Candidate {
   jobs: ResumeJob[] | null
   links: ResumeLink[] | null
   certificates: ResumeCertificate[] | null
+  first_name: string | null
+  last_name: string | null
+  citizenship: string | null
+  university: string | null
+  field_of_study: string | null
+  study_level: StudyLevel | "" | null
+  study_year: StudyYear | "" | null
+  graduation_year: number | null
+  preferred_countries: string | null
+  availability: string | null
+  duration: Duration | null
+  pay: PayPreference | null
 }
 
 export interface CandidatesResponse {
@@ -100,3 +124,8 @@ export interface SalaryText {
   to?: string
   currency: Currency
 }
+
+/** One line of a vacancy's details: literal text, or an i18n key with its params. */
+export type Fact =
+  | { text: string; i18n?: undefined; params?: undefined }
+  | { i18n: string; params?: Record<string, string>; text?: undefined }

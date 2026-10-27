@@ -209,11 +209,15 @@ True as of 2026-10-26:
 - **Admin lists are unpaged** (whole tables). Vacancy search pages by 20 with `ILIKE`;
   move to full-text search when listings grow.
 - **No notifications.** Students see status changes and notes only in their cabinet;
-  email notices need the same provider as sign-in codes. No company logos yet.
+  email notices need the same provider as sign-in codes.
 - **Uploads live in Postgres** (`files` table, `bytea`, 4 MB cap for Vercel's request limit, type read
-  from the bytes). Any signed-in user who knows a file's random id can open it; files a resume
-  stops using are never deleted. Move to object storage if volume grows (2026-10-26).
-- **One 726 kB JS bundle** (233 kB gzip). Routes are not code-split yet; Vite warns.
+  from the bytes; a `.docx` CV is always downloaded, never shown). Any signed-in user who knows a
+  file's random id can open it, and an approved company's logo is public; files a resume or company
+  stops using are never deleted. Move to object storage if volume grows (2026-10-27).
+- **"Open to Uzbekistan" is derived**, not a stored flag: the posting's eligibility (all /
+  international / non-EU, or a nationality list naming Uzbekistan) becomes the badge once the
+  admin approves the vacancy (`UZ_ELIGIBLE` in the API's `vacancies.ts`, 2026-10-27).
+- **One 832 kB JS bundle** (260 kB gzip, 2026-10-27). Routes are not code-split yet; Vite warns.
   Fix: `lazyRouteComponent` per page.
 - **`document.title` never changes** per page; every tab says "InternWay". Matters for
   SEO once the site is public.

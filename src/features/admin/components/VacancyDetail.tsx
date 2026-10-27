@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import { CardGridSkeleton, EmptyState, ErrorState, StatusBadge } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
-import { Salary, VacancyTags } from "@/features/vacancies"
+import { Salary, VacancyFacts, VacancyTags } from "@/features/vacancies"
 import { useVacancyDetail } from "../hooks/useAdminDetail"
 import { useAdminPanel } from "../hooks/useAdminPanel"
 import { DetailRow, DetailSection, RejectReason } from "./DetailParts"
@@ -32,14 +32,20 @@ export function VacancyDetail({ id }: { id: number }) {
             </span>
           )}
         </div>
+        {v.department && <p className="text-sm text-muted-foreground">{v.department}</p>}
         <p className="text-lg font-bold text-navy-900">
-          <Salary from={v.salary_from} to={v.salary_to} currency={v.currency} />
+          {v.paid ? (
+            <Salary from={v.salary_from} to={v.salary_to} currency={v.currency} />
+          ) : (
+            t("vacancies.unpaid")
+          )}
         </p>
         <VacancyTags
           kind={v.kind}
           schedule={v.schedule}
           employment={v.employment}
           experience={v.experience}
+          duration={v.duration}
         />
       </div>
       {v.company_status !== "approved" && (
@@ -56,6 +62,10 @@ export function VacancyDetail({ id }: { id: number }) {
           onReject={(reason) => panel.reject("vacancies", v.id, reason)}
         />
       )}
+      <DetailSection title={t("vacancyForm.sections.eligibility")}>
+        <p className="text-xs text-muted-foreground">{t("admin.checkEligibility")}</p>
+        <VacancyFacts vacancy={v} className="rounded-lg border p-3" />
+      </DetailSection>
       <DetailSection title={t("admin.company")}>
         <ul>
           <DetailRow
@@ -70,7 +80,7 @@ export function VacancyDetail({ id }: { id: number }) {
           <p className="text-sm">{v.skills}</p>
         </DetailSection>
       )}
-      <DetailSection title={t("admin.description")}>
+      <DetailSection title={t("vacancyForm.description")}>
         <p className="text-sm whitespace-pre-line">{v.description}</p>
       </DetailSection>
       <Button asChild variant="outline" className="w-fit rounded-full">

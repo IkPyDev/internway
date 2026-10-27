@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useFileUpload } from "@/features/student"
 import type { CompanyFields } from "@/types"
 import { useCreateInviteMutation } from "../api/mutations/useCreateInviteMutation"
 import { useDeleteInviteMutation } from "../api/mutations/useDeleteInviteMutation"
@@ -14,6 +15,7 @@ export function useCompanyProfile() {
   const invite = useCreateInviteMutation()
   const cancelInvite = useDeleteInviteMutation()
   const removeMember = useDeleteMemberMutation()
+  const files = useFileUpload()
   const [fields, setFields] = useState<CompanyFields>(() => companyFields(undefined))
   const [inviteEmail, setInviteEmail] = useState("")
 
@@ -30,6 +32,7 @@ export function useCompanyProfile() {
     fields,
     set: <K extends keyof CompanyFields>(key: K, value: CompanyFields[K]) =>
       setFields((f) => ({ ...f, [key]: value })),
+    ...files,
     submit: () => save.mutate(fields),
     saving: save.isPending,
     saved: save.isSuccess,

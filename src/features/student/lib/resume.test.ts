@@ -3,7 +3,15 @@ import { canWithdraw, formatMonth, jobPeriod, resumeFields, splitTags, uploadErr
 
 describe("resumeFields", () => {
   it("starts empty and copies only editable fields", () => {
-    expect(resumeFields(null)).toMatchObject({ title: "", work_status: "looking", jobs: [], photo_id: null })
+    expect(resumeFields(null)).toMatchObject({
+      title: "",
+      first_name: "",
+      study_level: "",
+      graduation_year: null,
+      work_status: "looking",
+      jobs: [],
+      photo_id: null,
+    })
     const resume = {
       id: 1,
       title: "Dev",

@@ -6,6 +6,7 @@ import {
   readAmount,
   salaryText,
   splitSkills,
+  vacancyFacts,
   vacancyFields,
 } from "./vacancies"
 
@@ -28,7 +29,14 @@ describe("vacancies lib", () => {
   })
 
   it("starts a new vacancy empty and copies an existing one", () => {
-    expect(vacancyFields(undefined)).toMatchObject({ kind: "internship", salary_from: null, currency: "USD" })
+    expect(vacancyFields(undefined)).toMatchObject({
+      kind: "internship",
+      salary_from: null,
+      currency: "USD",
+      paid: true,
+      eligibility: "all",
+      openings: null,
+    })
     const v = { title: "Intern", kind: "job", salary_from: 0, deadline: "2026-12-01" } as Vacancy
     expect(vacancyFields(v)).toMatchObject({ title: "Intern", kind: "job", salary_from: 0 })
   })
@@ -48,5 +56,27 @@ describe("vacancies lib", () => {
     expect(readAmount("")).toBeNull()
     expect(readAmount("0")).toBe(0)
     expect(readAmount("12.6")).toBe(13)
+  })
+
+  it("reads toggle filters from the URL", () => {
+    expect(parseVacanciesSearch({ uz: true, paid: "1" })).toMatchObject({ uz: true, paid: true })
+    expect(parseVacanciesSearch({ uz: "yes", paid: false })).toMatchObject({ uz: undefined, paid: undefined })
+  })
+
+  it("lists only the filled-in posting details", () => {
+    const facts = vacancyFacts({
+      ...vacancyFields(undefined),
+      duration: "3-6",
+      start_month: "2027-06",
+      openings: 5,
+    })
+    expect(facts.map(([key]) => key)).toEqual(["eligibility", "duration", "start", "openings"])
+    expect(facts[2][1]).toEqual({ text: "06.2027" })
+    const specific = vacancyFacts({
+      ...vacancyFields(undefined),
+      eligibility: "specific",
+      nationalities: "Uzbekistan",
+    })
+    expect(specific[0][1]).toEqual({ text: "Uzbekistan" })
   })
 })

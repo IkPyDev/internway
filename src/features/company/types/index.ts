@@ -24,7 +24,12 @@ export interface CompanyProfile extends CompanyFields {
   invites: Invite[]
 }
 
-export interface PublicCompany extends CompanyFields {
+/** The public page shows the company, never its contact person or registration number. */
+export interface PublicCompany
+  extends Pick<
+    CompanyFields,
+    "name" | "logo_id" | "description" | "website" | "linkedin" | "industry" | "size" | "country" | "city"
+  > {
   id: number
   created_at: string
   vacancies: VacancySummary[]

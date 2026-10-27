@@ -9,6 +9,11 @@ export function resumeFields(resume: Resume | null | undefined): ResumeFields {
   const text = Object.fromEntries(RESUME_FIELDS.map(({ key }) => [key, resume?.[key] ?? ""]))
   return {
     ...(text as unknown as ResumeFields),
+    study_level: resume?.study_level ?? "",
+    study_year: resume?.study_year ?? "",
+    graduation_year: resume?.graduation_year ?? null,
+    duration: resume?.duration ?? "",
+    pay: resume?.pay ?? "",
     work_status: resume?.work_status ?? "looking",
     photo_id: resume?.photo_id ?? null,
     file_id: resume?.file_id ?? null,

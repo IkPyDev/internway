@@ -32,7 +32,20 @@ export function ResumeView({ resume: r, name }: { resume: ResumeViewData; name?:
   const links = (r.links ?? []).filter((l) => safeUrl(l.url) !== "#")
   const certificates = r.certificates ?? []
   const skills = splitTags(r.skills)
-  const contact = [r.city, r.phone].filter(Boolean).join(" · ")
+  const contact = [r.city, r.citizenship, r.phone].filter(Boolean).join(" · ")
+  const fullName = name || [r.first_name, r.last_name].filter(Boolean).join(" ")
+  const study = [
+    r.field_of_study,
+    r.study_level && t(`resume.studyLevel.${r.study_level}`),
+    r.study_year && r.study_year !== "graduate" && t(`resume.studyYear.${r.study_year}`),
+    r.graduation_year && `${t("resume.fields.graduation_year")}: ${r.graduation_year}`,
+  ].filter(Boolean)
+  const wishes: [string, string | null | undefined][] = [
+    ["preferred_countries", r.preferred_countries],
+    ["availability", r.availability],
+    ["duration", r.duration && t("resume.months", { range: r.duration })],
+    ["pay", r.pay && t(`resume.pay.${r.pay}`)],
+  ]
 
   if (!r.title) return <p className="text-sm text-muted-foreground">{t("resume.none")}</p>
 
@@ -41,7 +54,7 @@ export function ResumeView({ resume: r, name }: { resume: ResumeViewData; name?:
       <div className="flex flex-wrap items-center gap-4">
         <ResumePhoto id={r.photo_id} />
         <div className="grid min-w-0 flex-1 gap-1">
-          {name && <p className="text-lg font-bold">{name}</p>}
+          {fullName && <p className="text-lg font-bold">{fullName}</p>}
           <p className="text-base font-semibold text-navy-900">{r.title}</p>
           {contact && <p className="text-muted-foreground">{contact}</p>}
           {r.work_status && (
@@ -54,8 +67,24 @@ export function ResumeView({ resume: r, name }: { resume: ResumeViewData; name?:
         </div>
       </div>
 
+      {wishes.some(([, v]) => v) && (
+        <Block title={t("resume.sections.preferences")}>
+          <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+            {wishes.map(
+              ([key, value]) =>
+                value && (
+                  <div key={key}>
+                    <dt className="text-xs text-muted-foreground">{t(`resume.fields.${key}`)}</dt>
+                    <dd className="font-semibold">{value}</dd>
+                  </div>
+                ),
+            )}
+          </dl>
+        </Block>
+      )}
+
       {r.about && (
-        <Block title={t("resume.sections.about")}>
+        <Block title={t("resume.fields.about")}>
           <p className="whitespace-pre-line">{r.about}</p>
         </Block>
       )}
@@ -77,9 +106,15 @@ export function ResumeView({ resume: r, name }: { resume: ResumeViewData; name?:
         </Block>
       )}
 
-      {r.education && (
-        <Block title={t("resume.fields.education")}>
-          <p className="whitespace-pre-line">{r.education}</p>
+      {(r.university || r.education) && (
+        <Block title={t("resume.sections.education")}>
+          {r.university && (
+            <div>
+              <p className="font-bold">{r.university}</p>
+              {study.length > 0 && <p className="text-muted-foreground">{study.join(" · ")}</p>}
+            </div>
+          )}
+          {r.education && <p className="whitespace-pre-line">{r.education}</p>}
         </Block>
       )}
 

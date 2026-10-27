@@ -1,6 +1,6 @@
-import { Building2, Globe, MapPin, Users } from "lucide-react"
+import { Globe, Linkedin, MapPin, Users } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { CardGridSkeleton, EmptyState, ErrorState } from "@/components/shared"
+import { CardGridSkeleton, CompanyLogo, EmptyState, ErrorState } from "@/components/shared"
 import { VacancyCard } from "@/features/vacancies"
 import { safeUrl } from "@/lib"
 import { usePublicCompany } from "../hooks/usePublicCompany"
@@ -18,7 +18,7 @@ export function PublicCompanyPage() {
           <header className="grid gap-3">
             <span className="eyebrow">{c.industry || t("company.eyebrow")}</span>
             <h1 className="flex items-center gap-3 text-3xl sm:text-5xl">
-              <Building2 className="size-9 shrink-0 text-navy-700" aria-hidden /> {c.name}
+              <CompanyLogo id={c.logo_id} className="size-14 sm:size-20" /> {c.name}
             </h1>
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground">
               {[c.city, c.country].some(Boolean) && (
@@ -39,6 +39,16 @@ export function PublicCompanyPage() {
                   className="flex items-center gap-1.5 break-all text-navy-700 hover:underline"
                 >
                   <Globe className="size-4 shrink-0" aria-hidden /> {c.website}
+                </a>
+              )}
+              {c.linkedin && (
+                <a
+                  href={safeUrl(c.linkedin)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-navy-700 hover:underline"
+                >
+                  <Linkedin className="size-4 shrink-0" aria-hidden /> LinkedIn
                 </a>
               )}
             </div>

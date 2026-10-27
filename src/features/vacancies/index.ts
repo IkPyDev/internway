@@ -1,5 +1,6 @@
 export { Salary } from "./components/Salary"
 export { VacancyCard } from "./components/VacancyCard"
+export { VacancyFacts } from "./components/VacancyFacts"
 export { VacancyTags } from "./components/VacancyTags"
 export { parseCandidatesSearch, parseVacanciesSearch } from "./lib/vacancies"
 export { CandidatesPage } from "./pages/CandidatesPage"

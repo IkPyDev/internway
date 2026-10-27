@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router"
-import { Building2, CalendarClock, MapPin } from "lucide-react"
+import { CalendarClock, MapPin } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { CompanyLogo } from "@/components/shared"
 import { ROUTES } from "@/constants"
 import type { VacancySummary } from "@/types"
 import { place } from "../lib/vacancies"
 import { Salary } from "./Salary"
+import { UzBadge } from "./UzBadge"
 import { VacancyTags } from "./VacancyTags"
 
 export function VacancyCard({ item }: { item: VacancySummary }) {
@@ -17,21 +19,31 @@ export function VacancyCard({ item }: { item: VacancySummary }) {
         </Link>
       </h3>
       <p className="text-lg font-bold">
-        <Salary from={item.salary_from} to={item.salary_to} currency={item.currency} />
+        {item.paid ? (
+          <Salary from={item.salary_from} to={item.salary_to} currency={item.currency} />
+        ) : (
+          t("vacancies.unpaid")
+        )}
       </p>
       <Link
         to={ROUTES.publicCompany}
         params={{ id: String(item.company_id) }}
         className="relative z-10 flex w-fit items-center gap-1.5 font-semibold text-navy-700 hover:underline"
       >
-        <Building2 className="size-4" aria-hidden /> {item.company}
+        <CompanyLogo id={item.logo_id} className="size-7 rounded-md" /> {item.company}
       </Link>
       {place(item) && (
         <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <MapPin className="size-4" aria-hidden /> {place(item)}
         </p>
       )}
-      <VacancyTags kind={item.kind} schedule={item.schedule} experience={item.experience} />
+      <VacancyTags
+        kind={item.kind}
+        schedule={item.schedule}
+        experience={item.experience}
+        duration={item.duration}
+      />
+      {item.uz_eligible && <UzBadge />}
       {item.deadline && (
         <p className="mt-auto flex items-center gap-1.5 border-t border-dashed pt-3 text-xs text-muted-foreground">
           <CalendarClock className="size-4" aria-hidden /> {t("vacancies.deadline")}: {item.deadline}

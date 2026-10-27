@@ -1,18 +1,36 @@
 import { Eye } from "lucide-react"
 import type { ReactNode } from "react"
 import { useTranslation } from "react-i18next"
-import { CardGridSkeleton, ErrorState, Field, FormError, PageShell, StatusBadge } from "@/components/shared"
+import {
+  CardGridSkeleton,
+  ErrorState,
+  Field,
+  FormError,
+  OptionSelect,
+  PageShell,
+  StatusBadge,
+} from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import type { ResumeTextFields, WorkStatus } from "@/types"
+import type { ResumeTextFields } from "@/types"
 import { FileUpload } from "../components/FileUpload"
 import { ListEditor } from "../components/ListEditor"
 import { ResumePhoto } from "../components/ResumePhoto"
 import { ResumeView } from "../components/ResumeView"
-import { DOCUMENT_TYPES, PHOTO_TYPES, RESUME_FIELDS, RESUME_LISTS, WORK_STATUSES } from "../constants"
+import {
+  CV_TYPES,
+  DOCUMENT_TYPES,
+  DURATIONS,
+  PAY_PREFERENCES,
+  PHOTO_TYPES,
+  RESUME_FIELDS,
+  RESUME_LISTS,
+  STUDY_LEVELS,
+  STUDY_YEARS,
+  WORK_STATUSES,
+} from "../constants"
 import { useResumeForm } from "../hooks/useResumeForm"
 
 function Card({ title, hint, children }: { title: string; hint?: string; children: ReactNode }) {
@@ -33,9 +51,9 @@ export function ResumePage() {
   const { fields, set } = form
 
   const text = (key: keyof ResumeTextFields, rows = 4) => {
-    const { long, required } = RESUME_FIELDS.find((f) => f.key === key) ?? {}
+    const { long, required, type } = RESUME_FIELDS.find((f) => f.key === key) ?? {}
     return (
-      <Field label={t(`resume.fields.${key}`)}>
+      <Field label={t(`resume.fields.${key}`)} required={required}>
         {long ? (
           <Textarea
             rows={rows}
@@ -47,8 +65,10 @@ export function ResumePage() {
         ) : (
           <Input
             required={required}
+            type={type}
             value={fields[key]}
             onChange={(e) => set(key, e.target.value)}
+            placeholder={t(`resume.placeholders.${key}`)}
             className="font-normal"
           />
         )}
@@ -108,29 +128,104 @@ export function ResumePage() {
                 <p className="text-xs text-muted-foreground">{t("resume.photoHint")}</p>
               </div>
             </div>
-            {text("title")}
-            <div className="grid gap-4 sm:grid-cols-3">
-              <Field label={t("resume.fields.work_status")}>
-                <Select value={fields.work_status} onValueChange={(v) => set("work_status", v as WorkStatus)}>
-                  <SelectTrigger className="w-full font-normal">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {WORK_STATUSES.map((s) => (
-                      <SelectItem key={s} value={s}>
-                        {t(`resume.workStatus.${s}`)}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {text("first_name")}
+              {text("last_name")}
+              {text("citizenship")}
+              {text("city")}
+              <Field label={t("resume.fields.email")} required>
+                <Input value={form.email} readOnly disabled className="font-normal" />
               </Field>
               {text("phone")}
-              {text("city")}
+              <Field label={t("resume.fields.work_status")}>
+                <OptionSelect
+                  value={fields.work_status}
+                  options={WORK_STATUSES}
+                  label={(s) => t(`resume.workStatus.${s}`)}
+                  onChange={(v) => set("work_status", v)}
+                />
+              </Field>
             </div>
+          </Card>
+
+          <Card title={t("resume.sections.education")}>
+            {text("university")}
+            <div className="grid gap-4 sm:grid-cols-2">
+              {text("field_of_study")}
+              <Field label={t("resume.fields.study_level")} required>
+                <OptionSelect
+                  required
+                  value={fields.study_level}
+                  options={STUDY_LEVELS}
+                  label={(v) => t(`resume.studyLevel.${v}`)}
+                  onChange={(v) => set("study_level", v)}
+                  placeholder={t("resume.choose")}
+                />
+              </Field>
+              <Field label={t("resume.fields.study_year")} required>
+                <OptionSelect
+                  required
+                  value={fields.study_year}
+                  options={STUDY_YEARS}
+                  label={(v) => t(`resume.studyYear.${v}`)}
+                  onChange={(v) => set("study_year", v)}
+                  placeholder={t("resume.choose")}
+                />
+              </Field>
+              <Field label={t("resume.fields.graduation_year")}>
+                <Input
+                  type="number"
+                  min={1950}
+                  max={2100}
+                  value={fields.graduation_year ?? ""}
+                  onChange={(e) => set("graduation_year", e.target.value ? Number(e.target.value) : null)}
+                  placeholder="2027"
+                  className="font-normal"
+                />
+              </Field>
+            </div>
+            {text("education", 3)}
+          </Card>
+
+          <Card title={t("resume.sections.preferences")}>
+            {text("title")}
+            {text("preferred_countries")}
+            <div className="grid gap-4 sm:grid-cols-2">
+              {text("availability")}
+              <Field label={t("resume.fields.duration")}>
+                <OptionSelect
+                  value={fields.duration}
+                  options={DURATIONS}
+                  label={(v) => t("resume.months", { range: v })}
+                  onChange={(v) => set("duration", v)}
+                  placeholder={t("resume.choose")}
+                />
+              </Field>
+            </div>
+            <fieldset className="grid gap-2">
+              <legend className="mb-1.5 text-sm font-semibold">{t("resume.fields.pay")}</legend>
+              <div className="flex flex-wrap gap-2">
+                {PAY_PREFERENCES.map((p) => (
+                  <Button
+                    key={p}
+                    type="button"
+                    size="sm"
+                    variant={fields.pay === p ? "default" : "outline"}
+                    aria-pressed={fields.pay === p}
+                    className="rounded-full"
+                    onClick={() => set("pay", fields.pay === p ? "" : p)}
+                  >
+                    {t(`resume.pay.${p}`)}
+                  </Button>
+                ))}
+              </div>
+            </fieldset>
           </Card>
 
           <Card title={t("resume.sections.about")} hint={t("resume.hints.about")}>
             {text("about", 7)}
+            {text("skills", 3)}
+            {text("languages")}
           </Card>
 
           <Card title={t("resume.sections.jobs")} hint={t("resume.hints.jobs")}>
@@ -190,12 +285,6 @@ export function ResumePage() {
               )}
             </ListEditor>
             {text("experience", 3)}
-          </Card>
-
-          <Card title={t("resume.sections.education")}>
-            {text("education", 3)}
-            {text("skills", 3)}
-            {text("languages")}
           </Card>
 
           <Card title={t("resume.sections.certificates")} hint={t("resume.hints.certificates")}>
@@ -283,7 +372,7 @@ export function ResumePage() {
               <p className="text-sm font-semibold">{t("resume.resumeFile")}</p>
               <FileUpload
                 fileId={fields.file_id}
-                accept={DOCUMENT_TYPES}
+                accept={CV_TYPES}
                 label={t("resume.uploadFile")}
                 busy={form.uploading}
                 upload={form.upload}
@@ -297,6 +386,7 @@ export function ResumePage() {
             <Button type="submit" className="rounded-full font-bold" disabled={form.saving || form.uploading}>
               {t("resume.save")}
             </Button>
+            <span className="text-xs text-muted-foreground">{t("resume.required")}</span>
             {form.saved && <span className="text-sm text-green-700">{t("resume.saved")}</span>}
             {form.fileError && (
               <p role="alert" className="text-sm text-destructive">

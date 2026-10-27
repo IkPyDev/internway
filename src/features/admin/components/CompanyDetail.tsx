@@ -1,11 +1,19 @@
 import { ExternalLink } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { CardGridSkeleton, ErrorState, StatusBadge } from "@/components/shared"
+import { CardGridSkeleton, CompanyLogo, ErrorState, StatusBadge } from "@/components/shared"
 import { safeUrl } from "@/lib"
 import { useCompanyDetail } from "../hooks/useAdminDetail"
 import { useAdminPanel } from "../hooks/useAdminPanel"
 import { DetailRow, DetailSection, RejectReason } from "./DetailParts"
 import { ModerationActions } from "./ModerationActions"
+
+const CONTACT_FIELDS = [
+  "contact_name",
+  "contact_position",
+  "contact_email",
+  "contact_phone",
+  "registration_no",
+] as const
 
 /** One company: the full profile with moderation, its team and every vacancy. */
 export function CompanyDetail({ id }: { id: number }) {
@@ -23,7 +31,9 @@ export function CompanyDetail({ id }: { id: number }) {
   return (
     <div className="grid gap-6">
       <div className="grid gap-2 pr-8">
-        <h2 className="text-xl">{c.name}</h2>
+        <h2 className="flex items-center gap-3 text-xl">
+          <CompanyLogo id={c.logo_id} /> {c.name}
+        </h2>
         <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <StatusBadge status={c.status} />
           <span>{facts.join(" · ")}</span>
@@ -38,6 +48,16 @@ export function CompanyDetail({ id }: { id: number }) {
             <ExternalLink className="size-4 shrink-0" aria-hidden /> {c.website}
           </a>
         )}
+        {c.linkedin && (
+          <a
+            href={safeUrl(c.linkedin)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit items-center gap-1.5 text-sm break-all text-navy-700 hover:underline"
+          >
+            <ExternalLink className="size-4 shrink-0" aria-hidden /> {c.linkedin}
+          </a>
+        )}
       </div>
       <RejectReason reason={c.reject_reason} label={t("moderation.reason")} />
       <ModerationActions
@@ -48,6 +68,16 @@ export function CompanyDetail({ id }: { id: number }) {
       />
       <DetailSection title={t("admin.about")}>
         <p className="text-sm whitespace-pre-line">{c.description || t("admin.noDescription")}</p>
+      </DetailSection>
+      <DetailSection title={t("company.sections.contact")}>
+        <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+          {CONTACT_FIELDS.map((key) => (
+            <div key={key}>
+              <dt className="text-xs text-muted-foreground">{t(`company.fields.${key}`)}</dt>
+              <dd className="font-semibold break-all">{c[key] || "—"}</dd>
+            </div>
+          ))}
+        </dl>
       </DetailSection>
       <DetailSection title={t("admin.team", { count: c.members.length })}>
         <ul className="grid gap-2">

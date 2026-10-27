@@ -596,9 +596,31 @@
       "anyExperience": "Istalgan tajriba",
       "anyCountry": "Istalgan davlat",
       "salary": "Maosh (dan)",
-      "reset": "Filtrlarni tozalash"
+      "reset": "Filtrlarni tozalash",
+      "uz": "O'zbekistonliklar uchun ochiq"
     },
-    "skills": "Asosiy ko'nikmalar"
+    "skills": "Asosiy ko'nikmalar",
+    "paid": "Pullik",
+    "unpaid": "Bepul amaliyot",
+    "months": "{{range}} oy",
+    "uzEligible": "O'zbekistonliklar uchun ochiq",
+    "uzEligibleLong": "O'zbekiston fuqarolari ariza topshirishi mumkin",
+    "eligibility": {
+      "all": "Barcha davlatlar fuqarolari",
+      "international": "Xalqaro talabalar",
+      "non_eu": "Yevropa Ittifoqidan tashqari nomzodlar ham qabul qilinadi",
+      "eu_only": "Faqat Yevropa Ittifoqi fuqarolari",
+      "specific": "Faqat belgilangan davlatlar fuqarolari"
+    },
+    "visa": {
+      "yes": "Yordam beriladi",
+      "no": "Yordam berilmaydi",
+      "negotiable": "Kelishuv asosida"
+    },
+    "housing": {
+      "yes": "Ta'minlanadi",
+      "no": "Ta'minlanmaydi"
+    }
   },
   "apply": {
     "title": "Ariza yuborish",
@@ -614,15 +636,28 @@
     "save": "Saqlash va tekshiruvga yuborish",
     "saved": "Saqlandi. Moderator tekshiradi.",
     "fields": {
-      "title": "Istalgan lavozim",
+      "title": "Istalgan amaliyot yo'nalishi",
       "phone": "Telefon",
       "city": "Shahar",
       "about": "O'zim haqimda",
       "skills": "Ko'nikmalar",
-      "education": "Ta'lim",
+      "education": "Qo'shimcha ta'lim va kurslar",
       "experience": "Boshqa tajriba (loyihalar, volontyorlik)",
-      "languages": "Tillar",
-      "work_status": "Ish qidirish holati"
+      "languages": "Tillar va darajasi",
+      "work_status": "Ish qidirish holati",
+      "first_name": "Ism",
+      "last_name": "Familiya",
+      "citizenship": "Fuqaroligi",
+      "email": "Email",
+      "university": "Universitet / o'quv muassasasi",
+      "field_of_study": "Mutaxassislik",
+      "study_level": "Ta'lim darajasi",
+      "study_year": "Kurs",
+      "graduation_year": "Bitirish yili",
+      "preferred_countries": "Afzal ko'rilgan davlatlar",
+      "availability": "Qachon bo'shsiz",
+      "duration": "Afzal muddat",
+      "pay": "Amaliyot turi"
     },
     "statusHint": {
       "pending": "Moderator rezyumeingizni tekshirmoqda.",
@@ -635,12 +670,13 @@
       "not_looking": "Ish qidirmayapman"
     },
     "sections": {
-      "basics": "Asosiy ma'lumotlar",
-      "about": "O'zim haqimda",
+      "basics": "Shaxsiy ma'lumotlar",
+      "about": "Professional rezyume",
       "jobs": "Ish tajribasi",
-      "education": "Ta'lim va ko'nikmalar",
+      "education": "Ta'lim",
       "certificates": "Sertifikatlar",
-      "links": "Havolalar va fayllar"
+      "links": "Havolalar va fayllar",
+      "preferences": "Amaliyot istaklari"
     },
     "hints": {
       "about": "Kimsiz, nimani yaxshi qilasiz, keyin nima qilmoqchisiz. Erkin yozing.",
@@ -651,8 +687,19 @@
     "placeholders": {
       "about": "Masalan: 3-kurs talabasiman, React'da veb ilovalar yarataman, chet elda amaliyot o'tamoqchiman…",
       "skills": "React, TypeScript, Figma, Ingliz tili B2",
-      "education": "Universitet, fakultet, yillar",
-      "experience": "Loyihalar, volontyorlik, klublar"
+      "education": "Kurslar, treninglar, ikkinchi ta'lim",
+      "experience": "Loyihalar, volontyorlik, klublar",
+      "first_name": "Ism",
+      "last_name": "Familiya",
+      "citizenship": "O'zbekiston",
+      "city": "Toshkent",
+      "phone": "+998…",
+      "university": "Universitet nomi",
+      "field_of_study": "Biznes boshqaruvi",
+      "title": "Marketing, muhandislik, mehmonxona biznesi…",
+      "preferred_countries": "Germaniya, Ispaniya, BAA…",
+      "availability": "Iyun–Avgust 2027",
+      "languages": "Ingliz B2, Nemis A2…"
     },
     "job": {
       "company": "Kompaniya yoki tashkilot",
@@ -686,11 +733,33 @@
     "uploadPhoto": "Rasm yuklash",
     "uploadFile": "Rezyume yuklash (PDF)",
     "photoHint": "JPG, PNG yoki WEBP, 4 MB gacha.",
-    "fileHint": "PDF yoki rasm, 4 MB gacha.",
+    "fileHint": "PDF yoki DOCX, 4 MB gacha.",
     "preview": "Ko'rinishi",
     "previewTitle": "Ish beruvchi rezyumeingizni shunday ko'radi",
     "present": "hozirgacha",
-    "none": "Rezyume hali yo'q."
+    "none": "Rezyume hali yo'q.",
+    "studyLevel": {
+      "bachelor": "Bakalavr",
+      "master": "Magistr",
+      "phd": "PhD / doktorantura",
+      "college": "Kollej / texnikum",
+      "graduate": "Bitirgan"
+    },
+    "studyYear": {
+      "1": "1-kurs",
+      "2": "2-kurs",
+      "3": "3-kurs",
+      "4": "4-kurs",
+      "graduate": "Bitirgan"
+    },
+    "months": "{{range}} oy",
+    "pay": {
+      "paid": "Pullik",
+      "unpaid": "Bepul",
+      "either": "Farqi yo'q"
+    },
+    "choose": "Tanlang",
+    "required": "* — majburiy maydonlar."
   },
   "myApplications": {
     "title": "Arizalarim",
@@ -715,21 +784,54 @@
   "vacancyForm": {
     "newTitle": "Yangi vakansiya",
     "editTitle": "Vakansiyani tahrirlash",
-    "title": "Nomi",
+    "title": "Amaliyot lavozimi",
     "kind": "Turi",
     "country": "Davlat",
     "city": "Shahar",
-    "description": "Tavsif: vazifalar, talablar, shartlar",
+    "description": "Asosiy vazifalar",
     "submit": "Tekshiruvga yuborish",
     "moderationNote": "Moderator har bir vakansiyani e'lon qilishdan oldin tekshiradi, odatda bir ish kuni ichida.",
     "schedule": "Ish formati",
     "employment": "Bandlik",
     "experience": "Tajriba",
     "currency": "Valyuta",
-    "salaryFrom": "Maosh (oyiga, dan)",
-    "salaryTo": "Maosh (oyiga, gacha)",
-    "skills": "Asosiy ko'nikmalar",
-    "skillsHint": "React, TypeScript, English B2"
+    "salaryFrom": "Maosh / stipendiya (oyiga, dan)",
+    "salaryTo": "Maosh / stipendiya (oyiga, gacha)",
+    "skills": "Talab qilinadigan ko'nikmalar",
+    "skillsHint": "React, TypeScript, English B2",
+    "sections": {
+      "position": "Lavozim va joy",
+      "terms": "Shartlar",
+      "requirements": "Talablar va vazifalar",
+      "eligibility": "Kimlar ariza topshirishi mumkin"
+    },
+    "department": "Bo'lim / yo'nalish",
+    "paid": "Pullik yoki bepul",
+    "duration": "Amaliyot davomiyligi",
+    "start": "Boshlanish sanasi",
+    "openings": "Bo'sh o'rinlar soni",
+    "education": "Ta'lim bo'yicha talablar",
+    "languages": "Til talablari",
+    "eligibility": "Kimlar ariza topshirishi mumkin?",
+    "nationalities": "Qaysi davlatlar fuqarolari",
+    "visa": "Viza / ishlash ruxsatnomasi bo'yicha yordam",
+    "housing": "Turar joy / ovqatlanish",
+    "benefits": "Qo'shimcha imtiyozlar",
+    "salaryHint": "Ixtiyoriy: oyiga summani kiriting, masalan 800 EUR.",
+    "uzHint": "\"O'zbekiston fuqarolari ariza topshirishi mumkin\" belgisi administrator e'lonni tasdiqlaganda beriladi.",
+    "applyVia": "Arizalar InternWay orqali qabul qilinadi.",
+    "placeholders": {
+      "title": "Front Office Intern",
+      "department": "Mehmonxona biznesi / Front Office",
+      "country": "Germaniya",
+      "city": "Berlin",
+      "education": "Mehmonxona biznesi / turizm talabalari",
+      "languages": "Ingliz B2, Nemis A2",
+      "description": "Mehmonlarni ro'yxatdan o'tkazish, bronlarni boshqarish…",
+      "nationalities": "Uzbekistan, Kazakhstan…",
+      "benefits": "Transport, sug'urta…"
+    },
+    "deadline": "Ariza topshirishning oxirgi muddati"
   },
   "candidates": {
     "title": "Nomzodlar",
@@ -809,7 +911,8 @@
     "vacanciesTitle": "Vakansiyalar ({{count}})",
     "description": "Tavsif",
     "openCandidates": "Nomzodlarni ko'rish",
-    "openVacancy": "Vakansiyani ochish"
+    "openVacancy": "Vakansiyani ochish",
+    "checkEligibility": "Tasdiqlashdan oldin tekshiring: e'lon O'zbekiston fuqarolari uchun ochiqmi? Tasdiqlansa, mos e'lonlarga \"O'zbekistonliklar uchun ochiq\" belgisi qo'yiladi."
   },
   "salary": {
     "range": "{{from}} – {{to}} {{currency}}",
@@ -830,13 +933,20 @@
     "lead": "Kompaniyangizning ommaviy sahifasi. Talabalar uni har bir vakansiya yonida ko'radi.",
     "fields": {
       "name": "Kompaniya nomi",
-      "industry": "Soha",
-      "website": "Veb-sayt",
+      "industry": "Faoliyat sohasi",
+      "website": "Rasmiy veb-sayt",
       "country": "Davlat",
       "city": "Shahar",
       "size": "Hajmi",
       "sizePlaceholder": "Xodimlar soni",
-      "description": "Kompaniya haqida"
+      "description": "Kompaniya haqida qisqacha",
+      "logo": "Kompaniya logotipi",
+      "linkedin": "LinkedIn sahifasi",
+      "contact_name": "Mas'ul shaxsning ism-familiyasi",
+      "contact_position": "Mas'ul shaxsning lavozimi",
+      "contact_email": "Korporativ email",
+      "contact_phone": "Aloqa telefoni",
+      "registration_no": "Ro'yxatdan o'tganlik raqami (STIR, HRB…)"
     },
     "employees": "{{size}} xodim",
     "save": "Saqlash",
@@ -859,6 +969,29 @@
       "inviteHint": "Taklif qilingan odam shu email bilan kirganda avtomatik kompaniyangizga qo'shiladi."
     },
     "openVacancies": "Ochiq vakansiyalar: {{count}}",
-    "noVacancies": "Hozircha ochiq vakansiya yo'q."
+    "noVacancies": "Hozircha ochiq vakansiya yo'q.",
+    "placeholders": {
+      "name": "Kompaniya nomi",
+      "industry": "Mehmonxona biznesi, IT, logistika…",
+      "website": "https://",
+      "country": "Germaniya",
+      "city": "Berlin",
+      "linkedin": "https://www.linkedin.com/company/…",
+      "contact_name": "Ism Familiya",
+      "contact_position": "HR menejer",
+      "contact_email": "hr@kompaniya.com",
+      "contact_phone": "+49…",
+      "description": "Nima bilan shug'ullanasiz, qancha xodim, talabalar uchun nima taklif qilasiz",
+      "registration_no": "Masalan: STIR 305 112 447"
+    },
+    "sections": {
+      "about": "Kompaniya ma'lumotlari",
+      "contact": "Mas'ul shaxs",
+      "verification": "Tekshiruv uchun"
+    },
+    "uploadLogo": "Logotip yuklash",
+    "logoHint": "JPG, PNG yoki WebP, 4 MB gacha. Kvadrat rasm yaxshi ko'rinadi.",
+    "verificationHint": "Faqat InternWay administratori ko'radi. Kompaniyani tekshirishni tezlashtiradi.",
+    "contactPrivate": "Mas'ul shaxs ma'lumotlari talabalarga ko'rinmaydi."
   }
 }

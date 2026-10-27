@@ -1,21 +1,23 @@
 import { useTranslation } from "react-i18next"
-import type { Employment, Experience, Schedule, VacancyKind } from "@/types"
+import type { Duration, Employment, Experience, Schedule, VacancyKind } from "@/types"
 
 interface VacancyTagsProps {
   kind: VacancyKind
   schedule: Schedule
   employment?: Employment
   experience: Experience
+  duration?: Duration
 }
 
-/** Kind, work format, employment and experience as small grey tags. */
-export function VacancyTags({ kind, schedule, employment, experience }: VacancyTagsProps) {
+/** Kind, work format, employment, experience and length as small grey tags. */
+export function VacancyTags({ kind, schedule, employment, experience, duration }: VacancyTagsProps) {
   const { t } = useTranslation()
   const tags = [
     t(`vacancies.kind.${kind}`),
     t(`vacancies.schedule.${schedule}`),
     employment && t(`vacancies.employment.${employment}`),
     t(`vacancies.experience.${experience}`),
+    duration && t("vacancies.months", { range: duration }),
   ].filter(Boolean)
   return (
     <ul className="flex flex-wrap gap-1.5">

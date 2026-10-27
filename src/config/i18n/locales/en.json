@@ -596,9 +596,31 @@
       "anyExperience": "Any experience",
       "anyCountry": "Any country",
       "salary": "Salary from",
-      "reset": "Reset filters"
+      "reset": "Reset filters",
+      "uz": "Open to Uzbekistan"
     },
-    "skills": "Key skills"
+    "skills": "Key skills",
+    "paid": "Paid",
+    "unpaid": "Unpaid internship",
+    "months": "{{range}} months",
+    "uzEligible": "Open to Uzbekistan",
+    "uzEligibleLong": "Uzbekistan applicants eligible",
+    "eligibility": {
+      "all": "All nationalities",
+      "international": "International students",
+      "non_eu": "Non-EU applicants accepted",
+      "eu_only": "EU citizens only",
+      "specific": "Specific nationalities only"
+    },
+    "visa": {
+      "yes": "Available",
+      "no": "Not available",
+      "negotiable": "Negotiable"
+    },
+    "housing": {
+      "yes": "Provided",
+      "no": "Not provided"
+    }
   },
   "apply": {
     "title": "Apply",
@@ -614,15 +636,28 @@
     "save": "Save and send for review",
     "saved": "Saved. The moderator will review it.",
     "fields": {
-      "title": "Desired position",
+      "title": "Desired internship field",
       "phone": "Phone",
       "city": "City",
       "about": "About me",
       "skills": "Skills",
-      "education": "Education",
+      "education": "Other education and courses",
       "experience": "Other experience (projects, volunteering)",
-      "languages": "Languages",
-      "work_status": "Job search"
+      "languages": "Languages and proficiency",
+      "work_status": "Job search",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "citizenship": "Country of citizenship",
+      "email": "Email",
+      "university": "University / institution",
+      "field_of_study": "Field of study",
+      "study_level": "Study level",
+      "study_year": "Current year",
+      "graduation_year": "Expected graduation",
+      "preferred_countries": "Preferred countries",
+      "availability": "Availability",
+      "duration": "Preferred duration",
+      "pay": "Internship type"
     },
     "statusHint": {
       "pending": "The moderator is reviewing your resume.",
@@ -635,12 +670,13 @@
       "not_looking": "Not looking"
     },
     "sections": {
-      "basics": "Main",
-      "about": "About me",
+      "basics": "Personal information",
+      "about": "Professional resume",
       "jobs": "Work experience",
-      "education": "Education and skills",
+      "education": "Education",
       "certificates": "Certificates",
-      "links": "Links and files"
+      "links": "Links and files",
+      "preferences": "Internship preferences"
     },
     "hints": {
       "about": "Who you are, what you are good at, what you want to do next. Write freely.",
@@ -651,8 +687,19 @@
     "placeholders": {
       "about": "For example: 3rd-year student, I build web apps in React and want an internship abroad…",
       "skills": "React, TypeScript, Figma, English B2",
-      "education": "University, faculty, years",
-      "experience": "Projects, volunteering, clubs"
+      "education": "Courses, trainings, a second degree",
+      "experience": "Projects, volunteering, clubs",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "citizenship": "Uzbekistan",
+      "city": "Tashkent",
+      "phone": "+998…",
+      "university": "University name",
+      "field_of_study": "Business Management",
+      "title": "Marketing, Engineering, Hospitality…",
+      "preferred_countries": "Germany, Spain, UAE…",
+      "availability": "June–August 2027",
+      "languages": "English B2, German A2…"
     },
     "job": {
       "company": "Company or organisation",
@@ -686,11 +733,33 @@
     "uploadPhoto": "Upload a photo",
     "uploadFile": "Upload a resume (PDF)",
     "photoHint": "JPG, PNG or WEBP, up to 4 MB.",
-    "fileHint": "PDF or an image, up to 4 MB.",
+    "fileHint": "PDF or DOCX, up to 4 MB.",
     "preview": "Preview",
     "previewTitle": "This is how employers see your resume",
     "present": "now",
-    "none": "No resume yet."
+    "none": "No resume yet.",
+    "studyLevel": {
+      "bachelor": "Bachelor's",
+      "master": "Master's",
+      "phd": "PhD",
+      "college": "College",
+      "graduate": "Graduated"
+    },
+    "studyYear": {
+      "1": "Year 1",
+      "2": "Year 2",
+      "3": "Year 3",
+      "4": "Year 4",
+      "graduate": "Graduate"
+    },
+    "months": "{{range}} months",
+    "pay": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "either": "Either"
+    },
+    "choose": "Choose",
+    "required": "* Required fields."
   },
   "myApplications": {
     "title": "My applications",
@@ -715,21 +784,54 @@
   "vacancyForm": {
     "newTitle": "New vacancy",
     "editTitle": "Edit vacancy",
-    "title": "Title",
+    "title": "Internship position",
     "kind": "Type",
     "country": "Country",
     "city": "City",
-    "description": "Description: duties, requirements, conditions",
+    "description": "Main responsibilities",
     "submit": "Send for review",
     "moderationNote": "The moderator checks every vacancy before it is published, usually within one working day.",
     "schedule": "Work format",
     "employment": "Employment",
     "experience": "Experience",
     "currency": "Currency",
-    "salaryFrom": "Salary from (per month)",
-    "salaryTo": "Salary to (per month)",
-    "skills": "Key skills",
-    "skillsHint": "React, TypeScript, English B2"
+    "salaryFrom": "Salary / stipend (per month, from)",
+    "salaryTo": "Salary / stipend (per month, to)",
+    "skills": "Required skills",
+    "skillsHint": "React, TypeScript, English B2",
+    "sections": {
+      "position": "Position and location",
+      "terms": "Terms",
+      "requirements": "Requirements and duties",
+      "eligibility": "Who can apply"
+    },
+    "department": "Department / field",
+    "paid": "Paid or unpaid",
+    "duration": "Internship duration",
+    "start": "Start date",
+    "openings": "Number of openings",
+    "education": "Education requirements",
+    "languages": "Language requirements",
+    "eligibility": "Who can apply?",
+    "nationalities": "Citizens of which countries",
+    "visa": "Visa / work permit support",
+    "housing": "Accommodation / meals",
+    "benefits": "Additional benefits",
+    "salaryHint": "Optional: the monthly amount, for example 800 EUR.",
+    "uzHint": "The \"Uzbekistan applicants eligible\" badge is granted when the admin approves the posting.",
+    "applyVia": "Applications come in through InternWay.",
+    "placeholders": {
+      "title": "Front Office Intern",
+      "department": "Hospitality / Front Office",
+      "country": "Germany",
+      "city": "Berlin",
+      "education": "Hospitality / tourism students",
+      "languages": "English B2, German A2",
+      "description": "Checking guests in, managing bookings…",
+      "nationalities": "Uzbekistan, Kazakhstan…",
+      "benefits": "Transport, insurance…"
+    },
+    "deadline": "Application deadline"
   },
   "candidates": {
     "title": "Candidates",
@@ -809,7 +911,8 @@
     "vacanciesTitle": "Vacancies ({{count}})",
     "description": "Description",
     "openCandidates": "See the candidates",
-    "openVacancy": "Open the vacancy"
+    "openVacancy": "Open the vacancy",
+    "checkEligibility": "Check before approving: is the posting open to Uzbekistan citizens? Once approved, eligible postings get the \"Open to Uzbekistan\" badge."
   },
   "salary": {
     "range": "{{from}} – {{to}} {{currency}}",
@@ -831,12 +934,19 @@
     "fields": {
       "name": "Company name",
       "industry": "Industry",
-      "website": "Website",
+      "website": "Official website",
       "country": "Country",
       "city": "City",
       "size": "Size",
       "sizePlaceholder": "Number of employees",
-      "description": "About the company"
+      "description": "Short company description",
+      "logo": "Company logo",
+      "linkedin": "LinkedIn page",
+      "contact_name": "Contact person's full name",
+      "contact_position": "Contact person's position",
+      "contact_email": "Corporate email",
+      "contact_phone": "Contact phone",
+      "registration_no": "Registration number (TIN, HRB…)"
     },
     "employees": "{{size}} employees",
     "save": "Save",
@@ -859,6 +969,29 @@
       "inviteHint": "The invited person signs in with this email and joins your company automatically."
     },
     "openVacancies": "Open vacancies: {{count}}",
-    "noVacancies": "No open vacancies right now."
+    "noVacancies": "No open vacancies right now.",
+    "placeholders": {
+      "name": "Company name",
+      "industry": "Hospitality, IT, logistics…",
+      "website": "https://",
+      "country": "Germany",
+      "city": "Berlin",
+      "linkedin": "https://www.linkedin.com/company/…",
+      "contact_name": "Full name",
+      "contact_position": "HR manager",
+      "contact_email": "hr@company.com",
+      "contact_phone": "+49…",
+      "description": "What you do, how many people, what you offer students",
+      "registration_no": "For example: HRB 214577 B"
+    },
+    "sections": {
+      "about": "Company information",
+      "contact": "Contact person",
+      "verification": "For verification"
+    },
+    "uploadLogo": "Upload logo",
+    "logoHint": "JPG, PNG or WebP, up to 4 MB. A square image looks best.",
+    "verificationHint": "Only the InternWay admin sees this. It speeds up the company check.",
+    "contactPrivate": "Students do not see the contact person's details."
   }
 }

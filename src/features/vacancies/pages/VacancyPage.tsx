@@ -1,12 +1,14 @@
 import { Link, useLocation } from "@tanstack/react-router"
-import { Bookmark, BookmarkCheck, Building2, CalendarClock, CircleCheck, Globe, MapPin } from "lucide-react"
+import { Bookmark, BookmarkCheck, CalendarClock, CircleCheck, Globe, MapPin } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { CardGridSkeleton, ErrorState, FormError, StatusBadge } from "@/components/shared"
+import { CardGridSkeleton, CompanyLogo, ErrorState, FormError, StatusBadge } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { ROUTES } from "@/constants"
 import { apiErrorCode, safeUrl } from "@/lib"
 import { Salary } from "../components/Salary"
+import { UzBadge } from "../components/UzBadge"
+import { VacancyFacts } from "../components/VacancyFacts"
 import { VacancyTags } from "../components/VacancyTags"
 import { useVacancyDetail } from "../hooks/useVacancyDetail"
 import { place, splitSkills } from "../lib/vacancies"
@@ -33,9 +35,15 @@ export function VacancyPage() {
               </div>
             )}
             <h1 className="text-3xl sm:text-4xl">{v.title}</h1>
+            {v.department && <p className="-mt-2 text-muted-foreground">{v.department}</p>}
             <p className="text-2xl font-bold">
-              <Salary from={v.salary_from} to={v.salary_to} currency={v.currency} />
+              {v.paid ? (
+                <Salary from={v.salary_from} to={v.salary_to} currency={v.currency} />
+              ) : (
+                t("vacancies.unpaid")
+              )}
             </p>
+            {v.uz_eligible && <UzBadge long className="text-sm" />}
             <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-muted-foreground">
               {place(v) && (
                 <span className="flex items-center gap-1.5">
@@ -53,7 +61,10 @@ export function VacancyPage() {
               schedule={v.schedule}
               employment={v.employment}
               experience={v.experience}
+              duration={v.duration}
             />
+            <VacancyFacts vacancy={v} className="rounded-xl border bg-card p-5" />
+            <h2 className="text-xl">{t("vacancyForm.description")}</h2>
             <p className="leading-relaxed whitespace-pre-line">{v.description}</p>
             {splitSkills(v.skills).length > 0 && (
               <div>
@@ -74,11 +85,14 @@ export function VacancyPage() {
               <Link
                 to={ROUTES.publicCompany}
                 params={{ id: String(v.company.id) }}
-                className="flex items-center gap-2 text-lg font-bold text-navy-700 hover:underline"
+                className="flex items-center gap-3 text-lg font-bold text-navy-700 hover:underline"
               >
-                <Building2 className="size-5" aria-hidden /> {v.company.name}
+                <CompanyLogo id={v.company.logo_id} /> {v.company.name}
               </Link>
               {v.company.industry && <p className="text-sm text-muted-foreground">{v.company.industry}</p>}
+              {v.company.description && (
+                <p className="line-clamp-4 text-sm whitespace-pre-line">{v.company.description}</p>
+              )}
               {v.company.website && (
                 <a
                   href={safeUrl(v.company.website)}
