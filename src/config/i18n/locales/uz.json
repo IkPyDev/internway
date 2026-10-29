@@ -124,21 +124,26 @@
       "lead": "Bir bosishda tayyor qidiruv."
     },
     "directions": {
-      "eyebrow": "Xizmatlar",
-      "title": "Biz qanday yordam beramiz?",
-      "lead": "Amaliyot topishdan ariza topshirishgacha — yoningizdamiz.",
-      "photoAlt": "Birga ketayotgan talabalar",
-      "students": {
-        "title": "Profil va CV",
-        "text": "CV joylang, ko'nikma va tillaringizni ko'rsating. Profilni kim ko'rishini o'zingiz tanlaysiz."
+      "title": "Qanday yordam beramiz",
+      "lead": "O‘zbekistonlik va xorijlik talaba hamda bitiruvchilarga <b>amaliyot</b> va <b>ish</b> topishda yordam beramiz.",
+      "profile": {
+        "title": "Profilingizni yarating",
+        "text": "Rezyume, ko‘nikma va tillaringizni qo‘shing. Ismingizni faqat tasdiqlangan kompaniyalar ko‘radi."
       },
-      "employers": {
-        "title": "Ish beruvchilar bilan aloqa",
-        "text": "Tekshirilgan kompaniyalar va ularning ochiq amaliyotlari bir joyda."
+      "find": {
+        "title": "Imkoniyat toping",
+        "text": "O‘zbekiston va xorijdagi tasdiqlangan kompaniyalar hamda ularning ochiq o‘rinlari."
       },
-      "internships": {
-        "title": "Ariza topshirishda yordam",
-        "text": "CV, hujjatlar va suhbatga tayyorgarlikda jamoamiz yoningizda."
+      "apply": {
+        "title": "Ariza bering va ishga kiring",
+        "text": "Bir necha bosishda ariza yuboring va javobini kuzatib boring."
+      },
+      "who": "Har bir davlat talaba va bitiruvchilari uchun ochiq",
+      "pills": {
+        "internships": "Amaliyot",
+        "jobs": "Ish",
+        "uzbekistan": "O‘zbekiston",
+        "abroad": "Xorij"
       }
     },
     "vacancies": {

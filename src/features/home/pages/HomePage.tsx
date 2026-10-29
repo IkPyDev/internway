@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router"
-import { Building2, FileCheck2, GraduationCap } from "lucide-react"
 import { useTranslation } from "react-i18next"
-import { CtaBand, FeatureCard, Section, Steps } from "@/components/shared"
+import { CtaBand, Section, Steps } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
 import { TopCompanies } from "@/features/companies"
@@ -9,6 +8,7 @@ import { DestinationGrid, FieldGrid, LatestInternships, PopularSearches } from "
 import { LatestVacancies } from "@/features/vacancies"
 import { AbroadGallery } from "../components/AbroadGallery"
 import { Hero } from "../components/Hero"
+import { HowWeHelp } from "../components/HowWeHelp"
 import { useHomeStats } from "../hooks/useHomeStats"
 
 export function HomePage() {
@@ -26,39 +26,7 @@ export function HomePage() {
         ]}
       />
 
-      <Section
-        eyebrow={t("home.directions.eyebrow")}
-        title={t("home.directions.title")}
-        lead={t("home.directions.lead")}
-      >
-        <div className="grid items-stretch gap-6 lg:grid-cols-[1.1fr_1fr]">
-          <img
-            src="/img/students-walking.jpg"
-            alt={t("home.directions.photoAlt")}
-            width={2400}
-            height={1347}
-            loading="lazy"
-            className="size-full max-h-[34rem] min-h-72 rounded-xl object-cover shadow-card"
-          />
-          <div className="grid gap-4">
-            <FeatureCard
-              icon={GraduationCap}
-              title={t("home.directions.students.title")}
-              text={t("home.directions.students.text")}
-            />
-            <FeatureCard
-              icon={Building2}
-              title={t("home.directions.employers.title")}
-              text={t("home.directions.employers.text")}
-            />
-            <FeatureCard
-              icon={FileCheck2}
-              title={t("home.directions.internships.title")}
-              text={t("home.directions.internships.text")}
-            />
-          </div>
-        </div>
-      </Section>
+      <HowWeHelp />
 
       <LatestVacancies />
 

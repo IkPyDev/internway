@@ -124,21 +124,26 @@
       "lead": "A ready-made search in one click."
     },
     "directions": {
-      "eyebrow": "Services",
       "title": "How we help",
-      "lead": "From finding an internship to applying — we are with you.",
-      "photoAlt": "Students walking together",
-      "students": {
-        "title": "Profile and CV",
-        "text": "Upload your CV, show your skills and languages. You decide who sees your profile."
+      "lead": "We help students and graduates, from Uzbekistan and abroad, find <b>internships</b> and <b>jobs</b>.",
+      "profile": {
+        "title": "Create your profile",
+        "text": "Add your CV, skills and languages. Only verified companies see your name."
       },
-      "employers": {
-        "title": "Reach employers",
-        "text": "Verified companies and their open internships in one place."
+      "find": {
+        "title": "Find opportunities",
+        "text": "Browse verified companies and their open roles, in Uzbekistan and abroad."
       },
-      "internships": {
-        "title": "Help with applying",
-        "text": "CV, documents and interview preparation — our team is by your side."
+      "apply": {
+        "title": "Apply and get hired",
+        "text": "Send your application in a few clicks and track the answer."
+      },
+      "who": "Open to students and graduates from every country",
+      "pills": {
+        "internships": "Internships",
+        "jobs": "Jobs",
+        "uzbekistan": "Uzbekistan",
+        "abroad": "Abroad"
       }
     },
     "vacancies": {
