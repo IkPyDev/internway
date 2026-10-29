@@ -141,6 +141,12 @@
         "text": "CV, documents and interview preparation — our team is by your side."
       }
     },
+    "vacancies": {
+      "eyebrow": "On InternWay",
+      "title": "New vacancies from companies",
+      "lead": "Posted by verified employers on InternWay — apply with your InternWay resume.",
+      "all": "All vacancies ({{count}})"
+    },
     "latest": {
       "eyebrow": "New",
       "title": "Latest internships",

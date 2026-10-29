@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
 import { TopCompanies } from "@/features/companies"
 import { DestinationGrid, FieldGrid, LatestInternships, PopularSearches } from "@/features/internships"
+import { LatestVacancies } from "@/features/vacancies"
 import { AbroadGallery } from "../components/AbroadGallery"
 import { Hero } from "../components/Hero"
 import { useHomeStats } from "../hooks/useHomeStats"
@@ -58,6 +59,8 @@ export function HomePage() {
           </div>
         </div>
       </Section>
+
+      <LatestVacancies />
 
       <Section
         tint

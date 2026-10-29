@@ -141,6 +141,12 @@
         "text": "CV, hujjatlar va suhbatga tayyorgarlikda jamoamiz yoningizda."
       }
     },
+    "vacancies": {
+      "eyebrow": "InternWay'da",
+      "title": "Kompaniyalardan yangi vakansiyalar",
+      "lead": "Tasdiqlangan ish beruvchilar InternWay'da joylagan — InternWay rezyumeingiz bilan topshiring.",
+      "all": "Barcha vakansiyalar ({{count}})"
+    },
     "latest": {
       "eyebrow": "Yangi",
       "title": "Eng so'nggi amaliyotlar",

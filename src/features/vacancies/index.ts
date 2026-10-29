@@ -1,3 +1,4 @@
+export { LatestVacancies } from "./components/LatestVacancies"
 export { Salary } from "./components/Salary"
 export { VacancyCard } from "./components/VacancyCard"
 export { VacancyFacts } from "./components/VacancyFacts"
