@@ -6,7 +6,6 @@ const STEPS = [
   { key: "find", icon: Search },
   { key: "apply", icon: Send },
 ] as const
-const PILLS = ["internships", "jobs", "uzbekistan", "abroad"] as const
 
 /** Low-contrast city skyline along the bottom edge of the navy band. */
 function Skyline() {
@@ -41,29 +40,11 @@ function Skyline() {
   )
 }
 
-/** Home "How we help": three numbered steps on a navy band with a faint pattern and skyline. */
+/** Home "How we help": three numbered steps on a navy band with a faint skyline. */
 export function HowWeHelp() {
   const { t } = useTranslation()
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(900px_500px_at_85%_0%,var(--navy-700),transparent_70%),linear-gradient(160deg,var(--navy-700),var(--navy-900)_60%)] text-white">
-      <svg className="pointer-events-none absolute inset-0 size-full" aria-hidden="true">
-        <defs>
-          <pattern id="how-pattern" width="64" height="64" patternUnits="userSpaceOnUse">
-            <rect x="16" y="16" width="32" height="32" fill="none" stroke="#fff" strokeOpacity=".07" />
-            <rect
-              x="16"
-              y="16"
-              width="32"
-              height="32"
-              fill="none"
-              stroke="#fff"
-              strokeOpacity=".07"
-              transform="rotate(45 32 32)"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#how-pattern)" />
-      </svg>
+    <section className="relative overflow-hidden bg-navy-950 text-white">
       <Skyline />
       <div className="container-page relative pt-14 pb-32 sm:pt-20 sm:pb-44">
         <h2 className="text-4xl text-white sm:text-5xl">{t("home.directions.title")}</h2>
@@ -88,23 +69,6 @@ export function HowWeHelp() {
               <p className="text-muted-foreground">{t(`home.directions.${key}.text`)}</p>
             </div>
           ))}
-        </div>
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-x-7 gap-y-3 rounded-3xl border border-white/20 bg-white/8 px-6 py-5 backdrop-blur-sm">
-          <strong className="text-lg font-semibold">{t("home.directions.who")}</strong>
-          <ul className="flex flex-wrap gap-2.5">
-            {PILLS.map((p, i) => (
-              <li
-                key={p}
-                className={
-                  i < 2
-                    ? "rounded-full bg-gold px-4 py-1.5 font-medium text-navy-950"
-                    : "rounded-full bg-white/12 px-4 py-1.5 font-medium"
-                }
-              >
-                {t(`home.directions.pills.${p}`)}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
