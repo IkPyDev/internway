@@ -7,9 +7,9 @@ export function TopCompanies({ limit = 6 }: { limit?: number }) {
   if (status === "pending") return <CardGridSkeleton count={3} />
   if (status === "error") return <ErrorState error={error} onRetry={() => refetch()} />
   return (
-    <div className="card-grid">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((c) => (
-        <CompanyCard key={c.name} company={c} />
+        <CompanyCard key={c.name} company={c} compact />
       ))}
     </div>
   )

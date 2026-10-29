@@ -6,13 +6,14 @@ import { safeUrl } from "@/lib"
 import { COUNTRY_LABELS, PRIORITY_BADGE } from "../constants"
 import type { Company } from "../types"
 
-export function CompanyCard({ company }: { company: Company }) {
+/** `compact` keeps only the header (badge, place, name, field) and makes the whole card the link. */
+export function CompanyCard({ company, compact = false }: { company: Company; compact?: boolean }) {
   const { t } = useTranslation()
   const badge = PRIORITY_BADGE[company.priority]
   const country = COUNTRY_LABELS[company.country] ? t(COUNTRY_LABELS[company.country]) : company.country
 
-  return (
-    <article className="flex animate-rise flex-col gap-2 rounded-xl border bg-card p-5 transition duration-300 hover:-translate-y-0.5 hover:shadow-card">
+  const header = (
+    <>
       <div className="flex items-center justify-between gap-2">
         <Badge variant="secondary" className={badge.className} title={t(badge.hint)}>
           {t(badge.label)}
@@ -32,6 +33,24 @@ export function CompanyCard({ company }: { company: Company }) {
         <h3 className="line-clamp-2 text-[1.05rem] font-bold">{company.name}</h3>
       </div>
       <p className="line-clamp-1 text-sm text-muted-foreground">{company.field}</p>
+    </>
+  )
+
+  if (compact)
+    return (
+      <a
+        href={safeUrl(company.url)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex animate-rise flex-col gap-2 rounded-xl border bg-card p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-card"
+      >
+        {header}
+      </a>
+    )
+
+  return (
+    <article className="flex animate-rise flex-col gap-2 rounded-xl border bg-card p-5 transition duration-300 hover:-translate-y-0.5 hover:shadow-card">
+      {header}
       {company.program && <p className="line-clamp-2 text-sm">{company.program}</p>}
       <dl className="grid gap-1.5 text-sm">
         {company.duration && (
