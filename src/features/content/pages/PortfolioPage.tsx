@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import { FeatureCard, PageHero, Section } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { ROUTES } from "@/constants"
+import { StudentDirectory } from "@/features/student"
 
 export function PortfolioPage() {
   const { t } = useTranslation()
@@ -25,7 +26,14 @@ export function PortfolioPage() {
           </Button>
         }
       />
-      <Section title={t("portfolio.fieldsTitle")}>
+      <Section
+        eyebrow={t("portfolio.directory.eyebrow")}
+        title={t("portfolio.directory.title")}
+        lead={t("portfolio.directory.lead")}
+      >
+        <StudentDirectory />
+      </Section>
+      <Section tint title={t("portfolio.fieldsTitle")}>
         <div className="grid gap-5 md:grid-cols-3">
           <FeatureCard
             icon={GraduationCap}
@@ -44,7 +52,7 @@ export function PortfolioPage() {
           />
         </div>
       </Section>
-      <Section tint title={t("portfolio.privacyTitle")}>
+      <Section title={t("portfolio.privacyTitle")}>
         <div className="grid gap-5 md:grid-cols-2">
           <FeatureCard
             icon={Lock}

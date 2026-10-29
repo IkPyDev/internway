@@ -2,17 +2,11 @@ import { ExternalLink } from "lucide-react"
 import type { ReactNode } from "react"
 import { useTranslation } from "react-i18next"
 import { cn, safeUrl } from "@/lib"
-import type { WorkStatus } from "@/types"
+import { STATUS_TONE } from "../constants"
 import { jobPeriod, splitTags } from "../lib/resume"
 import type { ResumeViewData } from "../types"
 import { FileLink } from "./FileLink"
 import { ResumePhoto } from "./ResumePhoto"
-
-const STATUS_TONE: Record<WorkStatus, string> = {
-  looking: "bg-green-100 text-green-700",
-  open: "bg-sky-100 text-sky-800",
-  not_looking: "bg-muted text-muted-foreground",
-}
 
 function Block({ title, children }: { title: string; children: ReactNode }) {
   return (

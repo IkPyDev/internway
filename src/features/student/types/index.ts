@@ -18,3 +18,6 @@ export interface MyApplication {
 
 /** Whatever part of a resume a screen has; a candidate without a resume has nulls. */
 export type ResumeViewData = { [K in keyof ResumeFields]?: ResumeFields[K] | null }
+
+/** A directory card; without `full` the server leaves out name, photo and contacts. */
+export type StudentCardData = ResumeViewData & { id: number; full: boolean }

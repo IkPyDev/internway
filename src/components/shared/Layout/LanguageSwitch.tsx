@@ -1,28 +1,29 @@
+import { Globe } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
 import { LANGUAGES } from "@/constants"
-import { cn } from "@/lib"
 
+/** A compact dropdown: globe icon and the current language code; the list shows each language's own name. */
 export function LanguageSwitch() {
   const { i18n, t } = useTranslation()
+  const current = LANGUAGES.find((l) => l.value === i18n.language) ?? LANGUAGES[1]
   return (
-    <fieldset className="flex rounded-full border p-0.5">
-      <legend className="sr-only">{t("common.language")}</legend>
-      {LANGUAGES.map((l) => (
-        <button
-          key={l.value}
-          type="button"
-          aria-pressed={i18n.language === l.value}
-          onClick={() => i18n.changeLanguage(l.value)}
-          className={cn(
-            "rounded-full px-2.5 py-1 text-xs font-bold transition",
-            i18n.language === l.value
-              ? "bg-navy-900 text-white"
-              : "text-muted-foreground hover:text-foreground",
-          )}
-        >
-          {l.label}
-        </button>
-      ))}
-    </fieldset>
+    <Select value={current.value} onValueChange={(v) => i18n.changeLanguage(v)}>
+      <SelectTrigger
+        size="sm"
+        aria-label={t("common.language")}
+        className="gap-1.5 rounded-full px-3 font-bold shadow-none"
+      >
+        <Globe className="size-4 text-navy-700" aria-hidden />
+        {current.label}
+      </SelectTrigger>
+      <SelectContent position="popper" align="end">
+        {LANGUAGES.map((l) => (
+          <SelectItem key={l.value} value={l.value}>
+            {l.name}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   )
 }

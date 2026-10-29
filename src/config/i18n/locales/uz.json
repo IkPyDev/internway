@@ -397,6 +397,14 @@
     "title": "Ko'nikmalaringiz — sizning vizit kartangiz",
     "lead": "Talaba profili ish beruvchilarga sizni to'liq ko'rsatadi. Kim ko'rishini esa o'zingiz hal qilasiz.",
     "create": "Profil yaratish",
+    "directory": {
+      "eyebrow": "Talabalar",
+      "title": "Amaliyot izlayotgan talabalar",
+      "lead": "Tasdiqlangan talaba profillari. To‘liq ism va kontaktlarni faqat tasdiqlangan kompaniyalar ko‘radi.",
+      "candidate": "Nomzod",
+      "cv": "Rezyume fayli",
+      "empty": "Hozircha talaba profillari yo‘q."
+    },
     "fieldsTitle": "Profilda nimalar bo'ladi",
     "fields": {
       "education": {
@@ -415,8 +423,8 @@
     "privacyTitle": "Maxfiylik sizning qo'lingizda",
     "privacy": {
       "visibility": {
-        "title": "Ko'rinishni boshqarish",
-        "text": "Profil ochiq, faqat tasdiqlangan ish beruvchilarga yoki yopiq bo'lishini tanlang."
+        "title": "Ismingizni faqat tasdiqlangan ish beruvchilar ko‘radi",
+        "text": "Yo‘nalishingiz, ko‘nikmalaringiz va holatingiz hammaga ko‘rinadi. Ism, rasm va kontaktlar faqat biz tasdiqlagan kompaniyalarga ochiladi."
       },
       "documents": {
         "title": "Hujjatlar himoyada",

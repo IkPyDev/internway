@@ -397,6 +397,14 @@
     "title": "Your skills are your business card",
     "lead": "A student profile shows employers the whole picture. You decide who sees it.",
     "create": "Create a profile",
+    "directory": {
+      "eyebrow": "Students",
+      "title": "Students looking for internships",
+      "lead": "Verified student profiles. Approved companies see full names and contacts.",
+      "candidate": "Candidate",
+      "cv": "CV file",
+      "empty": "No student profiles yet."
+    },
     "fieldsTitle": "What goes into a profile",
     "fields": {
       "education": {
@@ -415,8 +423,8 @@
     "privacyTitle": "Your privacy, your choice",
     "privacy": {
       "visibility": {
-        "title": "Control visibility",
-        "text": "Make your profile public, visible to verified employers only, or private."
+        "title": "Verified employers only see your name",
+        "text": "Everyone sees your field, skills and status. Your name, photo and contacts are shown only to companies we have verified."
       },
       "documents": {
         "title": "Documents protected",

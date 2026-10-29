@@ -7,6 +7,7 @@ export const API_ENDPOINTS = {
   logout: "api/auth/logout",
   me: "api/me",
   resume: "api/resume",
+  students: "api/students",
   files: "api/files",
   file: (id: string) => `api/files/${id}`,
   vacancies: "api/vacancies",

@@ -6,6 +6,7 @@ export const QUERY_KEYS = {
   companies: createEntityKeys("companies"),
   me: createEntityKeys("me"),
   resume: createEntityKeys("resume"),
+  students: createEntityKeys("students"),
   vacancies: createEntityKeys("vacancies"),
   myVacancies: createEntityKeys("myVacancies"),
   saved: createEntityKeys("saved"),

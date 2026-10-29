@@ -51,3 +51,10 @@ export const PHOTO_TYPES = "image/jpeg,image/png,image/webp"
 export const DOCUMENT_TYPES = "application/pdf,image/jpeg,image/png,image/webp"
 /** The CV may also be a Word document. */
 export const CV_TYPES = `application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+
+/** Badge colours for the job-search status. */
+export const STATUS_TONE: Record<WorkStatus, string> = {
+  looking: "bg-green-100 text-green-700",
+  open: "bg-sky-100 text-sky-800",
+  not_looking: "bg-muted text-muted-foreground",
+}
