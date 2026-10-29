@@ -19,6 +19,7 @@ export function regionsOf(location: string): RegionKey[] {
   const loc = ` ${location.toLowerCase()}`
   const tags = new Set(REGIONS.filter((r) => r.words.some((w) => loc.includes(w))).map((r) => r.key))
   if (tags.has("germany") || tags.has("uk")) tags.add("europe")
+  if (tags.has("japan") || tags.has("malaysia") || tags.has("china")) tags.add("asia")
   if (!tags.has("canada") && /, [A-Z]{2}\b/.test(location)) tags.add("usa")
   return [...tags]
 }

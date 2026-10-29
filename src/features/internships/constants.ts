@@ -14,6 +14,27 @@ export const FRESH_OPTIONS: { value: FreshWindow; label: string }[] = [
 /** Keywords that place a free-text location into a region; `en` is the place name used on outside job sites, `photo` an Unsplash image (free licence). */
 export const REGIONS: { key: RegionKey; label: string; en: string; photo: string; words: string[] }[] = [
   {
+    key: "japan",
+    label: "regions.japan",
+    photo: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=720&q=70",
+    en: "Japan",
+    words: ["japan", "tokyo", "osaka", "kyoto", "yokohama", "nagoya", "fukuoka"],
+  },
+  {
+    key: "malaysia",
+    label: "regions.malaysia",
+    photo: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=720&q=70",
+    en: "Malaysia",
+    words: ["malaysia", "kuala lumpur", "penang", "johor", "cyberjaya", "selangor"],
+  },
+  {
+    key: "china",
+    label: "regions.china",
+    photo: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=720&q=70",
+    en: "China",
+    words: ["china", "shanghai", "beijing", "shenzhen", "guangzhou", "hangzhou", "chengdu", "suzhou"],
+  },
+  {
     key: "germany",
     label: "regions.germany",
     photo: "/img/berlin.jpg",

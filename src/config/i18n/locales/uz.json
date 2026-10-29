@@ -45,6 +45,9 @@
     "yearsAgo": "{{count}} yil oldin"
   },
   "regions": {
+    "japan": "Yaponiya",
+    "malaysia": "Malayziya",
+    "china": "Xitoy",
     "germany": "Germaniya",
     "uk": "Buyuk Britaniya",
     "europe": "Yevropa",

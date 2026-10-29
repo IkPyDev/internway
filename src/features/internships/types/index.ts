@@ -1,6 +1,16 @@
 export type InternshipKind = "job" | "program"
 
-export type RegionKey = "germany" | "uk" | "europe" | "canada" | "asia" | "usa" | "remote"
+export type RegionKey =
+  | "japan"
+  | "malaysia"
+  | "china"
+  | "germany"
+  | "uk"
+  | "europe"
+  | "canada"
+  | "asia"
+  | "usa"
+  | "remote"
 
 export type FieldKey =
   | "software"

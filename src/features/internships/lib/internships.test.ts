@@ -19,6 +19,7 @@ describe("internships lib", () => {
     expect(regionsOf("Toronto, ON")).toEqual(["canada"])
     expect(regionsOf("San Francisco, CA")).toEqual(["usa"])
     expect(regionsOf("Remote")).toEqual(["remote"])
+    expect(regionsOf("Kuala Lumpur").sort()).toEqual(["asia", "malaysia"])
     expect(regionsOf("")).toEqual([])
   })
 

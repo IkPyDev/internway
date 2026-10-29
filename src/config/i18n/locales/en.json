@@ -45,6 +45,9 @@
     "yearsAgo": "{{count}} years ago"
   },
   "regions": {
+    "japan": "Japan",
+    "malaysia": "Malaysia",
+    "china": "China",
     "germany": "Germany",
     "uk": "United Kingdom",
     "europe": "Europe",

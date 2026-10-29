@@ -45,6 +45,9 @@
     "yearsAgo": "{{count}} г. назад"
   },
   "regions": {
+    "japan": "Япония",
+    "malaysia": "Малайзия",
+    "china": "Китай",
     "germany": "Германия",
     "uk": "Великобритания",
     "europe": "Европа",
