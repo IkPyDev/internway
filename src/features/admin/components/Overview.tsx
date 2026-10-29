@@ -52,7 +52,7 @@ export function Overview() {
         <h2 className="mb-3 text-xl">{t("admin.totals")}</h2>
         <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {TOTALS.map((key) => (
-            <div key={key} className="rounded-xl border bg-card p-4">
+            <div key={key} className="card-hover rounded-xl border bg-card p-4">
               <dd className="text-3xl font-bold text-navy-900">{data[key]}</dd>
               <dt className="text-sm text-muted-foreground">{t(`admin.stats.${key}`)}</dt>
             </div>

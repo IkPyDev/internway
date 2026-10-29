@@ -21,7 +21,7 @@ export function SavedVacanciesPage() {
         {items.map((v) => (
           <li
             key={v.id}
-            className="grid justify-items-start gap-2 rounded-xl border bg-card p-4 sm:flex sm:items-center sm:gap-3"
+            className="card-hover grid justify-items-start gap-2 rounded-xl border bg-card p-4 sm:flex sm:items-center sm:gap-3"
           >
             <div className="min-w-0 flex-1">
               <Link to={ROUTES.vacancy} params={{ id: String(v.id) }} className="font-bold hover:underline">

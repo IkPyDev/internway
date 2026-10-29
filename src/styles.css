@@ -155,6 +155,19 @@
   }
 }
 
+/* Hover feedback for any card: lift, shadow and a navy edge. */
+@utility card-hover {
+  transition:
+    translate 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+  &:hover {
+    translate: 0 -4px;
+    box-shadow: var(--shadow-card);
+    border-color: rgb(22 54 95 / 40%);
+  }
+}
+
 @utility container-page {
   width: min(1280px, 100% - 32px);
   margin-inline: auto;

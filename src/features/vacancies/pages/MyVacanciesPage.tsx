@@ -49,7 +49,10 @@ export function MyVacanciesPage() {
       )}
       <ul className="grid gap-3">
         {items.map((v) => (
-          <li key={v.id} className="grid gap-3 rounded-xl border bg-card p-4 lg:flex lg:items-center">
+          <li
+            key={v.id}
+            className="card-hover grid gap-3 rounded-xl border bg-card p-4 lg:flex lg:items-center"
+          >
             <div className="min-w-0 flex-1">
               <div className="flex flex-wrap items-center gap-2">
                 <Link to={ROUTES.vacancy} params={{ id: String(v.id) }} className="font-bold hover:underline">

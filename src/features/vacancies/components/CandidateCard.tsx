@@ -23,7 +23,7 @@ export function CandidateCard({ candidate: a, canDecide, busy, onDecide }: Candi
   const [note, setNote] = useState(a.employer_note)
 
   return (
-    <li className="grid gap-3 rounded-xl border bg-card p-5">
+    <li className="card-hover grid gap-3 rounded-xl border bg-card p-5">
       <div className="flex flex-wrap items-center gap-3">
         <ResumePhoto id={a.photo_id} className="size-14" />
         <div className="min-w-0 flex-1">

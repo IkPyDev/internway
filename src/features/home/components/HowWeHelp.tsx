@@ -55,7 +55,7 @@ export function HowWeHelp() {
           {STEPS.map(({ key, icon: Icon }, i) => (
             <div
               key={key}
-              className="rounded-3xl bg-card p-7 text-foreground shadow-[0_18px_40px_rgb(0_0_0/25%)]"
+              className="rounded-3xl bg-card p-7 text-foreground shadow-[0_18px_40px_rgb(0_0_0/25%)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_60px_rgb(0_0_0/40%)]"
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="grid size-14 place-items-center rounded-2xl bg-navy-900 text-white">

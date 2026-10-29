@@ -28,7 +28,7 @@ export function MyApplicationsPage() {
       {status === "success" && items.length === 0 && <EmptyState text={t("myApplications.empty")} />}
       <ul className="grid gap-3">
         {items.map((a) => (
-          <li key={a.id} className="grid gap-3 rounded-xl border bg-card p-4">
+          <li key={a.id} className="card-hover grid gap-3 rounded-xl border bg-card p-4">
             <div className="grid justify-items-start gap-2 sm:flex sm:items-center sm:gap-3">
               <div className="min-w-0 flex-1">
                 <Link

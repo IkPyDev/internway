@@ -18,7 +18,7 @@ export function Plan({ name, price, text, items, cta, to, hash, flag }: PlanProp
   return (
     <article
       className={cn(
-        "relative flex flex-col rounded-xl border-[1.5px] bg-card p-8",
+        "card-hover relative flex flex-col rounded-xl border-[1.5px] bg-card p-8",
         flag && "border-gold shadow-[0_20px_50px_rgb(232_188_74/22%)]",
       )}
     >
