@@ -28,7 +28,14 @@ export function HomePage() {
 
       <HowWeHelp />
 
-      <LatestVacancies />
+      <Section eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
+        <LatestInternships />
+        <div className="mt-10 text-center">
+          <Button asChild size="lg" className="rounded-full px-7 font-bold">
+            <Link to={ROUTES.internships}>{t("home.latest.all")} →</Link>
+          </Button>
+        </div>
+      </Section>
 
       <Section
         tint
@@ -64,14 +71,7 @@ export function HomePage() {
         <PopularSearches />
       </Section>
 
-      <Section tint eyebrow={t("home.latest.eyebrow")} title={t("home.latest.title")}>
-        <LatestInternships />
-        <div className="mt-10 text-center">
-          <Button asChild size="lg" className="rounded-full px-7 font-bold">
-            <Link to={ROUTES.internships}>{t("home.latest.all")} →</Link>
-          </Button>
-        </div>
-      </Section>
+      <LatestVacancies tint />
 
       <CtaBand
         title={t("home.cta.title")}

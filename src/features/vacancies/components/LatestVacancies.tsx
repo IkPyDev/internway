@@ -7,12 +7,13 @@ import { useLatestVacancies } from "../hooks/useLatestVacancies"
 import { VacancyCard } from "./VacancyCard"
 
 /** Home-page section with the newest approved vacancies; hidden while loading, on error or when there are none. */
-export function LatestVacancies({ limit = 8 }: { limit?: number }) {
+export function LatestVacancies({ limit = 8, tint }: { limit?: number; tint?: boolean }) {
   const { t } = useTranslation()
   const { items, total } = useLatestVacancies(limit)
   if (!items.length) return null
   return (
     <Section
+      tint={tint}
       eyebrow={t("home.vacancies.eyebrow")}
       title={t("home.vacancies.title")}
       lead={t("home.vacancies.lead")}
