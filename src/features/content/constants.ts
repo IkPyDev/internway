@@ -9,9 +9,11 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
     logo: "uzswlu.png",
   },
   {
-    name: "Tashkent State Pedagogical University named after Nizami",
+    name: "Uzbekistan National Pedagogical University named after Nizami",
     city: "tashkent",
-    url: "https://tdpu.uz",
+    url: "https://npuu.uz",
+    logo: "npuu.png",
+    dark: true,
   },
   {
     name: "Astrakhan State Technical University in Tashkent",
@@ -25,7 +27,7 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
     url: "https://iau.uz",
     logo: "iau.png",
   },
-  { name: "PDP University", city: "tashkent", url: "https://pdpu.uz" },
+  { name: "PDP University", city: "tashkent", url: "https://pdpu.uz", logo: "pdp.svg" },
   {
     name: "Tashkent Metropolitan University",
     city: "tashkent",
@@ -46,7 +48,7 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
   { name: "Alfraganus University", city: "tashkent", url: "https://afu.uz", logo: "afu.jpg" },
   { name: "British Management University", city: "tashkent", url: "https://bmu-edu.uz", logo: "bmu.svg" },
   { name: "International Digital University", city: "tashkent", url: "https://idu.uz", logo: "idu.png" },
-  { name: "TMC Institute", city: "tashkent", url: "https://tmci.uz" },
+  { name: "TMC Institute", city: "tashkent", url: "https://tmci.uz", logo: "tmc.svg" },
   { name: "Tashkent State Transport University", city: "tashkent", url: "https://tstu.uz", logo: "tstu.png" },
   {
     name: "Urgench State Medical Institute (former Urgench branch of TMA)",
