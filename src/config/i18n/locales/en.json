@@ -373,6 +373,17 @@
     "eyebrow": "Universities",
     "title": "Send your students into the world",
     "lead": "Together with universities we guide students to the right international internships and track the results.",
+    "partners": {
+      "eyebrow": "Partners",
+      "title": "Our partner universities",
+      "lead": "Universities across Uzbekistan that send their students abroad with InternWay. Click a card to open the university's site."
+    },
+    "cities": {
+      "tashkent": "Tashkent",
+      "bukhara": "Bukhara",
+      "samarkand": "Samarkand",
+      "khorezm": "Khorezm"
+    },
     "featuresTitle": "What partnership brings",
     "features": {
       "guide": {

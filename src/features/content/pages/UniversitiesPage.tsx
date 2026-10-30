@@ -2,6 +2,7 @@ import { BarChart3, Compass, Landmark } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { FeatureCard, PageHero, Section } from "@/components/shared"
 import { ContactForm } from "@/features/contact"
+import { PartnerUniversities } from "../components/PartnerUniversities"
 
 export function UniversitiesPage() {
   const { t } = useTranslation()
@@ -14,7 +15,14 @@ export function UniversitiesPage() {
         image="/img/graduates-selfie.jpg"
         position="center 80%"
       />
-      <Section title={t("universities.featuresTitle")}>
+      <Section
+        eyebrow={t("universities.partners.eyebrow")}
+        title={t("universities.partners.title")}
+        lead={t("universities.partners.lead")}
+      >
+        <PartnerUniversities />
+      </Section>
+      <Section tint title={t("universities.featuresTitle")}>
         <div className="grid gap-5 md:grid-cols-3">
           <FeatureCard
             icon={Compass}
@@ -33,7 +41,7 @@ export function UniversitiesPage() {
           />
         </div>
       </Section>
-      <Section tint id="university-form" title={t("universities.formTitle")}>
+      <Section id="university-form" title={t("universities.formTitle")}>
         <ContactForm topic="university" extraFields={["university"]} />
       </Section>
     </>

@@ -373,6 +373,17 @@
     "eyebrow": "Universitetlar",
     "title": "Talabalaringizni dunyoga yo'naltiring",
     "lead": "Universitetlar bilan hamkorlikda talabalarni mos xalqaro amaliyotlarga yo'naltiramiz va natijalarini kuzatamiz.",
+    "partners": {
+      "eyebrow": "Hamkorlar",
+      "title": "Hamkor universitetlarimiz",
+      "lead": "Talabalarini InternWay bilan xorijga yuboradigan O‘zbekiston universitetlari. Universitet saytini ochish uchun kartani bosing."
+    },
+    "cities": {
+      "tashkent": "Toshkent",
+      "bukhara": "Buxoro",
+      "samarkand": "Samarqand",
+      "khorezm": "Xorazm"
+    },
     "featuresTitle": "Hamkorlik nima beradi",
     "features": {
       "guide": {
