@@ -27,7 +27,7 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
     url: "https://iau.uz",
     logo: "iau.png",
   },
-  { name: "PDP University", city: "tashkent", url: "https://pdpu.uz", logo: "pdp.svg" },
+  { name: "PDP University", city: "tashkent", url: "https://university.pdp.uz/uz", logo: "pdp.svg" },
   {
     name: "Tashkent Metropolitan University",
     city: "tashkent",
@@ -44,7 +44,12 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
     url: "https://samdchti.uz",
     logo: "samdchti.png",
   },
-  { name: "Tashkent Institute of Economics and Pedagogy", city: "tashkent", url: "https://uztipi.uz" },
+  {
+    name: "Tashkent University of Economics and Pedagogy",
+    city: "tashkent",
+    url: "https://tipu.uz/uz",
+    logo: "tipu.png",
+  },
   { name: "Alfraganus University", city: "tashkent", url: "https://afu.uz", logo: "afu.jpg" },
   { name: "British Management University", city: "tashkent", url: "https://bmu-edu.uz", logo: "bmu.svg" },
   { name: "International Digital University", city: "tashkent", url: "https://idu.uz", logo: "idu.png" },
