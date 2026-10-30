@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router"
 import { Search } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { CountUp } from "@/components/shared"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ROUTES } from "@/constants"
@@ -116,7 +117,7 @@ export function Hero({ stats }: HeroProps) {
                   i === 1 && "text-gold",
                 )}
               >
-                {s.value?.toLocaleString() ?? "—"}
+                {s.value === null ? "—" : <CountUp value={s.value} />}
               </b>
               <span className="mt-2 block text-sm text-mist">{s.label}</span>
             </div>

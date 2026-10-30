@@ -1,4 +1,5 @@
 export { CompanyLogo } from "./CompanyLogo"
+export { CountUp } from "./CountUp"
 export { CtaBand } from "./CtaBand"
 export { FeatureCard } from "./FeatureCard"
 export { Field } from "./Field"

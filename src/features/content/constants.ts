@@ -77,7 +77,6 @@ export const PARTNER_UNIVERSITIES: PartnerUniversity[] = [
     name: "University of Journalism and Mass Communications of Uzbekistan",
     city: "tashkent",
     url: "https://uzjoku.uz",
-    logo: "uzjoku.svg",
   },
   {
     name: "University of Exact and Social Sciences",
